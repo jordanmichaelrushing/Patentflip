@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'bootstrap-sass'
-gem 'bcrypt-ruby'
-gem 'faker'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+ gem 'bootstrap-sass'
+ gem 'bcrypt-ruby'
+ gem 'faker'
+ gem 'will_paginate'
+ gem 'bootstrap-will_paginate'
 
 
 # Bundle edge Rails instead:
@@ -32,7 +32,7 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-	gem 'rspec-rails'
+	gem 'rspec-rails', '2.9.0'
 	gem 'guard-rspec'
 	gem 'guard-spork'
 	gem 'spork'
