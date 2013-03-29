@@ -181,6 +181,12 @@ footer {
 	}
 }
 
+.dropdown-menu {
+	&:hover {
+		display: block;
+	}
+}
+
 #home_css {
 	color: #bbb;
 &:hover {
@@ -196,6 +202,25 @@ footer {
 }
 
 #sign_css {
+	color: #bbb;
+	&:hover {
+		color: #fff;
+	}
+}
+
+#delete_css {
+	color: red;
+}
+
+
+.navbar .nav > li > a {
+	color: #bbb;
+	&:hover {
+		color: #fff;
+	}
+}
+
+#users_css {
 	color: #bbb;
 	&:hover {
 		color: #fff;
