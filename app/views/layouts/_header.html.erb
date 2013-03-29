@@ -11,7 +11,7 @@
 						<li id="fat-menu" class="dropdown">
 							<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="200">
 								Account <b class="caret"></b>
-						</a>
+							</a>
 							<ul class="dropdown-menu">
 								<li><%= link_to "Profile", current_user, id: "current_css" %></li>
 								<li><%= link_to "Settings", '#', id: "settings_css" %></li>
@@ -22,7 +22,19 @@
 							</ul>
 						</li>
 					<% else %>
-		 				<li><%= link_to "Sign in", signin_path, id: "sign_css" %></li>
+		 				<li id="fat-menu" class="dropdown">
+							<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="200">
+								Sign In
+							</a>
+							<ul class="dropdown-menu">
+								<div class="span4 offset0">
+									<%= form_for(:session, url: sessions_path) do |f| %>
+										<%= f.label :email %>
+										<%= f.text_field :email %>
+										<%= f.label :password %>
+										<%= f.password_field :password %>
+										<%= f.submit "Sign in", class: "btn btn-small btn-primary" %>
+									<% end %>
 		 			<% end %>
 				</ul>
 	  	</nav>
