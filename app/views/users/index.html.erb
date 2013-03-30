@@ -8,9 +8,9 @@
 		<li>
 			<%= gravatar_for user, size: 80, id: 'grav_user' %>
 			<%= link_to user.name, user, id: 'user_index', style: 'color: #000000'%>
-			<p><%= link_sale%></br>
+			<ul><%= link_sale%></br>
 			<%= link_sold%></br>
-			<%= link_buy%></p>
+			<%= link_buy%></ul>
 			<li class="divide"></li>
 		</li>
 	<% end %>

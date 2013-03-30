@@ -2,22 +2,16 @@
 
 /* universal */
 
-#myModal {
-	width: 1255px;
-	margin: -250px 0 0 -450px;
-}
+
 
 html {
 	overflow-y: scroll;
 	height: 100%;
-	overflow-x: auto;
 }
 
 body {
   height: 100%;
-  max-width: 100%;
 	padding-top: 10px;
-	align-right: 10px;
 	background-color:rgb(226,218,205);
 }
 section {
@@ -26,7 +20,6 @@ section {
 }
 textarea {
 	resize: vertical;
-	resize: horizontal;
 }
 
 
@@ -135,11 +128,8 @@ h2 {
 
 p {
 	padding-top: 30px;
-	align-right: -500px;
 	font-size: 1.1em;
 	line-height: 1.7em;
-	margin-left: auto;
-	margin-right: auto;
 	width: 100%;
 }
 
@@ -170,6 +160,7 @@ p {
 
 footer {
 	
+border-top: 1px solid #999;
 	clear:both;
  	a {
 		color: #555;
@@ -205,14 +196,16 @@ footer {
 		overflow: auto;
 		padding: 10px 0;
 		border-top: 1px solid #999;
+		ul {
+			float: right;
+		}
 		&:last-child {
 			border-bottom: 1px solid #999;
 		}
-	}
 	p {
 		color: black;
 		float: right;
-		margin-right: 100px
+	}
 	}
 }
 
