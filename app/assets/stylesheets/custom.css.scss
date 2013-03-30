@@ -2,15 +2,23 @@
 
 /* universal */
 
+#myModal {
+	width: 1255px;
+	margin: -250px 0 0 -450px;
+}
 
 html {
 	overflow-y: scroll;
 	height: 100%;
+	overflow-x: auto;
 }
 
 body {
-height: 100%;
-	padding-top: 60px;
+  height: 100%;
+  max-width: 100%;
+	padding-top: 10px;
+	align-right: 10px;
+	background-color:rgb(226,218,205);
 }
 section {
 	min-height: 100%;
@@ -18,25 +26,20 @@ section {
 }
 textarea {
 	resize: vertical;
+	resize: horizontal;
 }
-.center {
-	background-color: #EEE;
-	text-align: center;
-	h1 {
-		margin-bottom: 10px;
-	}
-}
+
 
 
 /* sidebar */
 
 aside {
 	section {
-		padding: 10px 0;
+		padding: 10px;
 		border-top: 1px solid #999;
 		&:first-child {
-			border: 0;
-			padding-top: 0;
+			border: 10;
+			padding-top: 100;
 		}
 		span {
 			display: block;
@@ -114,10 +117,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 2.8em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
 	text-align: center;
+	padding-top: 60px;
 }
 
 h2 {
@@ -130,8 +134,13 @@ h2 {
 }
 
 p {
+	padding-top: 30px;
+	align-right: -500px;
 	font-size: 1.1em;
 	line-height: 1.7em;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
 }
 
 
@@ -179,6 +188,37 @@ footer {
 			margin-left: 10px;
 		}
 	}
+}
+
+
+#sign_btn {
+	float: inherit;
+	width: 250px;
+}
+
+/* users index */
+
+.users {
+	list-style: none;
+	margin: 0;
+	li {
+		overflow: auto;
+		padding: 10px 0;
+		border-top: 1px solid #999;
+		&:last-child {
+			border-bottom: 1px solid #999;
+		}
+	}
+	p {
+		color: black;
+		float: right;
+		margin-right: 100px
+	}
+}
+
+
+#user_index {
+	font-size: 2.0em;
 }
 
 
@@ -233,7 +273,7 @@ input, textarea, select, .uneditable-input {
 	@include box_sizing;
 }
 
-#error explanation {
+#error_explanation {
 	color: #f00;
 	ul {
 		list-style: none;
@@ -241,7 +281,7 @@ input, textarea, select, .uneditable-input {
 	}
 }
 
-.field with errors {
+.field_with_errors {
 	@extend .control-group;
 	@extend .error;
 }
