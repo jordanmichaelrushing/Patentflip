@@ -1,19 +1,27 @@
 <% provide(:title, 'All users') %>
+	<div class="barney">
+		<div class="trouble">
 <h1>All users</h1>
 
-<% will_paginate %>
+<%= will_paginate %>
 
 <ul class="users">
 	<% @users.each do |user| %>
-		<li>
-			<%= gravatar_for user, size: 80, id: 'grav_user' %>
-			<%= link_to user.name, user, id: 'user_index', style: 'color: #000000'%>
-			<p><%= link_sale%></br>
+		<div class="userborder"></div>
+			<li>
+			<%= gravatar_for user, size: 100, id: 'grav_user' %>
+			<%= link_to user.name, user, id: 'user_index', style: 'color: #000000'%></br>
+			<%= link_to "Message User", message_path, class: "btn btn-small btn-primary", id: "sign_btn5"%>
+			<% if current_user.admin? && !current_user?(user) %>
+			| <%= link_to "delete", user, method: :delete, confirm: "Are you sure you want to delete this user?" %>
+			<% end %>
+			<div class="userlinks"><%= link_sale%></br>
 			<%= link_sold%></br>
-			<%= link_buy%></p>
-			<li class="divide"></li>
+			<%= link_buy%></div>
 		</li>
 	<% end %>
 </ul>
 
-<% will_paginate %>
+<%= will_paginate %>
+</div>
+</div>

@@ -1,11 +1,18 @@
+<% unless signed_in? %>
+	<div class="barney">
+		<div class="trouble">
+		<img src="/assets/easelly_visual_top.jpg" alt="smiley face" height="967.76" width="1255" border="0">
+		<img src="/assets/easelly_visual_bot.jpg" alt="smiley face" height="967.76" width="1255" border="0">
+			</div>
+		</div> </br></br></br>
 
-<p>
-	<img src="/assets/easelly_visual_top.jpg" alt="smiley face" height="967.76" width="1255" border="0">
-	<img src="/assets/easelly_visual_bot.jpg" alt="smiley face" height="967.76" width="1255" border="0">
-</p>
-	<div class="row">
-		<div class="span5 offset3">
-			<h1><%= link_to "Sign up today! (It's Free)", "signin_path", class: "btn btn-large btn-primary", id: "sign_btn"%>
-			</h1>
-		</div>
-	</div>
+	<div class="span12">
+					<%= link_to "Sign up as a Lawyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn1"%>
+					<%= link_to "Sign up as a buyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn2"%>
+					<%= link_to "Sign up as a seller", signup_path, class: "btn btn-large btn-primary", id: "sign_btn3"%>
+				</div></br></br></br></br></br></br>
+<% else %>
+	<p>
+		<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost:3000/users">
+	</p>
+<% end %>
