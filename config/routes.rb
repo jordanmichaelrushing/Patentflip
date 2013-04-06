@@ -9,6 +9,8 @@ match '/contact', to: 'static_pages#contact'
 match '/signup', to: 'users#new'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
+match '/message', to: 'static_pages#message'
+match '/faq', to: 'static_pages#faq'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,10 +1,10 @@
 module ApplicationHelper
   def full_title(page_title)
-  	base_title = "Buy My Idea"
+  	base_title = "Inception"
   	  if page_title.empty?
   	  	base_title
   	  else
-  	  	"#{base_title} | #{page_title}"
+  	  	"#{page_title} | #{base_title}"
   	  end
   end
 end

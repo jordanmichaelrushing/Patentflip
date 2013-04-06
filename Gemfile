@@ -4,8 +4,9 @@ gem 'rails', '3.2.12'
  gem 'bootstrap-sass'
  gem 'bcrypt-ruby'
  gem 'faker'
- gem 'will_paginate'
- gem 'bootstrap-will_paginate'
+ gem 'will_paginate', '3.0.3'
+ gem 'bootstrap-will_paginate', '0.0.6'
+ gem "koala"
 
 
 # Bundle edge Rails instead:
