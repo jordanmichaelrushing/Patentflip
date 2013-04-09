@@ -1,33 +1,33 @@
 <% provide(:title, "Edit user") %>
 	<div class="barney">
 		<div class="trouble">
-<h1>Update Your Profile</h1>
+			<h1>Update Your Profile</h1>
 
-<div class="row">
-	<div class="span6 offset3">
-	<%= form_for(@user) do |f| %>
+			<div class="row">
+				<div class="span6 offset3">
+					<%= form_for(@user) do |f| %>
 
-		<%= render 'shared/error_messages' %>
+						<%= render 'shared/error_messages' %>
 		
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+						<%= f.label :name %>
+						<%= f.text_field :name %>
 		
-		<%= f.label :email %>
-		<%= f.text_field :email %>
+						<%= f.label :email %>
+						<%= f.text_field :email %>
 		
-		<%= f.label :password %>
-		<%= f.password_field :password %>
+						<%= f.label :password %>
+						<%= f.password_field :password %>
 	
-		<%= f.label :password_confirmation, "Confirm Password" %>
-		<%= f.password_field :password_confirmation %>
+						<%= f.label :password_confirmation, "Confirm Password" %>
+						<%= f.password_field :password_confirmation %>
 
-		<%= f.fields_for :grav do |g| %>
-		<%= render 'gravfieldedit', f: g %>
+						<%= f.fields_for :grav do |g| %>
+						<%= render 'gravfield', f: g %>
 
-		<% end %>
-		<%= f.submit "Save changes", class: "btn btn-small btn-primary" %>
-	<% end %>
+						<% end %>
+						<%= f.submit "Save changes", class: "btn btn-small btn-primary" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-</div>
-</div>
