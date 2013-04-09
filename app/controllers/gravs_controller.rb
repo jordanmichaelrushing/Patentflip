@@ -1,0 +1,2 @@
+class GravsController < ApplicationController
+end

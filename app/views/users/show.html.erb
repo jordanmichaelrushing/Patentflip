@@ -4,7 +4,10 @@
 			<div class="row">
 				<div class="span4">
 					<section>
-							<%= gravatar_for @user %>
+							<% for grav in @user.grav %>
+								<%= image_tag(grav.content, alt: "Hi", class: "gravatar", size: "150x150") %>
+							<% end %>
+
 						<l1>
 							<%= @user.name %>
 

@@ -20,6 +20,11 @@
 				<%= f.label :password_confirmation, "Confirmation" %>
 				<%= f.password_field :password_confirmation %>
 				
+				<%= f.fields_for :grav do |g| %>
+				<%= render 'gravfield', f: g %>
+
+				<% end %>
+
 				<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 			<% end %>
 		</div>

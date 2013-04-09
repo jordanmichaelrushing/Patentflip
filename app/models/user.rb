@@ -10,10 +10,12 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :grav_attributes
   
   has_secure_password 
-
+  has_many :grav, dependent: :destroy
+  accepts_nested_attributes_for :grav, allow_destroy: true
+  has_many :microposts, dependent: :destroy
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
@@ -25,7 +27,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, 
   									format: { with: VALID_EMAIL_REGEX },
   	 								uniqueness: { case_sensative: false }
-                   
+  
   validates :password, length: { minimum: 6 }
 	validates :password_confirmation, presence: true
 
