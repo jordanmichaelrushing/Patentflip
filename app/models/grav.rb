@@ -3,7 +3,7 @@ class Grav < ActiveRecord::Base
  	
  	belongs_to :static_page
 
- 	def content
- 		:content
- 	end
+# 	def content
+# 		:content
+# 	end
 end
