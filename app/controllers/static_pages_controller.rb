@@ -1,7 +1,11 @@
 class StaticPagesController < ApplicationController
 
+  def new
+    @static = Staticpage.new
+    1.times { @static.grav.build }
+  end
+
   def home
-#    grav
   	@micropost = current_user.microposts.build 
     @feed_items = current_user.feed.paginate(page: params[:page])
 	end
@@ -9,7 +13,7 @@ class StaticPagesController < ApplicationController
 	def message
 	end
 
-#  def grav
-#    Grav.content
-#  end
+  def test
+  end
+
 end

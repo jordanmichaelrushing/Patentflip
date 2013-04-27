@@ -11,12 +11,12 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, 
-  :static_page_attributes
+  :grav_attributes
 
   acts_as_messageable
   has_secure_password 
-  has_many :static_page, dependent: :destroy
-  accepts_nested_attributes_for :static_page, allow_destroy: true
+  has_many :grav, dependent: :destroy
+  accepts_nested_attributes_for :grav, allow_destroy: true
   has_many :microposts, dependent: :destroy
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
