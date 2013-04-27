@@ -1,18 +1,32 @@
-<% unless signed_in? %>
-	<div class="barney">
-		<div class="trouble">
-		<img src="/assets/easelly_visual_top.jpg" alt="smiley face" height="967.76" width="1255" border="0">
-		<img src="/assets/easelly_visual_bot.jpg" alt="smiley face" height="967.76" width="1255" border="0">
+<div class="barney">
+	<div class="trouble">
+		<% if signed_in? %>
+			<div class="row">
+				<aside class="span4">
+					<section>
+						<%= render 'shared/user_info' %>
+					</section>
+								<div class="bordes"></div>
+					<section>
+						<%= render 'shared/micropost_form' %>
+					</section>
+				</aside>
+				<div class="span8">
+					<h3>Micropost Feed</h3>
+					<%= render 'feeds' %>
+				</div>
 			</div>
-		</div> </br></br></br>
+		<% else %>
+  		<img src="/assets/easelly_visual_top.jpg" alt="smiley face" height="967.76" width="1255" border="0">
+			<img src="/assets/easelly_visual_bot.jpg" alt="smiley face" height="967.76" width="1255" border="0">
+		<% end %>
+	</div>
+</div> 
+</br></br></br>
 
-	<div class="span12">
-					<%= link_to "Sign up as a Lawyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn1"%>
-					<%= link_to "Sign up as a buyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn2"%>
-					<%= link_to "Sign up as a seller", signup_path, class: "btn btn-large btn-primary", id: "sign_btn3"%>
-				</div></br></br></br></br></br></br>
-<% else %>
-	<p>
-		<meta HTTP-EQUIV="REFRESH" content="0; url=localhost:3000/users">
-	</p>
-<% end %>
+<div class="span12">
+	<%= link_to "Sign up as a Lawyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn1"%>
+	<%= link_to "Sign up as a buyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn2"%>
+	<%= link_to "Sign up as a seller", signup_path, class: "btn btn-large btn-primary", id: "sign_btn3"%>
+</div>
+</br></br></br></br></br></br>

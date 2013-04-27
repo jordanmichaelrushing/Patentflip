@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
 	end
  
+ 	def message
+ 	end
+
 	def show
 		@user = User.find(params[:id])
 		@microposts = @user.microposts.paginate(page: params[:page])
@@ -52,7 +55,7 @@ class UsersController < ApplicationController
 			flash[:success] = "User deleted"
 			redirect_to users_path
 		end
- 
+
 	private
  
 	def correct_user
@@ -63,4 +66,6 @@ class UsersController < ApplicationController
 	def admin_user
 		redirect_to(root_path) unless current_user.admin?
 	end
+
+
 end

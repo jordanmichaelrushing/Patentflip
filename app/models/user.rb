@@ -10,11 +10,13 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :grav_attributes
-  
+  attr_accessible :email, :name, :password, :password_confirmation, 
+  :static_page_attributes
+
+  acts_as_messageable
   has_secure_password 
-  has_many :grav, dependent: :destroy
-  accepts_nested_attributes_for :grav, allow_destroy: true
+  has_many :static_page, dependent: :destroy
+  accepts_nested_attributes_for :static_page, allow_destroy: true
   has_many :microposts, dependent: :destroy
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -30,6 +32,11 @@ class User < ActiveRecord::Base
   
   validates :password, length: { minimum: 6 }
 	validates :password_confirmation, presence: true
+
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Micropost.where("user_id = ?", id)
+  end 
 
   private
     def create_remember_token

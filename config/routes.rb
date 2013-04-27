@@ -1,7 +1,7 @@
 MydeaSample::Application.routes.draw do
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
-resources :microposts, only: [:create, :destroy]
+resources :microposts
 
 root to: "static_pages#home"
 match '/help', to: 'static_pages#help'
@@ -10,8 +10,8 @@ match '/contact', to: 'static_pages#contact'
 match '/signup', to: 'users#new'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
-match '/message', to: 'static_pages#message'
 match '/faq', to: 'static_pages#faq'
+match '/messages', to: 'users#message'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

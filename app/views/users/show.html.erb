@@ -4,22 +4,24 @@
 			<div class="row">
 				<div class="span4">
 					<section>
-								<% for grav in @user.grav %>
-							<% if grav.content == "" %>
-								<%= image_tag('/assets/coolguy.png', alt: "Hi", class: "gravatar", size: "150x150") %>
-							<% else %>
-								<%= image_tag(grav.content, alt: "Bye", class: "gravatar", size: "150x150") %>
-							<% end %>
-						<% end %>
+						<%= render partial: 'show' %>
+
 						<l1>
 							<%= @user.name %>
-
 						</l1>
-								<%= link_to "Message User", message_path, class: "btn btn-small btn-primary", id: "sign_btn4"%>
+						<%= link_to "Message User", messages_path, class: "btn btn-small btn-primary", id: "sign_btn4"%>
+
+
 					</section>
 				</div>
-				<div class="span2"></br></br></br></br>
-			
+				<div class="span6 offset1">
+											<% if @user.microposts.any? %>
+									<h3>Microposts (<%= @user.microposts.count %>)</h3>
+									<ol class="microposts">
+										<%= render @microposts %>
+									</ol>
+									<%= will_paginate @microposts %>
+								<% end %>
 				</div>
 			</div>
 			</br></br></br></br></br></br></br></br></br></br></br></br>
