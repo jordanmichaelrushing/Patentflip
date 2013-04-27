@@ -6,7 +6,6 @@ class UsersController < ApplicationController
  
 	def index
 		@users = User.paginate(page: params[:page])
-
 	end
  
  	def message
@@ -35,7 +34,6 @@ class UsersController < ApplicationController
 		end
 	end
  
- 
 	def edit
 	end
  
@@ -50,11 +48,11 @@ class UsersController < ApplicationController
 		end
 	end
 
-		def destroy
-			User.find(params[:id]).destroy
-			flash[:success] = "User deleted"
-			redirect_to users_path
-		end
+	def destroy
+		User.find(params[:id]).destroy
+		flash[:success] = "User deleted"
+		redirect_to users_path
+	end
 
 	private
  
@@ -66,6 +64,4 @@ class UsersController < ApplicationController
 	def admin_user
 		redirect_to(root_path) unless current_user.admin?
 	end
-
-
 end
