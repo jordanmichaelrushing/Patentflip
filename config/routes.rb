@@ -3,7 +3,8 @@ resources :users
 resources :sessions, only: [:new, :create, :destroy]
 resources :microposts
 
-root to: "static_pages#home"
+root to: "static_pages#test"
+match '/home', to: 'static_pages#home'
 match '/help', to: 'static_pages#help'
 match '/about', to: 'static_pages#about'
 match '/contact', to: 'static_pages#contact'
