@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
  gem 'bootstrap-will_paginate', '0.0.6'
  gem "koala"
  gem 'mailboxer'
+ gem "paperclip", "~> 3.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

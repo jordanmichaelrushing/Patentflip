@@ -2,24 +2,24 @@
 	<div class="trouble">
 		<% if signed_in? %>
 			<div class="row">
-				<aside class="span4">
+				<aside class="span5">
 					<section>
 						<%= render 'shared/user_info' %>
 					</section>
-								<div class="bordes"></div>
+					<div class="bordes"></div>
 					<section>
 						<%= render 'shared/micropost_form' %>
 					</section>
 				</aside>
 				<div class="span8">
-					<h3>Recent Patent Listings</h3>
 					<%= render 'feeds' %>
 				</div>
 			</div>
+	</div>
+</div> 
 		<% else %>
   		<img src="/assets/easelly_visual_top.jpg" alt="smiley face" height="967.76" width="1255" border="0">
 			<img src="/assets/easelly_visual_bot.jpg" alt="smiley face" height="967.76" width="1255" border="0">
-		<% end %>
 	</div>
 </div> 
 </br></br></br>
@@ -29,4 +29,5 @@
 	<%= link_to "Sign up as a buyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn2"%>
 	<%= link_to "Sign up as a seller", signup_path, class: "btn btn-large btn-primary", id: "sign_btn3"%>
 </div>
+		<% end %>
 </br></br></br></br></br></br>

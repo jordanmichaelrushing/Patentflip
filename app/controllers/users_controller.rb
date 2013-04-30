@@ -7,9 +7,6 @@ class UsersController < ApplicationController
 	def index
 		@users = User.paginate(page: params[:page])
 	end
- 
- 	def message
- 	end
 
 	def show
 		@user = User.find(params[:id])
@@ -18,16 +15,15 @@ class UsersController < ApplicationController
  
   def new
   	@user = User.new
-  	1.times { @user.grav.build }
   end
 
  
   def create
   	params[:user]
-		@user = User.new(params[:user])
+		@user = User.create(params[:user])
 		if @user.save
 			sign_in @user
-			flash[:success] = "Welcome to Inception!"
+			flash[:success] = "Welcome to Patket!"
 			redirect_to @user
 		else
 			render 'new'

@@ -1,0 +1,7 @@
+<% for grav in @static.grav %>
+	<% if grav.content == "" %>
+		<%= image_tag('/assets/coolguy.png', alt: "Image Error", class: "gravatar", size: "150x150") %>
+	<% else %>
+		<%= image_tag(grav.content, alt: "Image Error", class: "gravatar", size: "150x150") %>
+	<% end %>
+<% end %> 

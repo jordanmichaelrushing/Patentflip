@@ -1,4 +1,5 @@
 <% if @feed_items.any? %>
+	<h3>Recent Patent Listings</h3>
 	<ol class="microposts">
 		<%= render partial: 'feed_item', collection: @feed_items %>
 	</ol>

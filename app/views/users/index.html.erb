@@ -9,13 +9,7 @@
 				<% @users.each do |user| %>
 				<div class="userborder"></div>
 				<li>
-						<% for grav in user.grav %>
-							<% if grav.content == "" %>
-								<%= image_tag('/assets/coolguy.png', alt: "Image Error", class: "gravatar", size: "150x150") %>
-							<% else %>
-								<%= image_tag(grav.content, alt: "Image Error", class: "gravatar", size: "150x150") %>
-							<% end %>
-						<% end %>
+					<%= image_tag user.avatar.url(:thumb), class: "gravatar" %>
 
 					<%= link_to user.name, user, id: 'user_index', style: 'color: #000000'%></br>
 					<%= link_to "Message User", messages_path, class: "btn btn-small btn-primary", id: "sign_btn5"%>

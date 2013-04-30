@@ -2,26 +2,24 @@
 	<div class="barney">
 		<div class="trouble">
 			<div class="row">
-				<div class="span4">
+				<div class="span5">
 					<section>
-						<%= render partial: 'show' %>
+						<%= image_tag @user.avatar.url(:medium), class: "gravatar" %>
 
-						<l1>
+						<baloo>
 							<%= @user.name %>
-						</l1>
+						</baloo>
 						<%= link_to "Message User", messages_path, class: "btn btn-small btn-primary", id: "sign_btn4"%>
-
-
 					</section>
 				</div>
-				<div class="span6 offset1">
-											<% if @user.microposts.any? %>
-									<h3>Microposts (<%= @user.microposts.count %>)</h3>
-									<ol class="microposts">
-										<%= render @microposts %>
-									</ol>
-									<%= will_paginate @microposts %>
-								<% end %>
+				<div class="span5 offset1">
+					<% if @user.microposts.any? %>
+						<h3>Microposts (<%= @user.microposts.count %>)</h3>
+						<ol class="microposts">
+							<%= render @microposts %>
+						</ol>
+						<%= will_paginate @microposts %>
+					<% end %>
 				</div>
 			</div>
 			</br></br></br></br></br></br></br></br></br></br></br></br>
