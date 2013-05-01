@@ -11,7 +11,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, 
-  :grav_attributes, :avatar, :user_attributes
+  :grav_attributes, :avatar, :user_attributes, :avatar_file_name
 
   has_attached_file :avatar, styles: {medium: "200x200>", thumb: "100x100>"}, default_url: "/images/coolguy.png"
   acts_as_messageable
