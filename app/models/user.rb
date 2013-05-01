@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, 
   :grav_attributes, :avatar, :user_attributes, :avatar_file_name
 
-  has_attached_file :avatar, styles: {medium: "200x200>", thumb: "100x100>"}, default_url: "/assets/coolguy.png"
+  has_attached_file :avatar, styles: {medium: "120x120>", thumb: "80x80>"}, default_url: "/assets/coolguy.png"
   acts_as_messageable
   has_secure_password 
   has_many :grav, dependent: :destroy
