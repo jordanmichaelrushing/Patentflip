@@ -1,9 +1,9 @@
 <li id="<%= feed_item.id %>">
 	<span class="user">
-		<% if @user.avatar.url != nil %>
-			<%= image_tag @user.avatar.url(:thumb), class: "thumb_nail" %>
-		<% else %>
+		<% if @user.avatar.url == nil %>
 			<%= image_tag('/assets/coolguy.png', alt: "Image Error", class: "gravatar", size: "80x80") %>
+		<% else %>
+			<%= image_tag @user.avatar.url(:thumb), class: "thumb_nail" %>
 		<% end %>
 		<%= link_to feed_item.user.name, feed_item.user %>
 	</span>
