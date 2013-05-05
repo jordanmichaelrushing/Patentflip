@@ -68,14 +68,12 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('.carousel').carousel({
-    });
+    $('.carousel').carousel();
     $('.carousel').mouseenter(function() {
-    $(this).carousel('pause');
-}).mouseleave(function() {
-    $(this).carousel('cycle');
-}); 
+    	$(this).carousel('pause');
+		}).mouseleave(function() {
+    	$(this).carousel('cycle');
+		}); 
   });
 </script>
 <% end %>
-</br></br></br></br></br></br>
