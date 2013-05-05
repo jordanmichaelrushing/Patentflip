@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+ gem 'jquery-rails'
  gem 'bootstrap-sass'
  gem 'bcrypt-ruby'
  gem 'faker'
@@ -31,8 +32,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 group :test, :development do
 	gem 'rspec-rails', '2.9.0'
