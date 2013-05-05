@@ -1,7 +1,24 @@
-<% for grav in @static.grav %>
-	<% if grav.content == "" %>
-		<%= image_tag('/assets/coolguy.png', alt: "Image Error", class: "gravatar", size: "150x150") %>
-	<% else %>
-		<%= image_tag(grav.content, alt: "Image Error", class: "gravatar", size: "150x150") %>
+<h1>Sign up</h1>
+<div class="row">
+	<div class="span6 offset3">
+	<%= form_for(@user, html: { multipart: true}) do |f| %>
+
+		<%= render 'shared/error_messages', object: f.object %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	
+		<%= f.label :password_confirmation, "Confirmation" %>
+		<%= f.password_field :password_confirmation %>
+		
+		<%= f.file_field :avatar, id: "shit" %>
+
+	<%= f.submit "Sign Up", class: "btn btn-big btn-primary", id: "sign_btn2" %>
 	<% end %>
-<% end %> 
+</div>
+</div>
