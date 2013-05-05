@@ -11,9 +11,10 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, 
-  :grav_attributes, :avatar, :user_attributes
+  :grav_attributes, :avatar, :user_attributes, :avatar_file_name
 
-  has_attached_file :avatar, :styles => { :medium => "200x200#", :thumb => "80x80#"}, :default_url => "/assets/coolguy.png"
+
+  has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>" }, default_url: "/assets/coolguy_:style.png"
   acts_as_messageable
   has_secure_password 
   has_many :grav, dependent: :destroy
@@ -22,6 +23,7 @@ class User < ActiveRecord::Base
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
+  validates_attachment :avatar, :presence => true, :size => { :in => 0..1000.kilobytes }
   validates :name, presence: true, 
                    length: { maximum: 50 }
 

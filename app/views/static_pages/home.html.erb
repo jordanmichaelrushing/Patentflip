@@ -1,6 +1,6 @@
-<div class="barney">
-	<div class="trouble">
-		<% if signed_in? %>
+<% if signed_in? %>
+	<div class="barney">
+		<div class="trouble">
 			<div class="row">
 				<aside class="span5">
 					<section>
@@ -17,11 +17,47 @@
 			</div>
 	</div>
 </div> 
-		<% else %>
-  		<img src="/assets/easelly_visual_top.jpg" alt="smiley face" height="967.76" width="1255" border="0">
-			<img src="/assets/easelly_visual_bot.jpg" alt="smiley face" height="967.76" width="1255" border="0">
-	</div>
-</div> 
+<% else %>
+	<div class="barney">
+		<div class="trouble">
+			<div id="this-carousel-id" class="carousel slide">
+			<ol class="carousel-indicators">
+  			<li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
+  			<li data-target="#this-carousel-id" data-slide-to="1"></li>
+  			<li data-target="#this-carousel-id" data-slide-to="2"></li>
+  			<li data-target="#this-carousel-id" data-slide-to="3"></li>
+			</ol>
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      <img src="http://placehold.it/1200x480" alt="" />
+		      <div class="carousel-caption">
+		        <p>Caption text here</p>
+		      </div>
+		    </div>
+		    <div class="item">
+		      <img src="http://placehold.it/1200x480" alt="" />
+		      <div class="carousel-caption">
+		        <p>Caption text here</p>
+		      </div>
+		    </div>
+		    <div class="item">
+		      <img src="http://placehold.it/1200x480" alt="" />
+		      <div class="carousel-caption">
+		        <p>Caption text here</p>
+		      </div>
+		    </div>
+		    <div class="item">
+		      <img src="http://placehold.it/1200x480" alt="" />
+		      <div class="carousel-caption">
+		        <p>Caption text here</p>
+		      </div>
+		    </div>
+		  </div>
+	    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+	    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+			</div>
+		</div>
+	</div> 
 </br></br></br>
 
 <div class="span12">
@@ -29,5 +65,17 @@
 	<%= link_to "Sign up as a buyer", signup_path, class: "btn btn-large btn-primary", id: "sign_btn2"%>
 	<%= link_to "Sign up as a seller", signup_path, class: "btn btn-large btn-primary", id: "sign_btn3"%>
 </div>
-		<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({
+    });
+    $('.carousel').mouseenter(function() {
+    $(this).carousel('pause');
+}).mouseleave(function() {
+    $(this).carousel('cycle');
+}); 
+  });
+</script>
+<% end %>
 </br></br></br></br></br></br>

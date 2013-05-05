@@ -23,6 +23,9 @@
 	border-radius: 6px;
 }
 
+.carousel-inner{
+	margin-bottom: -20px;
+}
 
 #boogy {
 	margin-top: 181px;
@@ -52,9 +55,15 @@ body {
 	align-right: 10px;
 	background-color: #eee;
 }
+
+.baloo {
+	padding-top: 200px;
+	font-size: 1.5em;
+}
+
 section {
-	min-height: 100%;
-	overflow: auto;
+	padding-top: 10px;
+	margin-left: 10px;
 }
 textarea {
 	resize: vertical;
@@ -113,11 +122,6 @@ aside {
 			margin-bottom: 3px;
 		}
 	}
-}
-
-baloo {
-	margin-left: 40px;
-	font-size: 2.8em;
 }
 
 .gravatar {
@@ -305,8 +309,7 @@ footer {
 	border-radius: 6px;
 	box-shadow: 10px 10px 5px #888888;
 	margin-top: 10px;
-	margin-bottom: 15px;
-	margin-left: 50px;
+	margin-left: 40px;
 }
 
 #sign_btn5 {
@@ -478,4 +481,12 @@ aside {
 	moz-border-radius: 6px;
 	border-radius: 16px;
 	box-shadow: 10px 10px 5px #888888;
+}
+
+iframe {
+	margin-left: 25px;
+	margin-bottom: 15px;
+}
+
+.cats {
 }
