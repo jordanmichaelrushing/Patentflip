@@ -11,6 +11,7 @@ gem 'rails', '3.2.12'
  gem 'mailboxer'
  gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
  gem 'cocaine'
+ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
