@@ -18,7 +18,8 @@
 				
 					<%= f.label :password_confirmation, "Confirmation" %>
 					<%= f.password_field :password_confirmation %>
-				
+					
+					<%= f.label :avatar, "Upload User Image" %>
 					<%= f.file_field :avatar, id: "shit" %>
 
 				<%= f.submit "Create my account", class: "btn btn-big btn-primary", id: "sign_btn2" %>

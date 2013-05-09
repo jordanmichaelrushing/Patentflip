@@ -9,9 +9,10 @@ gem 'rails', '3.2.12'
  gem 'bootstrap-will_paginate', '0.0.6'
  gem "koala"
  gem 'mailboxer'
- gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
- gem 'cocaine'
- gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+ gem "paperclip", '~> 3.1'
+ gem 'paperclip-ffmpeg'
+ gem 'flowplayer'
+ gem 'aws-sdk'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,7 +30,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-   gem 'therubyracer', :platforms => :ruby
+   gem 'therubyracer', :platforms => :ruby, :require => 'v8'
 
   gem 'uglifier', '>= 1.0.3'
 end

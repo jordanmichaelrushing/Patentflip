@@ -1,8 +1,7 @@
 class CreateAuctions < ActiveRecord::Migration
   def change
     create_table :auctions do |t|
-      t.text :descrip
-      t.string :vid_url
+      t.string :descrip
       t.string :title
       t.string :category
       t.string :img_url

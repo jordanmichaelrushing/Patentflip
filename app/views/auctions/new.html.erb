@@ -1,0 +1,27 @@
+<div class="barney">
+	<div class="trouble">
+		<%= form_for(@auction, html: { multipart: true }) do |f| %>
+
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= f.label "Add First Picture" %>
+			<%= f.file_field :pic1, id: "shit"  %>
+
+			<%= f.label "Add Second Picture" %>
+			<%= f.file_field :pic2, id: "shit"  %>
+		
+			<%= f.label "Add Third Picture" %>
+			<%= f.file_field :pic3, id: "shit"  %>
+		
+			<%= f.label "Add Fourth Picture" %>
+			<%= f.file_field :pic4, id: "shit"  %>
+
+			<%= f.label "Add Fifth Picture" %>
+			<%= f.file_field :pic5, id: "shit"  %>
+
+			<%= f.label :vid, "Upload Patent Video" %>
+			<%= f.file_field :vid, id: "shit" %>
+
+			<%= f.submit "Add Patent", class: "btn btn-big btn-primary", id: "sign_btn2" %>
+		<% end %>
+	</div>
+</div>

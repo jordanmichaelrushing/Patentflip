@@ -1,5 +1,7 @@
 MydeaSample::Application.routes.draw do
-resources :users
+resources :users 
+  resources :auctions
+
 resources :sessions, only: [:new, :create, :destroy]
 resources :microposts
 

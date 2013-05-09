@@ -12,6 +12,8 @@
 				<ul class="nav pull-right">
 		  		<% if signed_in? %>
      				<li class="divider-vertical"></li>
+		  			<li><%= link_to "List Patent", new_auction_path, id: "home_css" %></li>
+     				<li class="divider-vertical"></li>
 		  			<li><%= link_to "Me", current_user, id: "home_css" %></li>
      				<li class="divider-vertical"></li>
 		  			<li><%= link_to "Help", help_path, id: "help_css" %></li>

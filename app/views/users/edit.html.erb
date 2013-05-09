@@ -19,7 +19,8 @@
 				
 					<%= f.label :password_confirmation, "Confirmation" %>
 					<%= f.password_field :password_confirmation %>
-				
+					
+					<%= f.label :avatar, "Edit User Image" %>
 					<%= f.file_field :avatar, id: "shit" %>
 						<%= f.submit "Save changes", class: "btn btn-big btn-primary", id: "sign_btn2" %>
 					<% end %>

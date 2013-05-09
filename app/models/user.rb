@@ -15,15 +15,13 @@ class User < ActiveRecord::Base
 
 
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>" }, default_url: "/assets/coolguy_:style.png"
-  acts_as_messageable
+
   has_secure_password 
-  has_many :grav, dependent: :destroy
-  accepts_nested_attributes_for :grav, allow_destroy: true
   has_many :microposts, dependent: :destroy
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
-  validates_attachment :avatar, :presence => true, :size => { :in => 0..1000.kilobytes }
+  validates_attachment :avatar, :size => { :in => 0..1000.kilobytes }
   validates :name, presence: true, 
                    length: { maximum: 50 }
 

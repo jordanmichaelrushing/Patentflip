@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429215350) do
+ActiveRecord::Schema.define(:version => 20130507174341) do
 
   create_table "auctions", :force => true do |t|
     t.text     "descrip"
@@ -29,8 +29,16 @@ ActiveRecord::Schema.define(:version => 20130429215350) do
     t.string   "lic_or_sell"
     t.text     "pat_off_desc"
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "vid_file_name"
+    t.string   "vid_content_type"
+    t.integer  "vid_file_size"
+    t.datetime "vid_updated_at"
+    t.string   "pic1_file_name"
+    t.string   "pic1_content_type"
+    t.integer  "pic1_file_size"
+    t.datetime "pic1_updated_at"
   end
 
   create_table "conversations", :force => true do |t|
