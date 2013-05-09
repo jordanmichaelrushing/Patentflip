@@ -1,0 +1,12 @@
+development:
+  bucket: Ideasm_Patent_Photos_and_Videos
+  access_key_id: AKIAJGZPSZQUTFRKVIFQ
+  secret_access_key: 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
+test:
+  bucket: Ideasm_Patent_Photos_and_Videos
+  access_key_id: AKIAJGZPSZQUTFRKVIFQ
+  secret_access_key: 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
+production:
+  bucket: Ideasm_Patent_Photos_and_Videos
+  access_key_id: AKIAJGZPSZQUTFRKVIFQ
+  secret_access_key: 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
