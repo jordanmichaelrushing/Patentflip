@@ -36,14 +36,4 @@ MydeaSample::Application.configure do
   config.assets.debug = true
 
   Paperclip.options[:command_path] = "/c/ImageMagick-6.8.5-Q16/"
-
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV['Ideasm_Patent_Photos_and_Videos'],
-    access_key_id: ENV['AKIAJGZPSZQUTFRKVIFQ'],
-    secret_access_key: ENV['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']
-  }
-}
-
 end
