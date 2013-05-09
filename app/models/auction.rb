@@ -1,6 +1,7 @@
 class Auction < ActiveRecord::Base
-  attr_accessible :category, :cost, :descrip, :img_url, :integer, :lic_or_sell, :pat_num, :pat_off_desc, :pat_type, :timer_day, :timer_hr, :timer_min, :title, :vid, :pic1, :pic2, :pic3, :pic4, :pic5, :pic1_file_name, :pic2_file_name, :pic3_file_name, :pic4_file_name, :pic5_file_name
-	
+  attr_accessible :category, :cost, :descrip, :img_url, :integer, :lic_or_sell, :pat_num, :pat_off_desc, :pat_type, :timer_day, :timer_hr, :timer_min, :title, :vid, :pic1, :pic2, :pic3, :pic4, :pic5
+	attr_accessor :pic1_file_name, :pic2_file_name, :pic3_file_name, :pic4_file_name, :pic5_file_name, :vid_file_name
+
 	has_attached_file :pic1, styles: { medium: "300x300>" }, default_url: "/assets/coolguy_:style.png", :storage => :s3,
      :s3_credentials => "#{Rails.root}/config/s3.yml",
      :path => "/:style/:id/:filename"
