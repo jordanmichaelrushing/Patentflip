@@ -12,8 +12,6 @@ gem 'rails', '3.2.12'
  gem "paperclip", '~> 3.1'
  gem 'paperclip-ffmpeg'
  gem 'flowplayer'
- gem 'aws-sdk'
- gem 'cocaine'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

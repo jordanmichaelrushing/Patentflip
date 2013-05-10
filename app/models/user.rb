@@ -14,9 +14,7 @@ class User < ActiveRecord::Base
   :user_attributes, :avatar_file_name
 
 
-  has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>" }, default_url: "/assets/coolguy_:style.png", :storage => :s3,
-     :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>" }, default_url: "/assets/coolguy_:style.png"
 
   has_secure_password 
   has_many :microposts, dependent: :destroy
