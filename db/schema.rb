@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507174341) do
+ActiveRecord::Schema.define(:version => 20130509222132) do
 
   create_table "auctions", :force => true do |t|
     t.text     "descrip"
@@ -39,6 +39,22 @@ ActiveRecord::Schema.define(:version => 20130507174341) do
     t.string   "pic1_content_type"
     t.integer  "pic1_file_size"
     t.datetime "pic1_updated_at"
+    t.string   "pic2_file_name"
+    t.string   "pic2_content_type"
+    t.integer  "pic2_file_size"
+    t.datetime "pic2_updated_at"
+    t.string   "pic3_file_name"
+    t.string   "pic3_content_type"
+    t.integer  "pic3_file_size"
+    t.datetime "pic3_updated_at"
+    t.string   "pic4_file_name"
+    t.string   "pic4_content_type"
+    t.integer  "pic4_file_size"
+    t.datetime "pic4_updated_at"
+    t.string   "pic5_file_name"
+    t.string   "pic5_content_type"
+    t.integer  "pic5_file_size"
+    t.datetime "pic5_updated_at"
   end
 
   create_table "conversations", :force => true do |t|

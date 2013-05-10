@@ -1,12 +1,30 @@
 <div class="barney">
 	<div class="trouble">
 		<div class="span7 offset2">
-		<div class="flowplayer">
-   		<video>
-           <source type="video/flv" src="<%= @auction.vid.url(:medium) %>">
-         </video>
+         <% if @auction.vid.url(:large) != "" %>
+           <div class="flowplayer">
+   		    <video>
+               <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
+             </video>
+           </div>
+         <% end %>
    	</div>
-		</div>
+      <% if @auction.pic1.url(:a) != "" %>
+         <%= image_tag @auction.pic1.url(:a) %>
+      <% end %>
+      <% if @auction.pic2.url(:b) != "" %>
+         <%= image_tag @auction.pic2.url(:b) %>
+      <% end %>
+      <% if @auction.pic3.url(:c) != "" %>
+         <%= image_tag @auction.pic3.url(:c) %>
+      <% end %>
+      <% if @auction.pic4.url(:d) != "" %>
+         <%= image_tag @auction.pic4.url(:d) %>
+      <% end %>
+      <% if @auction.pic5.url(:e) != "" %>
+         <%= image_tag @auction.pic5.url(:e) %>
+      <% end %>
+      </div>
 	</div>
 </div>
 
