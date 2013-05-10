@@ -9,12 +9,8 @@
            </div>
          <% end %>
    	</div>
-      <% if @auction.pic1.url(:a) != "" %>
          <%= image_tag @auction.pic1.url(:a) %>
-      <% end %>
-      <% if @auction.pic2.url(:b) != "" %>
          <%= image_tag @auction.pic2.url(:b) %>
-      <% end %>
       <% if @auction.pic3.url(:c) != "" %>
          <%= image_tag @auction.pic3.url(:c) %>
       <% end %>
