@@ -12,6 +12,9 @@ gem 'rails', '3.2.12'
  gem "paperclip", '~> 3.1'
  gem 'paperclip-ffmpeg'
  gem 'flowplayer'
+ gem 'delayed-paperclip'
+ gem 'delayed_job'
+ gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
