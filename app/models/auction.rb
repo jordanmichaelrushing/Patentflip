@@ -5,11 +5,11 @@ class Auction < ActiveRecord::Base
   attr_accessor :vid_file_name, :pic1_file_name, :pic2_file_name, :pic3_file_name, 
   :pic4_file_name, :pic5_file_name
 
-	has_attached_file :pic1, styles: { a: "500x500>" }, default_url: ""
-  has_attached_file :pic2, styles: { b: "500x500>" }, default_url: ""
-  has_attached_file :pic3, styles: { c: "500x500>" }, default_url: ""
-  has_attached_file :pic4, styles: { d: "500x500>" }, default_url: ""
-  has_attached_file :pic5, styles: { e: "500x500>" }, default_url: ""
+	has_attached_file :pic1, styles: { a: "500x500>" }, default_url: "/assets/coolguy_:style.png"
+  has_attached_file :pic2, styles: { b: "500x500>" }, default_url: "/assets/coolguy_:style.png"
+  has_attached_file :pic3, styles: { c: "500x500>" }, default_url: "/assets/coolguy_:style.png"
+  has_attached_file :pic4, styles: { d: "500x500>" }, default_url: "/assets/coolguy_:style.png"
+  has_attached_file :pic5, styles: { e: "500x500>" }, default_url: "/assets/coolguy_:style.png"
   
   has_attached_file :vid, styles: { large: { geometry: "1280x720", format: 'flv'} }, default_url: "", processors: [:ffmpeg]
 end
