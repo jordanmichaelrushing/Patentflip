@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= twitter-bootstrap-hover-dropdown
+//= twitter-bootstrap-hover-dropdown.min
 //= require_tree .
