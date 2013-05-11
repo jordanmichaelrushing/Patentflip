@@ -1,15 +1,29 @@
 <div class="barney">
-	<div class="trouble">
-		<div class="span7 offset2">
-         <% if @auction.vid.url(:large) != "" %>
-           <div class="flowplayer">
+   <div class="trouble">
+      <% if @auction.vid.url(:large) != "/vids/large/missing.png" %>
+         <div class="flowplayer">
+         <div class="span7 offset2">
    		    <video>
                <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
              </video>
-           </div>
+         </div>
+         </div>
          <% end %>
-   	</div>
-         <%= image_tag @auction.pic1.url(:a) %>
+      <% if @auction.pic1.url(:medium) != "/pic1s/medium/missing.png" %>
+         <%= image_tag @auction.pic1.url(:medium) %>
+      <% end %>
+      <% if @auction.pic2.url(:medium) != "/pic2s/medium/missing.png" %>
+         <%= image_tag @auction.pic2.url(:medium) %>
+      <% end %>
+      <% unless @auction.pic3.url(:medium) == "/pic3s/medium/missing.png" %>
+         <%= image_tag @auction.pic3.url(:medium) %>
+      <% end %>
+      <% if @auction.pic4.url(:medium) != "/pic4s/medium/missing.png" %>
+         <%= image_tag @auction.pic4.url(:medium) %>
+      <% end %>
+      <% if @auction.pic5.url(:medium) != "/pic5s/medium/missing.png" %>
+         <%= image_tag @auction.pic5.url(:medium) %>
+      <% end %>
       </div>
 	</div>
 </div>

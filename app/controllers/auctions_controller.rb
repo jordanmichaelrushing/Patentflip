@@ -7,6 +7,7 @@ class AuctionsController < ApplicationController
 	end
 
 	def create
+		params[:user]
 		@auction = Auction.new(params[:auction] )
 		if @auction.save
 			flash[:success] = "Uploaded new video!"
