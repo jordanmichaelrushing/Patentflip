@@ -9,20 +9,20 @@
          </div>
          </div>
          <% end %>
-      <% if @auction.pic1.url(:medium) != "/pic1s/medium/missing.png" %>
-         <%= image_tag @auction.pic1.url(:medium) %>
+      <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
+         <%= image_tag @auction.pic1.url(:a) %>
       <% end %>
-      <% if @auction.pic2.url(:medium) != "/pic2s/medium/missing.png" %>
-         <%= image_tag @auction.pic2.url(:medium) %>
+      <% if @auction.pic2.url(:b) != "/pic2s/b/missing.png" %>
+         <%= image_tag @auction.pic2.url(:b) %>
       <% end %>
-      <% unless @auction.pic3.url(:medium) == "/pic3s/medium/missing.png" %>
-         <%= image_tag @auction.pic3.url(:medium) %>
+      <% unless @auction.pic3.url(:c) == "/pic3s/c/missing.png" %>
+         <%= image_tag @auction.pic3.url(:c) %>
       <% end %>
-      <% if @auction.pic4.url(:medium) != "/pic4s/medium/missing.png" %>
-         <%= image_tag @auction.pic4.url(:medium) %>
+      <% if @auction.pic4.url(:d) != "/pic4s/d/missing.png" %>
+         <%= image_tag @auction.pic4.url(:d) %>
       <% end %>
-      <% if @auction.pic5.url(:medium) != "/pic5s/medium/missing.png" %>
-         <%= image_tag @auction.pic5.url(:medium) %>
+      <% if @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
+         <%= image_tag @auction.pic5.url(:e) %>
       <% end %>
       </div>
 	</div>
