@@ -11,6 +11,8 @@
 				
 				<ul class="nav pull-right">
 		  		<% if signed_in? %>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "Inbox", '#', id: "home_css" %></li>
      				<li class="divider-vertical"></li>
 		  			<li><%= link_to "List Patent", new_auction_path, id: "home_css" %></li>
      				<li class="divider-vertical"></li>

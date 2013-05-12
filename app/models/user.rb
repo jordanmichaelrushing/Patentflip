@@ -16,8 +16,9 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>" }, 
       default_url: "/assets/coolguy_:style.png"
 
-  has_secure_password 
   has_many :microposts, dependent: :destroy
+  has_private_messages
+  has_secure_password 
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 

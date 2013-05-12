@@ -6,7 +6,7 @@
 					<section>
 						<%= image_tag @user.avatar.url(:medium), class: "gravatar" %>
 					</section>
-						<%= link_to "Message User", messages_path, class: "btn btn-small btn-primary", id: "sign_btn4"%>
+						<%= link_to "Message User", new_user_messenger_path, class: "btn btn-small btn-primary", id: "sign_btn4"%>
 				</div>
 				<div class="span3">
 						<div class="baloo"><%= @user.name %></div>

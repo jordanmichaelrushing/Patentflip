@@ -1,0 +1,22 @@
+<div class="barney">
+  <div class="trouble">    
+    Hello
+    <% form_for @messenger, :url => user_messengers_path(@user) do |f| %>
+      <p>
+        To:<br />
+    		<%= f.text_field :to %>
+      </p>
+      <p>
+        Subject:<br />
+        <%= f.text_field :subject %>
+        </p>
+        <p>
+          Message<br />
+          <%= f.text_area :body %>
+        </p>
+        <p>
+          <%= submit_tag "Send" %>
+        </p>
+    <% end %>
+  </div>
+</div>

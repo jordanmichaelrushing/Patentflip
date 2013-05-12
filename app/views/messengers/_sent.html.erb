@@ -1,0 +1,31 @@
+<h2>Sent</h2>
+<table>
+	<tr>
+		<th>Del?</th>
+		<th>Subject</th>
+		<th>To</th>
+		<th>Sent</th>
+	</tr>
+	<% if @messengers.size == 0 %>
+		<tr>
+			<td colspan="4">
+				No messages
+			</td>
+		</tr>
+	<% else %>
+		<% for messenger in @messengers %>
+			<tr>
+				<td><%= check_box_tag "delete[]", messenger.id %></td>
+				<td><%= link_to h(messenger.subject), user_messenger_path(@user, messenger) %></td>
+  			<td><%= link_to h(messenger.recipient.login), user_path(messenger.recipient) %></td>
+			  <td><%=h messenger.created_at.to_s(:long) %></td>
+			</tr>
+		<% end %>
+		<tr>
+			<td colspan="4">
+				<%= submit_tag "Delete" %>
+			</td>
+		</tr>
+ 	<% end %>
+</table>
+<%= link_to "Inbox", user_messengers_path(@user)%>

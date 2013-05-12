@@ -2,13 +2,14 @@
    <div class="trouble">
       <% if @auction.vid.url(:large) != "/vids/large/missing.png" %>
          <div class="flowplayer">
-         <div class="span7 offset2">
-   		    <video>
-               <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
-             </video>
+            <div class="span7 offset2">
+               <video>
+                  <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
+               </video>
+            </div>
          </div>
-         </div>
-         <% end %>
+      <% end %>
+      
       <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
          <%= image_tag @auction.pic1.url(:a) %>
       <% end %>
