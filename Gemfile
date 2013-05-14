@@ -1,19 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+ gem 'rails', '3.2.12'
+
  gem 'jquery-rails'
+ gem 'jquery-ui-rails'
  gem 'bootstrap-sass'
  gem 'bcrypt-ruby'
  gem 'faker'
  gem 'will_paginate', '3.0.3'
  gem 'bootstrap-will_paginate', '0.0.6'
  gem "koala"
- gem 'mailboxer'
+
  gem "paperclip", '~> 3.1'
  gem 'paperclip-ffmpeg'
  gem 'flowplayer'
  gem 'delayed_job'
  gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+ gem 'spud_photos'
+ gem 'rails3-jquery-autocomplete'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -31,7 +35,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby, :require => 'v8'
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end

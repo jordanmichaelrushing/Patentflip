@@ -5042,6 +5042,7 @@ a.thumbnail:focus {
   overflow: hidden;
   width: 100%;
   position: relative;
+  background: black;
 }
 .carousel-inner > .item {
   display: none;
@@ -5055,6 +5056,8 @@ a.thumbnail:focus {
 .carousel-inner > .item > a > img {
   display: block;
   line-height: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 .carousel-inner > .active,
 .carousel-inner > .next,

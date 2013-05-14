@@ -1,17 +1,19 @@
-<div class="barney">
-  <div class="trouble">     
-    <p><strong>From:</strong> <%= @messenger.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@messenger.sender.login), user_path(@messenger.sender)) %></p>
-    <p><strong>Received:</strong> <%= @messenger.created_at.to_s(:long) %></p>
-    <p><strong>To:</strong> <%= @messenger.recipient == @user ? link_to("You", user_path(@user)) : link_to(h(@messenger.recipient.login), user_path(@messenger.recipient)) %></p>
-    <p>
-      <strong>Message</strong><br />
-      <%=h @messenger.body %>
-    </p>
-    <p>
-      <% if @messenger.recipient == @user %>
-    	  <%= link_to "Reply", new_user_messenger_path(@user, :reply_to => @messenger) %> |
-      <% end %>
-      <%= link_to "Inbox", user_messengers_path(@user)%>
-    </p>
+<div class='span6 offset3'>
+  <div class="barney">
+    <div class="trouble">     
+      <p><strong>From:</strong> <%= @messenger.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@messenger.sender.name), user_path(@messenger.sender)) %></p>
+      <p><strong>Received:</strong> <%= @messenger.created_at.to_s(:long) %></p>
+      <p><strong>To:</strong> <%= @messenger.recipient == @user ? link_to("You", user_path(@user)) : link_to(h(@user.name), user_path(@messenger.recipient)) %></p>
+      <p>
+        <strong>Message</strong><br />
+        <%=h @messenger.body %>
+      </p>
+      <p>
+        <% if @messenger.recipient == @user %>
+      	  <%= link_to "Reply", new_user_messenger_path(@user, :reply_to => @messenger) %> |
+        <% end %>
+        <%= link_to "Inbox", user_messengers_path(@user)%>
+      </p>
+    </div>
   </div>
 </div>

@@ -13,11 +13,15 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
   :user_attributes, :avatar_file_name
 
-  has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>" }, 
-      default_url: "/assets/coolguy_:style.png"
+  has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
+   micro: "60x60>" }, default_url: "/assets/coolguy_:style.png"
 
+  has_many :auctions, dependent: :destroy
+  accepts_nested_attributes_for :auctions
   has_many :microposts, dependent: :destroy
-  has_private_messages
+  has_private_messages class_name: "Messenger"
+  accepts_nested_attributes_for :microposts
+
   has_secure_password 
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

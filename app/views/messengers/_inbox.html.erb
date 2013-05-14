@@ -1,18 +1,19 @@
 <h2>Inbox</h2>
 <table>
-	<tr>
+	<% if @messengers.size == 0 %>
+    <tr>
+      <td colspan="4">
+        Your inbox is empty, you should start talking to more people
+      </td>
+    </tr>
+  <% else %>
+  <tr>
 		<th>Del?</th>
 		<th>Sent</th>
 		<th>Sender</th>
 		<th>Sent</th>
 	</tr>
-	<% if @messengers.size == 0 %>
-		<tr>
-			<td colspan="4">
-				No messages
-			</td>
-		</tr>
-	<% else %>
+
 		<% for messenger in @messengers %>
 			<tr>
 				<td><%= check_box_tag "delete[]", messenger.id %></td>
@@ -23,7 +24,7 @@
 					  <%= link_to "#{h(messenger.subject)} (unread)", user_messenger_path(@user, messenger) %>
 					<% end %>
 				</td>
-				<td><%= link_to h(messenger.sender.login), user_path(messenger.sender) %></td>
+				<td><%= link_to h(messenger.sender.name), user_path(messenger.sender) %></td>
 		    <td><%=h messenger.created_at.to_s(:long) %></td>
 			</tr>
 		<% end %>
@@ -34,5 +35,4 @@
 		</tr>
 	<% end %>
 </table>
-<%= link_to "Sent", user_messengers_path(@user, :mailbox => :sent)%> |
-<%= link_to "Compose", new_user_messenger_path(@user)%>
+<%= link_to "Sent", user_messengers_path(@user, :mailbox => :sent)%>

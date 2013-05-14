@@ -17,7 +17,7 @@
 			<tr>
 				<td><%= check_box_tag "delete[]", messenger.id %></td>
 				<td><%= link_to h(messenger.subject), user_messenger_path(@user, messenger) %></td>
-  			<td><%= link_to h(messenger.recipient.login), user_path(messenger.recipient) %></td>
+  			<td><%= link_to h(current_user.name), user_path(messenger.recipient) %></td>
 			  <td><%=h messenger.created_at.to_s(:long) %></td>
 			</tr>
 		<% end %>

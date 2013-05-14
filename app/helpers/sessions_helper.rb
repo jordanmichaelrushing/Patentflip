@@ -41,4 +41,8 @@ module SessionsHelper
 			redirect_to signin_path, notice: "Please Sign In"
 		end
 	end
+
+  def message_read?
+    self.read_at.nil? ? false : true
+  end
 end

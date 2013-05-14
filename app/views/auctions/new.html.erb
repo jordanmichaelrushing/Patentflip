@@ -1,27 +1,86 @@
 <div class="barney">
 	<div class="trouble">
-		<%= form_for(@auction, html: { multipart: true }) do |f| %>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
+          <li><a href="#tab2" data-toggle="tab">Descriptions</a></li>
+          <li><a href="#tab3" data-toggle="tab">Pictures</a></li>
+          <li><a href="#tab4" data-toggle="tab">Video</a></li>
+          <li><a href="#tab5" data-toggle="tab">Account Info</a></li>
+          <li><a href="#tab6" data-toggle="tab">Review</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <div class="span7 offset2">
+            <h4> 
+              <%= form_for(@auction, html: { multipart: true }) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
 
-			<%= render 'shared/error_messages', object: f.object %>
-			<%= f.label "Add First Picture" %>
-			<%= f.file_field :pic1, id: "shit"  %>
+              Patent Title
+              <%= f.text_area :title, id: "balls" %>
+              </br></br>
+              Patent Publication Number
+              <%= f.text_area :pat_num, id: "balls" %>
+              </br></br>
+              <%= f.check_box(:goog_url) %><%="  "%>Is your patent on google patents?
+             </h4>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab2">
+          <div class="span7 offset2">
+            <h4>Add the official description of your patent in this box.
+                <%= f.text_area :pat_off_desc, id: "pussy" %></br>
+                Add any personal description you want to add here. Be sure to let people understand why your patent really stands out, and why it has significant value.
+                <%= f.text_area :descrip, id: "pussy" %></h4>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab3">
+          <div class="span7 offset2">
+            <h4>Add First Picture and it's description.</br>
+                <%= f.text_area :pic_descr_1, id: "pussy" %>
+                <%= f.file_field :pic1, id: "shit"  %></br>
 
-			<%= f.label "Add Second Picture" %>
-			<%= f.file_field :pic2, id: "shit"  %>
-		
-			<%= f.label "Add Third Picture" %>
-			<%= f.file_field :pic3, id: "shit"  %>
-		
-			<%= f.label "Add Fourth Picture" %>
-			<%= f.file_field :pic4, id: "shit"  %>
+                </br>Add Second Picture and it's description.</br>
+                <%= f.text_area :pic_descr_2, id: "pussy" %>
+                <%= f.file_field :pic2, id: "shit"  %></br>
+      
+                </br>Add Third Picture and it's description.</br>
+                <%= f.text_area :pic_descr_3, id: "pussy" %>
+                <%= f.file_field :pic3, id: "shit"  %></br>
+      
+                </br>Add Fourth Picture and it's description.</br>
+                <%= f.text_area :pic_descr_4, id: "pussy" %>
+                <%= f.file_field :pic4, id: "shit"  %></br>
 
-			<%= f.label "Add Fifth Picture" %>
-			<%= f.file_field :pic5, id: "shit"  %>
-
-			<%= f.label :vid, "Upload Patent Video" %>
-			<%= f.file_field :vid, id: "shit" %>
-
-			<%= f.submit "Add Patent", class: "btn btn-big btn-primary", id: "sign_btn2" %>
-		<% end %>
+                </br>Add Fifth Picture and it's description.</br>
+                <%= f.text_area :pic_descr_5, id: "pussy" %>
+                <%= f.file_field :pic5, id: "shit"  %></br></h4>
+              </div>
+        </div>
+        <div class="tab-pane fade" id="tab4">
+          <div class="span7 offset2">
+            <h1> Your patent video </h1>
+            <div class="bordes"></div>
+            <h2> <%= f.label :vid_url, "Add a video from youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just add the youtube video link here:" %></br>
+                <%= f.text_area :vid_url, id: "balls", placeholder: "https://www.youtube.com/watch?v=abcd12345efg" %></h2>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab5">
+          <div class="span7 offset2">
+            <p>Howdy, I'm an Amazon Payment Page!</p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab6">
+          <div class="span7 offset2">
+            <p>
+              <h3> Before you submit your patent on the marketplace...</h3>
+              <div class="boreds"></div>
+                <h5> Verify all contents on the previous pages are correct. When you're satisfied, click the button below to list your patent.</br>After you have submitted your patent, let everyone know you have listed your patent on the site. </h5></br>
+              <%= f.submit "Add Patent", class: "btn btn-big btn-primary", id: "sign_btn2" %>
+                <% end %></p>
+          </div>
+        </div>
+      </div>
+    </div>
 	</div>
 </div>

@@ -1,7 +1,8 @@
 class MessengersController < ApplicationController
+  autocomplete :user, :name, :full => true
   
   before_filter :set_user
-  
+  before_filter :correct_user, only: [:show, :index]
   def index
     if params[:mailbox] == "sent"
       @messengers = @user.sent_messages
@@ -16,11 +17,10 @@ class MessengersController < ApplicationController
   
   def new
     @messenger = Messenger.new
-
     if params[:reply_to]
       @reply_to = @user.received_messages.find(params[:reply_to])
       unless @reply_to.nil?
-        @messenger.to = @reply_to.sender.login
+        @messenger.to = @reply_to.sender.id
         @messenger.subject = "Re: #{@reply_to.subject}"
         @messenger.body = "\n\n*Original message*\n\n #{@reply_to.body}"
       end
@@ -29,12 +29,12 @@ class MessengersController < ApplicationController
   
   def create
     @messenger = Messenger.new(params[:messenger])
-    @messenger.sender = @user
-    @messenger.recipient = User.find_by_login(params[:messenger][:to])
+    @messenger.sender = current_user
+    @messenger.recipient = User.find(params[:user_id])
 
     if @messenger.save
       flash[:notice] = "Message sent"
-      redirect_to user_messengers_path(@user)
+      redirect_to user_messengers_path(current_user)
     else
       render :action => :new
     end
@@ -55,6 +55,11 @@ class MessengersController < ApplicationController
   
   private
     def set_user
-      @user = current_user.messenger.find_by_id(params[:id])
+      @user = User.find(params[:user_id])
     end
+
+    def correct_user
+    @user = User.find(params[:user_id])
+    redirect_to user_messengers_path(current_user), error: "Cannot view others mailboxes!" unless current_user?(@user)
+  end
 end

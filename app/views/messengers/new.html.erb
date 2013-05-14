@@ -1,22 +1,28 @@
-<div class="barney">
-  <div class="trouble">    
-    Hello
-    <% form_for @messenger, :url => user_messengers_path(@user) do |f| %>
-      <p>
-        To:<br />
-    		<%= f.text_field :to %>
-      </p>
-      <p>
-        Subject:<br />
-        <%= f.text_field :subject %>
+<div class='span6 offset3'> 
+  <div class="barney">
+    <div class="trouble">   
+      New Message Test
+      <%= form_for @messenger, url: user_messengers_path(@user) do |f| %>
+        <p>
+          From:<br />
+          <%= current_user.name %>
         </p>
         <p>
-          Message<br />
-          <%= f.text_area :body %>
+          To:<br />
+            <%= @user.name %>
         </p>
         <p>
-          <%= submit_tag "Send" %>
-        </p>
-    <% end %>
+          Subject:<br />
+          <%= f.text_field :subject %>
+          </p>
+          <p>
+            Message<br />
+            <%= f.text_area :body, id: 'pussy' %>
+          </p>
+          <p>
+            <%= submit_tag "Send" %>
+          </p>
+      <% end %>
+    </div>
   </div>
 </div>

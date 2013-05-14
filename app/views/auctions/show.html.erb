@@ -1,45 +1,117 @@
 <div class="barney">
-   <div class="trouble">
-      <% if @auction.vid.url(:large) != "/vids/large/missing.png" %>
-         <div class="flowplayer">
-            <div class="span7 offset2">
-               <video>
-                  <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
-               </video>
-            </div>
-         </div>
+   <div class="crumble">
+      <h2> <%=@auction.title%> </h2>
+      <h4>Official Patent Number: &nbsp 
+      <% if @auction.goog_url == true %>
+         <a href="//www.google.com/<%=@auction.pat_num%>"><%=@auction.pat_num%></a> 
+      <% else %>
+        <%= @auction.pat_num %>
       <% end %>
+        </h4>
+        <%= @auction.vid_url %>
+      <iframe width="560" height="315" src="<%=@auction.vid_url%>" frameborder="0" allowfullscreen></iframe>
       
-      <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
-         <%= image_tag @auction.pic1.url(:a) %>
+      <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" && @auction.pic2.url(:b) != "/pic2s/b/missing.png" && @auction.pic3.url(:c) != "/pic3s/c/missing.png" && if @auction.pic4.url(:d) != "/pic4s/d/missing.png" && @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
+        <div id="this-carousel-id" class="carousel slide">
+          <ol class="carousel-indicators">
+            <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
+              <li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
+            <% end %>
+            <% if @auction.pic2.url(:b) != "/pic2s/b/missing.png" %>
+              <li data-target="#this-carousel-id" data-slide-to="1"></li>
+            <% end %>
+            <% if @auction.pic3.url(:c) != "/pic3s/c/missing.png" %>
+              <li data-target="#this-carousel-id" data-slide-to="2"></li>
+            <% end %>
+            <% if @auction.pic4.url(:d) != "/pic4s/d/missing.png" %>
+              <li data-target="#this-carousel-id" data-slide-to="3"></li>
+            <% end %>
+            <% if @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
+              <li data-target="#this-carousel-id" data-slide-to="4"></li>
+            <% end %>
+            </ol>
+            <div class="carousel-inner">
+              <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
+                <div class="item active">
+                  <img src="<%= @auction.pic1.url(:a) %>" alt="" />
+                  <div class="carousel-caption">
+                    <% if defined?(@auction.pic_descr_1) %>
+                    <p><%=@auction.pic_descr_1%></p>
+                    <% else %>
+                    <p>Picture #1</p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+              <% if @auction.pic2.url(:b) != "/pic2s/b/missing.png" %>
+                <div class="item">
+                  <img src="<%= @auction.pic2.url(:b) %>" alt="" />
+                  <div class="carousel-caption">
+                    <% if defined?(@auction.pic_descr_2) %>
+                    <p><%=@auction.pic_descr_2%></p>
+                    <% else %>
+                    <p>Picture #2</p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+              <% if @auction.pic3.url(:c) != "/pic3s/c/missing.png" %>
+                <div class="item">
+                  <img src="<%= @auction.pic3.url(:c) %>" alt="" />
+                  <div class="carousel-caption">
+                    <% if defined?(@auction.pic_descr_3) %>
+                    <p><%=@auction.pic_descr_3%></p>
+                    <% else %>
+                    <p>Picture #3</p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>  
+              <% if @auction.pic4.url(:d) != "/pic4s/d/missing.png" %>
+                <div class="item">
+                  <img src="<%= @auction.pic4.url(:d) %>" alt="" />
+                  <div class="carousel-caption">
+                    <% if defined?(@auction.pic_descr_4) %>
+                    <p><%=@auction.pic_descr_4%></p>
+                    <% else %>
+                    <p>Picture #4</p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>  
+              <% if @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
+                <div class="item">
+                  <img src="<%= @auction.pic5.url(:e) %>" alt="" />
+                  <div class="carousel-caption">
+                    <% if defined?(@auction.pic_descr_5) %>
+                    <p><%=@auction.pic_descr_5%></p>
+                    <% else %>
+                    <p>Picture #5</p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+        </div>
       <% end %>
-      <% if @auction.pic2.url(:b) != "/pic2s/b/missing.png" %>
-         <%= image_tag @auction.pic2.url(:b) %>
-      <% end %>
-      <% unless @auction.pic3.url(:c) == "/pic3s/c/missing.png" %>
-         <%= image_tag @auction.pic3.url(:c) %>
-      <% end %>
-      <% if @auction.pic4.url(:d) != "/pic4s/d/missing.png" %>
-         <%= image_tag @auction.pic4.url(:d) %>
-      <% end %>
-      <% if @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
-         <%= image_tag @auction.pic5.url(:e) %>
-      <% end %>
-      </div>
+      <h2><%=@auction.title%>'s official description:</h2></br>
+      <h5> <%=@auction.pat_off_desc%> </h5></br>
+
+
+      <h2>My comments about <%=@auction.title%>:</h2></br>
+      <h5> <%=@auction.descrip%> </h5></br>
+      
+      
 	</div>
 </div>
 
 
-<!-- 1. jquery library -->
-<script type="text/javascript"
-   src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js">
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 7000
+    });
+  });
 </script>
- 
-<!-- 2. flowplayer -->
-<script type="text/javascript"
-   src="//releases.flowplayer.org/5.4.1/flowplayer.min.js">
-</script>
- 
-<!-- 3. skin -->
-<link rel="stylesheet" type="text/css"
-   href="//releases.flowplayer.org/5.4.1/skin/minimalist.css">

@@ -1,20 +1,25 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "PATKET", home_path, id: "logo" %>
+      <%= link_to "PATKET", root_path, id: "logo" %>
       <nav>
 
       	<form class="navbar-search">
-      		<div class="span3">
+      		<div class="span2">
   				<input type="text" class="search-query" placeholder="Search"> </div>
 				</form>
 				
 				<ul class="nav pull-right">
 		  		<% if signed_in? %>
             <li class="divider-vertical"></li>
-            <li><%= link_to "Inbox", '#', id: "home_css" %></li>
+            <% if current_user.unread_messages? %>
+              <li><%= link_to "Inbox (#{current_user.unread_message_count})", user_messengers_path(current_user), id: "home_css" %></li>
+            <% else %>
+              <li><%= link_to "Inbox", user_messengers_path(current_user), id: "home_css" %>
+            </li>
+            <% end %>
      				<li class="divider-vertical"></li>
-		  			<li><%= link_to "List Patent", new_auction_path, id: "home_css" %></li>
+		  			<li><%= link_to "List Patent", new_user_auction_path(current_user), id: "home_css" %></li>
      				<li class="divider-vertical"></li>
 		  			<li><%= link_to "Me", current_user, id: "home_css" %></li>
      				<li class="divider-vertical"></li>
@@ -40,7 +45,7 @@
 		  			<li><%= link_to "FAQ's", faq_path%></li>
 					<% else %>
 			      <li class="divider-vertical"></li>
-						<li><%= link_to "Home", home_path, id: "home_css" %></li>
+						<li><%= link_to "Home", root_path, id: "home_css" %></li>
 
       			<li class="divider-vertical"></li>
 		  		  <li><%= link_to "Help", help_path, id: "help_css" %></li>
@@ -72,6 +77,7 @@
 	  	</nav>
 		</div>
   </div>
+  <script>$('#example').tooltip(options)</script>
   <script src="/assets/dropdown.js"></script>
 <script type="text/javascript">$('.dropdown-toggle').dropdownHover();</script>
 </header>
