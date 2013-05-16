@@ -7,6 +7,7 @@ class MessengersController < ApplicationController
     if params[:mailbox] == "sent"
       @messengers = @user.sent_messages
     else
+      @feed_items = current_user.feed.paginate(page: params[:page])
       @messengers = @user.received_messages
     end
   end
@@ -53,6 +54,18 @@ class MessengersController < ApplicationController
     end
   end
   
+  def receivers
+    @user = User.find(params[:user_id])
+    @users = @user.receivers.paginate(page: params[:page])
+    render :partial => "inbox"
+  end
+
+  def senders
+    @user = User.find(params[:user_id])
+    @users = @user.senders.paginate(page: params[:page])
+    render :partial => "sent"
+  end
+
   private
     def set_user
       @user = User.find(params[:user_id])

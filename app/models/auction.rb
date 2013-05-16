@@ -12,12 +12,12 @@ class Auction < ActiveRecord::Base
   has_attached_file :pic4, styles: { a: "500x500>" }
   has_attached_file :pic5, styles: { a: "500x500>" }
 
+  validates :title, presence: {message: 'Patent title cannot be blank'}
+  validates :pat_num, presence: {message: 'Patent number cannot be blank'}
   #validates :category, presence: {message: 'Patent category cannot be blank'}  
+  validates :pat_off_desc, presence: {message: "You need to have your official patent description. Otherwise businesses won't take you seriously "}
   validates :descrip, presence: {message: 'Your personal description should not be blank'}
   #validates :lic_or_sell, presence: {message: 'You need to specify if you want to sell or license your patent'}
-  validates :pat_num, presence: {message: 'Patent number cannot be blank'}
-  validates :pat_off_desc, presence: {message: "You need to have your official patent description. Otherwise businesses won't take you seriously "}
-  validates :title, presence: {message: 'Patent title cannot be blank'}
   validates :pic1, presence: {message: 'You need to have at least one picture in the first picture spot'}
   validates :pic_descr_1, presence: {message: 'You need to have a description for your picture'}
 

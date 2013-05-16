@@ -6,4 +6,7 @@ class Messenger < ActiveRecord::Base
   # uncomment it if using it or you can remove it if not
   attr_accessor :to
   
+  def feed
+    Conver.from_messengers_received_by(self)
+  end
 end

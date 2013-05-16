@@ -39,6 +39,42 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 	validates :password_confirmation, presence: true
 
+
+
+  has_many :reverse_convers, foreign_key: "receiver_id",
+                                   class_name:  "Conver",
+                                   dependent:   :destroy
+  has_many :senders, through: :reverse_convers, source: :sender
+  has_many :convers, foreign_key: "sender_id", dependent: :destroy
+  has_many :receiver_users, through: :convers, source: :receiver
+  has_many :receivers, through: :convers, source: :receiver
+
+
+  def receiving?(other_user)
+      convers.find_by_receiver_id(other_user.id)
+    end
+
+  def receive!(other_user)
+      convers.create!(receiver_id: other_user.id)
+    end
+
+  def del_receiving!(other_user)
+      convers.find_by_receiver_id(other_user.id).destroy
+    end
+
+  def sending?(other_user)
+      convers.find_by_sender_id(other_user.id)
+    end
+
+  def send!(other_user)
+      convers.create!(sender_id: other_user.id)
+    end
+
+  def del_sending!(other_user)
+      convers.find_by_sender_id(other_user.id).destroy
+    end
+
+
   def feed
     # This is preliminary. See "Following users" for the full implementation.
     Micropost.where("user_id = ?", id)

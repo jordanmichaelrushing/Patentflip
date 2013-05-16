@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514024550) do
+ActiveRecord::Schema.define(:version => 20130516161258) do
 
   create_table "auctions", :force => true do |t|
     t.text     "descrip"
@@ -64,6 +64,17 @@ ActiveRecord::Schema.define(:version => 20130514024550) do
     t.text     "why_sell"
     t.string   "phone_num"
   end
+
+  create_table "convers", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "convers", ["receiver_id"], :name => "index_convers_on_receiver_id"
+  add_index "convers", ["sender_id", "receiver_id"], :name => "index_convers_on_sender_id_and_receiver_id", :unique => true
+  add_index "convers", ["sender_id"], :name => "index_convers_on_sender_id"
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="shortcut icon" href="assets/Patent_Flip_Photo.png"/>
+    <link rel="shortcut icon" href="Patent_Flip_Photo.png"/>
     <title><%= full_title(yield(:title)) %></title>
       <%= stylesheet_link_tag "application", media: "all" %>
       <%= javascript_include_tag "application" %>
@@ -24,7 +24,7 @@
           <div class="span2">
             <%= render 'layouts/sidebar' %>
           </div>
-          <div class="span10">
+          <div class="span8 offset1">
             <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>"><%= value %></div>
             <% end %>

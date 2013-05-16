@@ -6,3 +6,5 @@ en:
     attributes:
       user:
         password_digest: "Password"
+    errors:
+      blank: "is required"

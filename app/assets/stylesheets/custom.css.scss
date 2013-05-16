@@ -204,7 +204,8 @@ h1 {
 	font-size: 2.8em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
-	text-align: center;
+	margin-left: auto;
+  margin-right: auto;
 	padding-top: 20px;
 }
 l1 {
@@ -379,8 +380,9 @@ A:hover {
 }
 .userborder {
 		border-top: 1px solid #999;
-		margin-left: 400px;
-		margin-right: 400px;
+		margin-left: auto;
+		margin-right: auto;
+    width: 175px;
 }
 
 #user_index {
