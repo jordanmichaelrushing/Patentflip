@@ -18,6 +18,8 @@ source 'https://rubygems.org'
  gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
  gem 'spud_photos'
  gem 'rails3-jquery-autocomplete'
+ gem 'activemerchant', require: 'active_merchant'
+ gem 'aws-sdk'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
