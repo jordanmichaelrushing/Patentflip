@@ -72,6 +72,7 @@ body {
 section {
 	padding-top: 10px;
 	margin-left: 10px;
+  margin-bottom: -10px;
 }
 textarea {
 	resize: vertical;
@@ -119,22 +120,28 @@ aside {
 			line-height: 1;
 		}
 		h1 {
+      margin-left: 25px;
+      margin-top: -15px;
 			font-size: 2.1em;
 			text-align: left;
 			letter-spacing: -1px;
 			margin-bottom: 3px;
+      color: #00cc00;
 		}
 	}
 }
 
 .gravatar {
-	margin-left: 10px;
+	margin-left: 25px;
 	margin-top: 10px;
-	margin-bottom: 20px;
-	border: 8px ridge #eee;
+  margin-right: 10px;
+	border: 2px solid #00cc00;
 	moz-border-radius: 6px;
 	border-radius: 16px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
+  &:hover {
+    opacity:0.9;
+  }
 }
 
 #grav_user {
@@ -204,10 +211,15 @@ h1 {
 	font-size: 2.8em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
-	margin-left: auto;
+	margin-left: 15px;
   margin-right: auto;
 	padding-top: 20px;
 }
+
+h3 {
+  padding-left: 20px;
+}
+
 l1 {
 	font-size: 2.8em;
 	letter-spacing: -2px;
@@ -226,12 +238,24 @@ h2 {
 	color: #999;
 }
 
+.h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
 
 h4 {
 	color: #888;
 }
 
-
+h8 {
+  color: #888;
+  align: center;
+  font-size: 1.2em;
+}
 
 
 /* header */
@@ -294,7 +318,7 @@ footer {
 	width: 200px;
 	moz-border-radius: 6px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 #sign_btn2 {
@@ -303,7 +327,7 @@ footer {
 	width: 150px;
 	moz-border-radius: 6px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 #sign_btn3 {
@@ -312,14 +336,14 @@ footer {
 	width: 200px;
 	moz-border-radius: 6px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 #sign_btn4 {
 	width: 110px;
 	moz-border-radius: 6px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
 	margin-top: 10px;
 	margin-left: 40px;
 }
@@ -328,8 +352,8 @@ footer {
 	width: 110px;
 	moz-border-radius: 6px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #888888;
-	margin-left: 40px;
+	box-shadow: 5px 5px 5px #888888;
+	margin-left: 5px;
 	margin-top: 15px;
 }
 
@@ -393,9 +417,9 @@ A:hover {
 
 #home_css {
 	color: #bbb;
-&:hover {
-	color: #fff;
-}
+  &:hover {
+  	color: #fff;
+  }
 }
 
 #help_css {
@@ -528,4 +552,36 @@ iframe {
 
 .tab-content {
   padding-bottom: 25px;
+}
+
+
+
+/* sidebar */
+
+.stats {
+  margin-top: 15px;
+  margin-left: 35px;
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #aaa;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.field {
+  float: left;
+  width: 30%;
 }

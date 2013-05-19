@@ -7,21 +7,21 @@
       </td>
     </tr>
   <% else %>
-  <tr>
-		<th>Del?</th>
-		<th>Sent</th>
-		<th>Sender</th>
-		<th>Sent</th>
-	</tr>
+    <tr>
+  		<th>Delete?</th>
+  		<th>Message</th>
+  		<th>Sender</th>
+  		<th>Sent At</th>
+  	</tr>
 
 		<% for messenger in @messengers %>
 			<tr>
 				<td><%= check_box_tag "delete[]", messenger.id %></td>
 				<td>
 					<% if messenger.message_read? %>
-					  <%= link_to h(messenger.subject), user_messenger_path(@user, messenger) %>
+					  <%= link_to h(messenger.body)[0..9], user_messenger_path(@user, messenger) %>
 					<% else %>
-					  <%= link_to "#{h(messenger.subject)} (unread)", user_messenger_path(@user, messenger) %>
+					  <%= link_to "#{h(messenger.body)[0..79]} (unread)", user_messenger_path(@user, messenger) %>
 					<% end %>
 				</td>
 				<td><%= link_to h(messenger.sender.name), user_path(messenger.sender) %></td>
@@ -30,9 +30,9 @@
 		<% end %>
 		<tr>
 			<td colspan="4">
-				<%= submit_tag "Delete" %>
+				<%= submit_tag "Delete", class: "btn btn-small btn-primary", id: "sign_btn5" %>
 			</td>
 		</tr>
 	<% end %>
-</table>
+</table></br><div class="bordes"></div>
 <%= link_to "Sent", user_messengers_path(@user, :mailbox => :sent)%>

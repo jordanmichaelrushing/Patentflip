@@ -1,6 +1,6 @@
 <div class="barney">
    <div class="crumble">
-      <% if @user != @user.signed_in_user %>
+      <% if @user == current_user %>
         <%= link_to "Edit Patent Listing", edit_user_auction_path(current_user) %>
       <% end %>
       <h2> <%=@auction.title%> </h2>
@@ -12,31 +12,35 @@
       <% end %>
         </h4>
         <%= @auction.vid_url %>
-      <iframe width="560" height="315" src="<%=@auction.vid_url%>" frameborder="0" allowfullscreen></iframe>
+        <% if @auction.vid.url(:large) != "" %>
+          <div class="flowplayer">
+            <video>
+              <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
+            </video>
+          </div>
+        <% end %>
       
-      <% if ((@auction.pic1.url(:a) != "/pic1s/a/missing.png") && (@auction.pic2.url(:b) != "/pic2s/b/missing.png") && (@auction.pic3.url(:c) != "/pic3s/c/missing.png") && (@auction.pic4.url(:d) != "/pic4s/d/missing.png") && (@auction.pic5.url(:e) != "/pic5s/e/missing.png")) %>
+      <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
+      <% else %>
         <div id="this-carousel-id" class="carousel slide">
           <ol class="carousel-indicators">
-            <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
               <li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
-            <% end %>
-            <% if @auction.pic2.url(:b) != "/pic2s/b/missing.png" %>
+            <% if @auction.pic2.url(:a) != "/pic2s/a/missing.png" %>
               <li data-target="#this-carousel-id" data-slide-to="1"></li>
             <% end %>
-            <% if @auction.pic3.url(:c) != "/pic3s/c/missing.png" %>
+            <% if @auction.pic3.url(:a) != "/pic3s/a/missing.png" %>
               <li data-target="#this-carousel-id" data-slide-to="2"></li>
             <% end %>
-            <% if @auction.pic4.url(:d) != "/pic4s/d/missing.png" %>
+            <% if @auction.pic4.url(:a) != "/pic4s/a/missing.png" %>
               <li data-target="#this-carousel-id" data-slide-to="3"></li>
             <% end %>
-            <% if @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
+            <% if @auction.pic5.url(:a) != "/pic5s/a/missing.png" %>
               <li data-target="#this-carousel-id" data-slide-to="4"></li>
             <% end %>
             </ol>
             <div class="carousel-inner">
-              <% if @auction.pic1.url(:a) != "/pic1s/a/missing.png" %>
                 <div class="item active">
-                  <img src="<%= @auction.pic1.url(:a) %>" alt="" />
+                  <img src="<%= @auction.pic1.url(:a) %>"/>
                   <div class="carousel-caption">
                     <% if defined?(@auction.pic_descr_1) %>
                     <p><%=@auction.pic_descr_1%></p>
@@ -45,10 +49,9 @@
                     <% end %>
                   </div>
                 </div>
-              <% end %>
-              <% if @auction.pic2.url(:b) != "/pic2s/b/missing.png" %>
+              <% if @auction.pic2.url(:a) != "/pic2s/a/missing.png" %>
                 <div class="item">
-                  <img src="<%= @auction.pic2.url(:b) %>" alt="" />
+                  <img src="<%= @auction.pic2.url(:a) %>"/>
                   <div class="carousel-caption">
                     <% if defined?(@auction.pic_descr_2) %>
                     <p><%=@auction.pic_descr_2%></p>
@@ -58,9 +61,9 @@
                   </div>
                 </div>
               <% end %>
-              <% if @auction.pic3.url(:c) != "/pic3s/c/missing.png" %>
+              <% if @auction.pic3.url(:a) != "/pic3s/a/missing.png" %>
                 <div class="item">
-                  <img src="<%= @auction.pic3.url(:c) %>" alt="" />
+                  <img src="<%= @auction.pic3.url(:a) %>" alt="" />
                   <div class="carousel-caption">
                     <% if defined?(@auction.pic_descr_3) %>
                     <p><%=@auction.pic_descr_3%></p>
@@ -70,9 +73,9 @@
                   </div>
                 </div>
               <% end %>  
-              <% if @auction.pic4.url(:d) != "/pic4s/d/missing.png" %>
+              <% if @auction.pic4.url(:a) != "/pic4s/a/missing.png" %>
                 <div class="item">
-                  <img src="<%= @auction.pic4.url(:d) %>" alt="" />
+                  <img src="<%= @auction.pic4.url(:a) %>" alt="" />
                   <div class="carousel-caption">
                     <% if defined?(@auction.pic_descr_4) %>
                     <p><%=@auction.pic_descr_4%></p>
@@ -82,9 +85,9 @@
                   </div>
                 </div>
               <% end %>  
-              <% if @auction.pic5.url(:e) != "/pic5s/e/missing.png" %>
+              <% if @auction.pic5.url(:a) != "/pic5s/a/missing.png" %>
                 <div class="item">
-                  <img src="<%= @auction.pic5.url(:e) %>" alt="" />
+                  <img src="<%= @auction.pic5.url(:a) %>" alt="" />
                   <div class="carousel-caption">
                     <% if defined?(@auction.pic_descr_5) %>
                     <p><%=@auction.pic_descr_5%></p>

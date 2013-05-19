@@ -15,4 +15,5 @@
 //= require autocomplete-rails
 //= require bootstrap
 //= require twitter-bootstrap-hover-dropdown.min
+//= flowplayermin
 //= require_tree .

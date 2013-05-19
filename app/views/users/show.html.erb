@@ -7,20 +7,26 @@
 						<%= image_tag @user.avatar.url(:medium), class: "gravatar" %>
 					</section>
 						<%= link_to "Message User", new_user_messenger_path(@user), class: "btn btn-small btn-primary", id: "sign_btn4"%>
+          <%= render 'shared/stats' %>
 				</div>
 				<div class="span3">
 						<div class="baloo"><%= @user.name %></div>
 				</div>
-				<div class="span5">
-					<% if @user.microposts.any? %>
-						<h3>Microposts (<%= @user.microposts.count %>)</h3>
-						<ol class="microposts">
-							<%= render @microposts %>
-						</ol>
-						<%= will_paginate @microposts %>
-					<% end %>
-				</div>
-			</div>
+        <section>
+        </section>
+        <div class="span8">
+          <%= render 'follow_form' if signed_in? %>
+				    <div class="span5">
+              <% if @user.microposts.any? %>
+						    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+						    <ol class="microposts">
+						      <%= render @microposts %>
+						    </ol>
+						    <%= will_paginate @microposts %>
+              <% end %>
+				    </div>
+        </div>
 			</br></br></br></br></br></br></br></br></br></br></br></br>
-		</div>
-	</div>
+		  </div>
+    </div>
+  </div>

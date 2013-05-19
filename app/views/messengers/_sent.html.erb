@@ -1,31 +1,33 @@
-<h2>Sent</h2>
+<h1>Sent</h1>
+<div class="bordes"></div></br>
 <table>
-	<tr>
-		<th>Del?</th>
-		<th>Subject</th>
-		<th>To</th>
-		<th>Sent</th>
-	</tr>
 	<% if @messengers.size == 0 %>
 		<tr>
 			<td colspan="4">
-				No messages
+				<h8>No messages Sent</h8></br></br></br>
 			</td>
 		</tr>
 	<% else %>
+  <tr>
+    <th>Delete?</th>
+    <th>Message</th>
+    <th>To</th>
+    <th>Sent At</th>
+  </tr>
 		<% for messenger in @messengers %>
 			<tr>
 				<td><%= check_box_tag "delete[]", messenger.id %></td>
 				<td><%= link_to h(messenger.subject), user_messenger_path(@user, messenger) %></td>
-  			<td><%= link_to h(current_user.name), user_path(messenger.recipient) %></td>
+  			<td><%= link_to h(messenger.recipient.name), user_path(messenger.recipient) %></td>
 			  <td><%=h messenger.created_at.to_s(:long) %></td>
 			</tr>
 		<% end %>
 		<tr>
 			<td colspan="4">
-				<%= submit_tag "Delete" %>
+				<%= submit_tag "Delete", class: "btn btn-small btn-primary", id: "sign_btn5" %>
 			</td>
 		</tr>
  	<% end %>
 </table>
+<div class="bordes"></div></br>
 <%= link_to "Inbox", user_messengers_path(@user)%>

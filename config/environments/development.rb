@@ -35,5 +35,5 @@ MydeaSample::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  Paperclip.options[:command_path] = "/c/ImageMagick-6.8.5-Q16/"
+  Paperclip.options[:command_path] = "/c/IMAGE~1.5-Q/"
 end

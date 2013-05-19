@@ -7,7 +7,6 @@ class MessengersController < ApplicationController
     if params[:mailbox] == "sent"
       @messengers = @user.sent_messages
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
       @messengers = @user.received_messages
     end
   end
@@ -34,7 +33,7 @@ class MessengersController < ApplicationController
     @messenger.recipient = User.find(params[:user_id])
 
     if @messenger.save
-      flash[:notice] = "Message sent"
+      flash[:success] = "Message sent"
       redirect_to user_messengers_path(current_user)
     else
       render :action => :new

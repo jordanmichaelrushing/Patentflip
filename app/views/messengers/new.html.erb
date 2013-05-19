@@ -1,20 +1,21 @@
 <div class='span6 offset3'> 
   <div class="barney">
-    <div class="trouble">   
-      New Message Test
+    <div class="trouble">
       <%= form_for @messenger, url: user_messengers_path(@user) do |f| %>
-        <p>
-          From:<br />
+        <h5>
+          From:</h5>
+          <div class='span12 offset1'> 
+        <h4>
           <%= current_user.name %>
-        </p>
-        <p>
-          To:<br />
+        </h4>
+      </div>
+        <h5>
+          To:</h5>
+          <div class='span12 offset1'>
+        <h4>
             <%= @user.name %>
-        </p>
-        <p>
-          Subject:<br />
-          <%= f.text_field :subject %>
-          </p>
+          </div>
+        </h4>
           <p>
             Message<br />
             <%= f.text_area :body, id: 'pussy' %>

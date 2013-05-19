@@ -1,0 +1,30 @@
+<% provide(:title, @title) %>
+<div class="barney">
+  <div class="trouble">
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= link_to (image_tag @user.avatar.url(:medium), class: "gravatar"), @user %>
+            <h1><%= link_to @user.name, @user %></h1>
+            <span><%= link_to "view my profile", @user %></span>
+            <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+        </section>
+        <section>
+          <%= render 'shared/stats' %>
+        </section>
+      </aside>
+      <div class="span8">
+        <h3><%= @title %></h3>
+        <% if @users.any? %>
+            <% @users.each do |user| %>
+              <%= link_to image_tag(user.avatar.url(:thumb), class: "gravatar"), user %>
+              <%= link_to user.name, user, class: "h2" %>
+              <%= link_to "Message User", new_user_messenger_path(user), class: "btn btn-small btn-primary", id: "sign_btn4"%>
+          <div class="bordes"></div>
+            <% end %>
+          <%= will_paginate %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

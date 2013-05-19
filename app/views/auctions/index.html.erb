@@ -1,0 +1,23 @@
+<% provide(:title, 'All Patents') %>
+  <div class="barney">
+    <div class="trouble">
+      <h1>All Patents</h1>
+
+      <%= will_paginate %>
+
+      <ul class="users">
+        <% @auctions.each do |auction| %>
+        <div class="userborder"></div>
+          <li>
+            <%= image_tag auction.pic1.url(:tiny), class: "gravatar" %>
+            <%= link_to auction.title, user_auction_path(@user, auction), id: 'user_index', style: 'color: #000000'%>
+            <% if current_user.admin? || current_user?(@user) %>
+              | <%= link_to "delete", @user, method: :delete, confirm: "Are you sure you want to delete this auction?" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= will_paginate %>
+    </div>
+  </div>

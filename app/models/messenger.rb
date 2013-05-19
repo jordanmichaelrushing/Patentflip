@@ -9,4 +9,6 @@ class Messenger < ActiveRecord::Base
   def feed
     Conver.from_messengers_received_by(self)
   end
+
+  default_scope order: 'messengers.created_at ASC'
 end

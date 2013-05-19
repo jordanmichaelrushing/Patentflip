@@ -1,6 +1,6 @@
 MydeaSample::Application.routes.draw do
 
-resources :users do
+resources :users do 
     resources :auctions
     resources :messengers  do
       get :autocomplete_user_name, on: :collection
@@ -8,9 +8,15 @@ resources :users do
         post :delete_selected
       end
     end
-  end
+    member do
+      get :following, :followers
+    end
+end
+
 resources :sessions, only: [:new, :create, :destroy]
-resources :microposts
+resources :microposts, only: [:create, :destroy]
+resources :relationships, only: [:create, :destroy]
+resources :convers, only: [:create, :destroy]
 
 root to: 'static_pages#home'
 match '/help', to: 'static_pages#help'
@@ -19,7 +25,8 @@ match '/contact', to: 'static_pages#contact'
 match '/faq', to: 'static_pages#faq'
 match '/signup', to: 'users#new'
 match '/signin', to: 'sessions#new'
-match '/signout', to: 'sessions#destroy', via: :delete
+match '/signout', to: 'sessions#destroy', only: :delete
+match '/patents', to: 'auctions#patents'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
