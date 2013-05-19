@@ -19,7 +19,7 @@ class UsersController < ApplicationController
  
   def create
   	params[:user]
-		@user = User.new(params[:user])
+		@user = User.create(params[:user])
 		if @user.save
 			sign_in @user
 			flash[:success] = "Welcome to Patentflip!"

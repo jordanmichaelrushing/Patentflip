@@ -1,5 +1,5 @@
 class AddAttachmentVideoToAuctions < ActiveRecord::Migration
   def change
-  	add_string :auctions, :vid
+  	add_attachment :auctions, :video_upload
 	end
 end
