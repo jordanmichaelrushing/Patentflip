@@ -7,9 +7,6 @@ belongs_to :receiver, class_name: "User"
 validates :sender_id, presence: true
 validates :receiver_id, presence: true
 
-  sender_id: Messenger.sender.id
-  receiver_id: Messenger.recipient.id
-
   def self.from_messengers_received_by(messenger)
     received_messenger_ids = "SELECT receiver_id FROM convers
                               WHERE receiver_id = :messenger_id"
