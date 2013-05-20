@@ -353,6 +353,7 @@ footer {
 	moz-border-radius: 6px;
 	border-radius: 6px;
 	box-shadow: 5px 5px 5px #888888;
+  float: left;
 	margin-left: 5px;
 	margin-top: 15px;
 }
@@ -584,4 +585,51 @@ iframe {
 .field {
   float: left;
   width: 30%;
+}
+
+#message_icon {
+  margin-top: -5px;
+  margin-bottom: -5px;
+  width: 30px;
+}
+
+#message_icon_open {
+  margin-top: -10px;
+  margin-bottom: -5px;
+  width: 30px;
+}
+
+#lawyer_icon {
+  margin-top: -9px;
+  margin-bottom: -5px;
+  width: 35px;
+}
+
+#patent_icon {
+  margin-top: -7px;
+  margin-bottom: -5px;
+  width: 25px;
+}
+
+fl {
+  width: 20px;
+}
+
+ml {
+  width: 50px;
+}
+
+mr {
+  width: 50px;
+}
+
+fr {
+  width: 50px;
+}
+
+mess {
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 200px;
+  display:inline-block;
 }

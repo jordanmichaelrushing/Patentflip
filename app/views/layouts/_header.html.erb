@@ -13,27 +13,43 @@
 		  		<% if signed_in? %>
             <li class="divider-vertical"></li>
             <% if current_user.unread_messages? %>
-              <li><%= link_to "Inbox (#{current_user.unread_message_count})", user_messengers_path(current_user), id: "home_css" %></li>
+              <% if current_user.unread_message_count == 1 %>
+              <li><a href="<%= user_messengers_path(current_user) %>" title="<%= current_user.unread_message_count %> new message!">
+                <% else %>
+              <li><a href="<%= user_messengers_path(current_user) %>" title="<%= current_user.unread_message_count %> new messages!">
+                <% end %>
+                <%= image_tag("/assets/messages_icon.png", id: "message_icon_open") %></a>
+              </li>
             <% else %>
-              <li><%= link_to "Inbox", user_messengers_path(current_user), id: "home_css" %>
-            </li>
+              <li>
+                <a href="<%= user_messengers_path(current_user) %>" title="No new messages!"><%= image_tag("/assets/messages_closed_icon.png", id: "message_icon") %></a>
+              </li>
             <% end %>
      				<li class="divider-vertical"></li>
-		  			<li><%= link_to "List Patent", new_user_auction_path(current_user), id: "home_css" %></li>
-     				<li class="divider-vertical"></li>
-		  			<li><%= link_to "Me", current_user, id: "home_css" %></li>
-     				<li class="divider-vertical"></li>
-		  			<li><%= link_to "Help", help_path, id: "help_css" %></li>
-   					<li class="divider-vertical"></li>
-		  			<li><%= link_to "Uncover A Patent", users_path, id: "users_css" %></li>
-   					<li class="divider-vertical"></li>
-						<li id="fat-menu" class="dropdown">
+            <li>
+                <a href="#" title="Find A Patent Lawyer!"><%= image_tag("/assets/lawyer_icon.png", id: "lawyer_icon") %></a>
+            </li>
+            
+            <li class="divider-vertical"></li>
+		  			<li>
+              <a href="<%= new_user_auction_path(current_user) %>" title="Let's flip your patent on the marketplace!"><%= image_tag("/assets/pat_add_icon.png", id: "patent_icon") %></a>
+            </li>
+     				
+            <li class="divider-vertical"></li>
+		  			<li>
+              <a href="<%= patents_path %>" title="Look at the patents on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon") %></a>
+            </li>
+   					
+            <li class="divider-vertical"></li>
+						
+            <li id="fat-menu" class="dropdown">
 							<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="200">
-								Account
+								<%= image_tag("/assets/settings_icon.png", id: "message_icon") %>
 							</a>
 							<ul class="dropdown-menu">
 
 								<li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Help", help_path %></li>
 								<li><%= link_to "Settings", edit_user_path(current_user) %></li>
 								<li class="divider"></li>
 								<li>
@@ -42,7 +58,6 @@
 							</ul>
 						</li>
 						<li class="divider-vertical"></li>
-		  			<li><%= link_to "FAQ's", faq_path%></li>
 					<% else %>
 			      <li class="divider-vertical"></li>
 						<li><%= link_to "Home", root_path, id: "home_css" %></li>
@@ -77,7 +92,13 @@
 	  	</nav>
 		</div>
   </div>
-  <script>$('#example').tooltip(options)</script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( document ).tooltip();
+  });</script>
   <script src="/assets/dropdown.js"></script>
 <script type="text/javascript">$('.dropdown-toggle').dropdownHover();</script>
 </header>

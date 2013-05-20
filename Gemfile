@@ -20,6 +20,7 @@ source 'https://rubygems.org'
  gem 'activemerchant', require: 'active_merchant'
  gem 'aws-sdk'
  gem 'mandrill-api'
+ gem 'tire'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

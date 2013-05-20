@@ -1,13 +1,7 @@
-<div class='span6 offset3'>
-  <div class="barney">
-    <div class="trouble">     
-      <%= form_tag delete_selected_user_messengers_path(@user, :method => :post) do %>
-      	<% if params[:mailbox] == "sent" %>
-      			<%= render :partial => "sent" %>
-      	<% else %>
-      			<%= render :partial => "inbox" %>
-      		<% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%=form_tag delete_selected_user_messengers_path(@user, :method => :post) do %>
+	<% if params[:mailbox] == "sent" %>
+			<%= render :partial => "sent" %>
+	<% else %>
+			<%= render :partial => "inbox" %>
+	<% end %>
+<% end %>

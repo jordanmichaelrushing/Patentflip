@@ -45,4 +45,8 @@ module SessionsHelper
   def message_read?
     self.read_at.nil? ? false : true
   end
+
+  def store_user
+    @@suser = @messenger.sender.id
+  end
 end

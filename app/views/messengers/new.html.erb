@@ -1,23 +1,27 @@
-<div class='span6 offset3'> 
+<div class='span10 offset1'> 
   <div class="barney">
     <div class="trouble">
       <%= form_for @messenger, url: user_messengers_path(@user) do |f| %>
-        <h5>
+        <h5> 
           From:</h5>
           <div class='span12 offset1'> 
         <h4>
           <%= current_user.name %>
         </h4>
-      </div>
+          </div>
         <h5>
           To:</h5>
           <div class='span12 offset1'>
-        <h4>
-            <%= @user.name %>
+            <h4>
+              <% if @reply_name == 'r' %>
+                <%= @reply_to.sender.name %>
+              <% elsif @reply_name == 'n' %>
+                <%= @user.name %>
+              <% end %>
+            </h4>
           </div>
-        </h4>
           <p>
-            Message<br />
+            Message</br>
             <%= f.text_area :body, id: 'pussy' %>
           </p>
           <p>

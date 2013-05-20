@@ -13,24 +13,12 @@
     <%= render 'layouts/footer' %>
   	<div class="container-fluid">
       <div class="row-fluid">
-        <% if ((params[:controller] == 'auctions' && params[:action] == 'new') || (params[:controller] == 'home' && signed_in_user?)) %>
           <div class="span10 offset1">
             <% flash.each do |key, value| %>
               <div class="alert alert-<%= key %>"><%= value %></div>
             <% end %>
             <%= yield %>
           </div>
-        <% else %>
-          <div class="span2">
-            <%= render 'layouts/sidebar' %>
-          </div>
-          <div class="span8 offset1">
-            <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
-            <% end %>
-            <%= yield %>
-          </div>
-        <% end %>
        </div>
     </div>
   </body>
