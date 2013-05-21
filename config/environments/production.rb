@@ -68,9 +68,9 @@ MydeaSample::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['Patentflip'],
-      :access_key_id => ENV['AKIAJGZPSZQUTFRKVIFQ'],
-      :secret_access_key => ENV['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']
+      bucket: 'Patentflip',
+      access_key_id: 'AKIAJGZPSZQUTFRKVIFQ',
+      secret_access_key: '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'
     }
   }
 end
