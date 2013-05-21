@@ -71,5 +71,6 @@ MydeaSample::Application.configure do
       :bucket => ENV['Patentflip'],
       :access_key_id => ENV['AKIAJGZPSZQUTFRKVIFQ'],
       :secret_access_key => ENV['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']
+    }
   }
 end
