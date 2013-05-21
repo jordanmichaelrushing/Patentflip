@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 .env
+
+# Ignore the S3 credentials file
+/config/s3.yml

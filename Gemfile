@@ -21,6 +21,7 @@ source 'https://rubygems.org'
  gem 'aws-sdk'
  gem 'mandrill-api'
  gem 'tire'
+ gem 'uploadify-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,6 +29,7 @@ source 'https://rubygems.org'
 group :development do
 	gem 'sqlite3'
 	gem 'annotate'
+  gem "nifty-generators"
 end
 
 

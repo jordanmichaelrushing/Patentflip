@@ -12,10 +12,10 @@
       <% end %>
         </h4>
         <%= @auction.vid_url %>
-        <% if @auction.vid.url(:large) != "" %>
+        <% if @auction.vid.url != "" %>
           <div class="flowplayer">
             <video>
-              <source type="video/flv" src="<%= @auction.vid.url(:large) %>">
+              <source type="video/flv" src="<%= @auction.vid.url %>">
             </video>
           </div>
         <% end %>

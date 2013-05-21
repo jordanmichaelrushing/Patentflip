@@ -32,10 +32,12 @@ class AuctionsController < ApplicationController
 	end
 
   def edit
+    @user = User.find(params[:user_id])
+    @auction = Auction.find(params[:id])
   end
  
   def update
-    user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @auction = Auction.find(params[:id])
     if @auction.update_attributes(params[:auction])
       flash[:success] = "Profile updated"
