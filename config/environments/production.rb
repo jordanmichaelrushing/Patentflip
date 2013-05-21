@@ -69,8 +69,8 @@ MydeaSample::Application.configure do
     :storage => :s3,
     :s3_credentials => {
       bucket: 'Patentflip',
-      access_key_id: 'AKIAJGZPSZQUTFRKVIFQ',
-      secret_access_key: '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'
+      access_key_id: 'AKIAJKBXJPEW7KTDO56Q',
+      secret_access_key: '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'
     }
   }
 end
