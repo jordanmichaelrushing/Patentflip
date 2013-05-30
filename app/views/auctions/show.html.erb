@@ -1,42 +1,75 @@
-<div class="barney">
-   <div class="crumble">
-      <% if @user == current_user %>
-        <%= link_to "Edit Patent Listing", edit_user_auction_path(current_user) %>
-      <% end %>
-      <h2> <%=@auction.title%> </h2>
-      <h4>Official Patent Number: &nbsp 
-      <% if @auction.goog_url == true %>
-         <a href="//www.google.com/patents/<%=@auction.pat_num%>"><%=@auction.pat_num%></a> 
-      <% else %>
-        <%= @auction.pat_num %>
-      <% end %>
-        </h4>
-        <%= @auction.vid_url %>
-        <% if @auction.vid.url != "" %>
-          <div class="flowplayer">
-            <video>
-              <source type="video/flv" src="<%= @auction.vid.url %>">
-            </video>
-          </div>
+</br></br></br></br>
+<h6><%=@auction.title%></h6>
+<h8>Filed by: <%= @user.name %></h8>
+<div class="info_message" id="complete_info_message" style="display: none;">
+        Patent Listing Completed!
+</div>
+  <div class="barney">
+    <div class="crumble">
+      <listingblurb>
+        <% if @user == current_user %>
+          <%= link_to "Edit Patent Listing", edit_user_auction_path(current_user) %>
         <% end %>
-      
-      <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
-      <% else %>
-        <div id="this-carousel-id" class="carousel slide">
-          <ol class="carousel-indicators">
+        <h4>Official Patent Number: &nbsp 
+          <% if @auction.goog_url == true %>
+             <a href="//www.google.com/patents/<%=@auction.pat_num%>"><%=@auction.pat_num%></a> 
+          <% else %>
+            <%= @auction.pat_num %>
+          <% end %>
+        </h4>
+      </br>
+      <div class="userborder"></div>
+        <div id="countdown_dashboard">
+          <div class="dash days_dash">
+            <span class="dash_title">days left</span>
+            <div class="digit">0</div>
+            <div class="digit">0</div>
+          </div>
+        </div>
+
+        <script language="Javascript" type="text/javascript" src="/assets/jquery-1.7.2min.js"></script>
+        <script language="Javascript" type="text/javascript" src="/assets/jquery.lwsCountdown-1.0.js"></script>
+        <script language="Javascript" type="text/javascript" src="/assets/misc.js"></script>
+        <script language="javascript" type="text/javascript">
+
+          jQuery(document).ready(function() {
+            $('#countdown_dashboard').countDown({
+              targetDate: {
+                'day':    <%= @auction.timer_day %>,
+                'month':  <%= @auction.timer_min %>,
+                'year':   <%= @auction.timer_hr %>,
+                'hour':   0,
+                'min':    43,
+                'sec':    0
+              },
+            onComplete: function() { $('#complete_info_message').slideDown() },
+            omitWeeks: true
+            });
+          });
+
+        </script>
+      </listingblurb>
+
+      <listingfeed>
+        <div class="barney">
+        <div class="crumble">
+        <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
+        <% else %>
+          <div id="this-carousel-id" class="carousel slide">
+            <ol class="carousel-indicators">
               <li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
-            <% if @auction.pic2.url(:a) != "/pic2s/a/missing.png" %>
-              <li data-target="#this-carousel-id" data-slide-to="1"></li>
-            <% end %>
-            <% if @auction.pic3.url(:a) != "/pic3s/a/missing.png" %>
-              <li data-target="#this-carousel-id" data-slide-to="2"></li>
-            <% end %>
-            <% if @auction.pic4.url(:a) != "/pic4s/a/missing.png" %>
-              <li data-target="#this-carousel-id" data-slide-to="3"></li>
-            <% end %>
-            <% if @auction.pic5.url(:a) != "/pic5s/a/missing.png" %>
-              <li data-target="#this-carousel-id" data-slide-to="4"></li>
-            <% end %>
+              <% if @auction.pic2.url(:a) != "/pic2s/a/missing.png" %>
+                <li data-target="#this-carousel-id" data-slide-to="1"></li>
+              <% end %>
+              <% if @auction.pic3.url(:a) != "/pic3s/a/missing.png" %>
+                <li data-target="#this-carousel-id" data-slide-to="2"></li>
+              <% end %>
+              <% if @auction.pic4.url(:a) != "/pic4s/a/missing.png" %>
+                <li data-target="#this-carousel-id" data-slide-to="3"></li>
+              <% end %>
+              <% if @auction.pic5.url(:a) != "/pic5s/a/missing.png" %>
+                <li data-target="#this-carousel-id" data-slide-to="4"></li>
+              <% end %>
             </ol>
             <div class="carousel-inner">
                 <div class="item active">
@@ -98,26 +131,28 @@
                 </div>
               <% end %>
             </div>
-          <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-        </div>
-      <% end %>
-      <h2><%=@auction.title%>'s official description:</h2></br>
-      <h5> <%=@auction.pat_off_desc%> </h5></br>
+            <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+          </div>
+        <% end %>
+      </div>
+    </div></br>
+        <h2><%=@auction.title%>'s official description:</h2></br>
+        <h5> <%=@auction.pat_off_desc%> </h5></br>
 
 
-      <h2>My comments about <%=@auction.title%>:</h2></br>
-      <h5> <%=@auction.descrip%> </h5></br>
-      
-      
-	</div>
-</div>
+        <h2>My comments about <%=@auction.title%>:</h2></br>
+        <h5> <%=@auction.descrip%> </h5></br>
+        
+      </listingfeed>
+    </div>
+  </div>
 
-
+<script src="/assets/bootstrapmin.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
     $('.carousel').carousel({
-      interval: 7000
+      interval: 10000
     });
   });
 </script>

@@ -10,16 +10,15 @@ class AuctionsController < ApplicationController
 
 	def new
 		@auction = Auction.new
-    @user = User.find(params[:user_id])
+    @user = current_user
 	end
 
 	def create
-    @user = User.find(params[:user_id])
-		params[:auction]
-		@auction = Auction.new(params[:auction] )
+    @user = current_user
+		@auction = current_user.auctions.build(params[:auction] )
 		if @auction.save
 			flash[:success] = "Uploaded your patent on the marketplace!"
-			redirect_to [@user, @auction]
+			redirect_to [current_user, @auction]
 		else
 			render 'new'
 		end
@@ -40,7 +39,7 @@ class AuctionsController < ApplicationController
     @user = User.find(params[:user_id])
     @auction = Auction.find(params[:id])
     if @auction.update_attributes(params[:auction])
-      flash[:success] = "Profile updated"
+      flash[:success] = "Patent listing updated"
       redirect_to [@user, @auction]
     else
       render 'edit'

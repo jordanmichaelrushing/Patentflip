@@ -3,23 +3,23 @@
   <head>
     <link rel="shortcut icon" href="/assets/Patent_Flip_Photo.png"/>
     <title><%= full_title(yield(:title)) %></title>
-      <%= stylesheet_link_tag "application", media: "all" %>
-      <%= javascript_include_tag "application" %>
-      <%= csrf_meta_tags %>
-      <%= render 'layouts/shim' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
   </head>
   <body>
   	<%= render 'layouts/header' %>
-    <%= render 'layouts/footer' %>
   	<div class="container-fluid">
       <div class="row-fluid">
-          <div class="span10 offset1">
-            <% flash.each do |key, value| %>
-              <div class="alert alert-<%= key %>"><%= value %></div>
-            <% end %>
-            <%= yield %>
-          </div>
-       </div>
+        <div class="span10 offset1">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
+    <%= render 'layouts/footer' %>
 </html>

@@ -21,6 +21,7 @@
 	background-color: white;
 		-moz-border-radius: 6px;
 	border-radius: 6px;
+  padding-bottom: 30px;
 }
 
 .crumble {
@@ -33,6 +34,8 @@
 
 .carousel-inner{
 	margin-bottom: -20px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 #boogy {
@@ -44,7 +47,7 @@
   background-color: #999;
   border-left: 1px solid #fff;
   border-right: 1px solid #999;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #myModal {
@@ -53,15 +56,17 @@
 }
 
 html {
+  position: relative;
 	overflow-y: scroll;
-	height: 100%;
+	min-height: 100%;
 }
 
 body {
+  
   height: 100%;
-	padding-top: 10px;
-	align-right: 10px;
-	background-color: #eee;
+  padding-top: 10px;
+  align-right: 10px;
+  background-color: #eee;
 }
 
 .baloo {
@@ -144,6 +149,19 @@ aside {
   }
 }
 
+.gravatar-home {
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 2px solid #00cc00;
+  moz-border-radius: 6px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 5px #888888;
+  &:hover {
+    opacity:0.9;
+  }
+}
+
 #grav_user {
 	margin-top: -20px;
 }
@@ -179,6 +197,8 @@ aside {
   background-image: -o-linear-gradient(top, #7f7f7f, #191919);
   background-image: linear-gradient(top, #7f7f7f, #191919);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'7f7f7f, endColorstr='#'191919, GradientType=0);
+  margin-top: -10px;
+  height: 60px;
 }
 
 .btn {
@@ -251,9 +271,19 @@ h4 {
 	color: #888;
 }
 
+h6 {
+  text-align: center;
+  font-size: 28pt;
+  letter-spacing: 12px;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  text-shadow: 5px 5px 5px #888888;
+}
+
 h8 {
   color: #888;
-  align: center;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.2em;
 }
 
@@ -263,7 +293,7 @@ h8 {
 
 #logo {
 	float: left;
-	margin-top: 8px;
+	margin-top: 16px;
   margin-right: 10px;
   width: 135px;
 	&:hover {
@@ -284,7 +314,11 @@ footer {
   background-image: -o-linear-gradient(top, #7f7f7f, #191919);
   background-image: linear-gradient(top, #7f7f7f, #191919);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'7f7f7f, endColorstr='#'191919, GradientType=0);
-  padding-top: 5px;
+  position: static;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
 	clear: both;
 	color: white;
 	ul {
@@ -375,7 +409,6 @@ footer {
 	color: #00cc00;
 	&:hover {
 		color: #007c00;
-
 	}
 }
 
@@ -390,6 +423,7 @@ footer {
 #btn_align {
 	float: right;
 	margin-right: 15px;
+  margin-top: -30px;
 }
 
 .bordes {
@@ -544,7 +578,6 @@ iframe {
 #pussy {
   height: 150px;
   font-size: 1.0em;
-  margin-bottom: 75px;
 }
 
 .container-fluid {
@@ -588,25 +621,25 @@ iframe {
 }
 
 #message_icon {
-  margin-top: -5px;
+  margin-top: 5px;
   margin-bottom: -5px;
   width: 30px;
 }
 
 #message_icon_open {
-  margin-top: -10px;
+  margin-top: 0px;
   margin-bottom: -5px;
   width: 30px;
 }
 
 #lawyer_icon {
-  margin-top: -9px;
+  margin-top: 1px;
   margin-bottom: -5px;
   width: 35px;
 }
 
 #patent_icon {
-  margin-top: -7px;
+  margin-top: 3px;
   margin-bottom: -5px;
   width: 25px;
 }
@@ -632,4 +665,60 @@ mess {
   font-weight: bold;
   width: 200px;
   display:inline-block;
+}
+
+listingfeed {
+  width: 600px;
+  padding-left: 15px;
+  display:inline-block;
+}
+
+listingblurb {
+  background-color: #eee;
+  width: 350px;
+  margin-top: 60px;
+  margin-left: 10px;
+  float: left;
+  display:inline-block;
+  border: 4px solid #ddd;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  box-shadow: 7px 7px 5px #888888;
+}
+
+gcse:search {
+  background-color: black;
+}
+
+.digit {
+  margin-top: 30px;
+  text-shadow: 7px 7px 5px #888888;
+}
+
+#countdown_dashboard {
+  margin-left: 100px;
+}
+
+.dash_title {
+  margin-left: 20px;
+  width: 89px;
+}
+
+#complete_info_message {
+  padding-top: 5px;
+  margin-bottom: -25px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-color: #00cc00;
+  border: 4px solid #00cc00;
+  color: white;
+  font-size: 2.2em;
+  height: 30px;
+  text-align: center;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  box-shadow: 7px 7px 5px #888888;
+  text-shadow: 5px 5px 5px #666666;
 }

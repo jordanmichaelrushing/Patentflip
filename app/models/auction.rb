@@ -6,12 +6,13 @@ class Auction < ActiveRecord::Base
     :pic5_file_name, :vid_url, :pic_descr_1, :pic_descr_2, :pic_descr_3, 
     :pic_descr_4, :pic_descr_5, :goog_url, :vid, :vid_file_name
 
-	has_attached_file :pic1, styles: { a: "500x500>", tiny: "250x250>" }
-  has_attached_file :pic2, styles: { a: "500x500>", tiny: "250x250>" } 
-  has_attached_file :pic3, styles: { a: "500x500>", tiny: "250x250>" }
-  has_attached_file :pic4, styles: { a: "500x500>", tiny: "250x250>" }
-  has_attached_file :pic5, styles: { a: "500x500>", tiny: "250x250>" }
-  has_attached_file :vid
+	has_attached_file :pic1, styles: { a: "600>", tiny: "250x250>" }
+  has_attached_file :pic2, styles: { a: "600>", tiny: "250x250>" } 
+  has_attached_file :pic3, styles: { a: "600>", tiny: "250x250>" }
+  has_attached_file :pic4, styles: { a: "600>", tiny: "250x250>" }
+  has_attached_file :pic5, styles: { a: "600>", tiny: "250x250>" }
+  has_attached_file :vid, styles: { large: { geometry: "1920x1080>", 
+    format: 'flv' }}, default: "", processors: [:ffmpeg]
 
   validates :title, presence: {message: 'Patent title cannot be blank'}
   validates :pat_num, presence: {message: 'Patent number cannot be blank'}

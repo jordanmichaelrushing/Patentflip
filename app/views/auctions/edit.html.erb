@@ -22,6 +22,15 @@
               Patent Publication Number
               <%= f.text_area :pat_num, id: "balls" %>
               </br></br>
+              Month to stop
+              <%= f.text_area :timer_min, id: "balls" %>
+              </br></br>
+              Day to stop
+              <%= f.text_area :timer_day, id: "balls" %>
+              </br></br>              
+              Year to stop
+              <%= f.text_area :timer_hr, id: "balls" %>
+              </br></br>
               <%= f.check_box(:goog_url) %><%="  "%>Is your patent on google patents?
              </h4>
           </div>
@@ -59,7 +68,6 @@
         </div>
         <div class="tab-pane fade" id="tab4">
           <div class="span7 offset2">
-            <%= f.file_field :vid, id: "shit"  %>
             <h1> Your patent video </h1>
             <div class="bordes"></div>
             <h4> <%= f.label :vid_url, "Add a video from youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just add the youtube video link here:" %></br>

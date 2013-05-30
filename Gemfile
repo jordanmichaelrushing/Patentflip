@@ -11,7 +11,7 @@ source 'https://rubygems.org'
  gem 'bootstrap-will_paginate', '0.0.6'
  gem "koala"
 
- gem "paperclip", '~> 3.1'
+ gem "paperclip", '3.4.2'
  gem 'paperclip-ffmpeg'
  gem 'flowplayer'
  gem 'delayed_job'
@@ -22,6 +22,7 @@ source 'https://rubygems.org'
  gem 'mandrill-api'
  gem 'tire'
  gem 'uploadify-rails'
+ gem 'mailboxer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

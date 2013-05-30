@@ -36,4 +36,13 @@ MydeaSample::Application.configure do
   config.assets.debug = true
 
   Paperclip.options[:command_path] = "/c/IMAGE~1.5-Q/"
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      bucket: 'Ideasm_Patent_Photos_and_Videos',
+      access_key_id: 'AKIAJKBXJPEW7KTDO56Q',
+      secret_access_key: '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'
+    }
+  }
 end

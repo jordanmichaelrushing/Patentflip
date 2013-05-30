@@ -23,7 +23,6 @@ class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
   accepts_nested_attributes_for :microposts
 
-  
   has_private_messages class_name: "Messenger"
 
   has_secure_password 
