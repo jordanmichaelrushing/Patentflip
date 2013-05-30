@@ -56,13 +56,11 @@
 }
 
 html {
-  position: relative;
-	overflow-y: scroll;
-	min-height: 100%;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 body {
-  
   height: 100%;
   padding-top: 10px;
   align-right: 10px;
