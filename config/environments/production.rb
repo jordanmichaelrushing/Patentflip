@@ -73,6 +73,4 @@ MydeaSample::Application.configure do
       secret_access_key: 'o/fltAennrfbWjbgu1wJkaPCpxrtsLCAMtzpgx+A'
     }
   }
-
-  RailsVersion::Config.api_key = "1ae42d8adea3502c351b5c5f82916fef"
 end

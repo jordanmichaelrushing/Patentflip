@@ -14,6 +14,7 @@
 	-moz-border-radius: 9px;
 	border-radius: 9px;
 	box-shadow: 10px 10px 5px #888888;
+  height: 100%;
 }
 
 .trouble {
@@ -22,6 +23,7 @@
 		-moz-border-radius: 6px;
 	border-radius: 6px;
   padding-bottom: 30px;
+  min-height: 100%;
 }
 
 .crumble {
@@ -30,6 +32,8 @@
     -moz-border-radius: 6px;
   border-radius: 6px;
   postion: absolute;
+  min-height: 100%;
+
 }
 
 .carousel-inner{
@@ -579,7 +583,7 @@ iframe {
 }
 
 .container-fluid {
-  min-height: 100%;
+  height: 100%;
 }
 
 .tab-content {
