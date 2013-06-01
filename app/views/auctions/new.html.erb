@@ -13,7 +13,7 @@
         <div class="tab-pane fade in active" id="tab1">
           <div class="span7 offset2">
             <h4> 
-              <%= form_for([@user, @auction], html: { multipart: true }) do |f| %>
+              <%= form_for(@auction, html: { multipart: true }) do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
 
               Patent Title
@@ -21,41 +21,7 @@
               </br></br>
               Patent Publication Number
               <%= f.text_area :pat_num, id: "balls" %>
-              </br></br>
-              Day auction ends
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-                <option>19</option>
-                <option>20</option>
-                <option>21</option>
-                <option>22</option>
-                <option>23</option>
-                <option>24</option>
-                <option>25</option>
-                <option>26</option>
-                <option>27</option>
-                <option>28</option>
-                <option>29</option>
-                <option>30</option>
-                <option>31</option>
-              </select>
+              </br></br>              
               Month to stop
               <%= f.text_area :timer_min, id: "balls" %>
               </br></br>
@@ -104,7 +70,7 @@
         </div>
         <div class="tab-pane fade" id="tab4">
           <div class="span7 offset2">
-            <%= f.file_field :vid, id: "shit"  %>
+            <%= f.file_field :video, id: "shit"  %>
             <h1> Your patent video </h1>
             <div class="bordes"></div>
             <h4> <%= f.label :vid_url, "Add a video from youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just add the youtube video link here:" %></br>

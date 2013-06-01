@@ -22,8 +22,7 @@ source 'https://rubygems.org'
  gem 'mandrill-api'
  gem 'tire'
  gem 'uploadify-rails'
- gem 'mailboxer'
-
+ 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

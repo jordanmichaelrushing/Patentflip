@@ -1,7 +1,7 @@
 class AuctionsController < ApplicationController
 	
   before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :correct_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -10,37 +10,35 @@ class AuctionsController < ApplicationController
 
 	def new
 		@auction = Auction.new
-    @user = current_user
 	end
 
 	def create
-    @user = current_user
-		@auction = current_user.auctions.build(params[:auction] )
-		if @auction.save
+		@auction = Auction.create(params[:auction])
+		@auction.user_id = current_user.id
+    if @auction.save
 			flash[:success] = "Uploaded your patent on the marketplace!"
-			redirect_to [current_user, @auction]
+			redirect_to @auction
 		else
 			render 'new'
 		end
 	end
 
 	def show
-    @user = User.find(params[:user_id])
 		@auction = Auction.find(params[:id])
+    @user = User.find_by_id(@auction.user_id)
     @vid_url = :vid_url
 	end
 
   def edit
-    @user = User.find(params[:user_id])
+    @user = User.find_by_id(@auction.user_id)
     @auction = Auction.find(params[:id])
   end
  
   def update
-    @user = User.find(params[:user_id])
     @auction = Auction.find(params[:id])
     if @auction.update_attributes(params[:auction])
       flash[:success] = "Patent listing updated"
-      redirect_to [@user, @auction]
+      redirect_to @auction
     else
       render 'edit'
     end
@@ -59,7 +57,8 @@ class AuctionsController < ApplicationController
     private
  
   def correct_user
-    @user = User.find(params[:user_id])
+    @auction = Auction.find(params[:id])
+    @user = User.find_by_id(@auction.user_id)
     redirect_to (new_auction_path), error: "Cannot edit others information!" unless current_user?(@user)
   end
 end

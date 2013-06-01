@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524021520) do
+ActiveRecord::Schema.define(:version => 20130601021245) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20130524021520) do
     t.string   "lic_or_sell"
     t.text     "pat_off_desc"
     t.integer  "user_id"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "vid"
     t.string   "pic1_file_name"
     t.string   "pic1_content_type"
@@ -56,10 +56,15 @@ ActiveRecord::Schema.define(:version => 20130524021520) do
     t.string   "pic_descr_3"
     t.string   "pic_descr_4"
     t.string   "pic_descr_5"
-    t.boolean  "goog_url",          :default => false
+    t.boolean  "goog_url",           :default => false
     t.text     "why_sell"
     t.string   "phone_num"
     t.string   "vid_url"
+    t.string   "user_name"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
   end
 
   create_table "convers", :force => true do |t|

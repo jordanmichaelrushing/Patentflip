@@ -7,9 +7,10 @@
   <div class="barney">
     <div class="crumble">
       <listingblurb>
-        <% if @user == current_user %>
-          <%= link_to "Edit Patent Listing", edit_user_auction_path(current_user) %>
+        <% if @auction.user_id == current_user.id %>
+          <%= link_to "Edit Patent Listing", edit_auction_path %>
         <% end %>
+        <%= @user.name %>
         <h4>Official Patent Number: &nbsp 
           <% if @auction.goog_url == true %>
              <a href="//www.google.com/patents/<%=@auction.pat_num%>"><%=@auction.pat_num%></a> 
@@ -39,7 +40,7 @@
                 'month':  <%= @auction.timer_min %>,
                 'year':   <%= @auction.timer_hr %>,
                 'hour':   0,
-                'min':    43,
+                'min':    58,
                 'sec':    0
               },
             onComplete: function() { $('#complete_info_message').slideDown() },
@@ -51,6 +52,14 @@
       </listingblurb>
 
       <listingfeed>
+        <%= @auction.video.url %>
+        <div class="flowplayer">
+      <video>
+         
+         <source type="video/mp4" src="<%= @auction.video.url(:mobile)%>"/>
+      </video>
+   </div>
+
         <div class="barney">
         <div class="crumble">
         <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
@@ -156,3 +165,17 @@
     });
   });
 </script>
+
+<!-- 1. jquery library -->
+<script type="text/javascript"
+   src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js">
+</script>
+ 
+<!-- 2. flowplayer -->
+<script type="text/javascript"
+   src="//releases.flowplayer.org/5.4.1/flowplayer.min.js">
+</script>
+ 
+<!-- 3. skin -->
+<link rel="stylesheet" type="text/css"
+   href="//releases.flowplayer.org/5.4.1/skin/minimalist.css">

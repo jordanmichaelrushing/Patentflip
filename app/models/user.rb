@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
 	before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
-  validates_attachment :avatar, :size => { :in => 0..1000.kilobytes }
   validates :name, presence: true, 
                    length: { maximum: 50 }
 

@@ -1,7 +1,6 @@
 MydeaSample::Application.routes.draw do
 
 resources :users do 
-    resources :auctions
     resources :messengers  do
       get :autocomplete_user_name, on: :collection
       collection do
@@ -13,6 +12,8 @@ resources :users do
     end
 end
 
+
+resources :auctions, path: "patent"
 resources :sessions, only: [:new, :create, :destroy]
 resources :microposts, only: [:create, :destroy]
 resources :relationships, only: [:create, :destroy]
