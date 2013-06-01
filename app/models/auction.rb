@@ -4,7 +4,7 @@ class Auction < ActiveRecord::Base
     :auction_attributes, :pic1, :pic2, :pic3, :pic4, :pic5, 
     :pic1_file_name, :pic2_file_name, :pic3_file_name, :pic4_file_name, 
     :pic5_file_name, :vid_url, :pic_descr_1, :pic_descr_2, :pic_descr_3, 
-    :pic_descr_4, :pic_descr_5, :goog_url, :video, :vid
+    :pic_descr_4, :pic_descr_5, :goog_url, :video, :vid, :video_file_name
 
 	has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic2, styles: { a: "600x400>", tiny: "250x250>" } 
