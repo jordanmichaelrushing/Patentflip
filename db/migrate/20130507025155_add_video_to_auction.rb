@@ -1,7 +1,5 @@
 class AddVideoToAuction < ActiveRecord::Migration
-  def self.up
-    change_table :auctions do |t|
-      t.attachment :vid
-    end
+  def change
+    add_attachment :auctions, :vid
   end
 end

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130601021245) do
     t.integer  "user_id"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
+    t.string   "vid"
     t.string   "pic1_file_name"
     t.string   "pic1_content_type"
     t.integer  "pic1_file_size"
