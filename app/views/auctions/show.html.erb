@@ -29,7 +29,7 @@
         </div>
 
         <script language="Javascript" type="text/javascript" src="/assets/jquery-1.7.2min.js"></script>
-        <script language="Javascript" type="text/javascript" src="/assets/jquery.lwsCountdown-1.0.js"></script>
+        <script language="Javascript" type="text/javascript" src="/assets/countdown.js"></script>
         <script language="Javascript" type="text/javascript" src="/assets/misc.js"></script>
         <script language="javascript" type="text/javascript">
 
@@ -54,11 +54,10 @@
       <listingfeed>
         <%= @auction.video.url %>
         <div class="flowplayer">
-      <video>
-         
-         <source type="video/flv" src="<%= @auction.video.url%>"/>
-      </video>
-   </div>
+          <video>
+             <source type="video/flv" src="<%= @auction.video.url%>"/>
+          </video>
+        </div>
 
         <div class="barney">
         <div class="crumble">
@@ -173,9 +172,9 @@
  
 <!-- 2. flowplayer -->
 <script type="text/javascript"
-   src="//releases.flowplayer.org/5.4.1/flowplayer.min.js">
+   src="/assets/flowplayermin.js">
 </script>
  
 <!-- 3. skin -->
 <link rel="stylesheet" type="text/css"
-   href="//releases.flowplayer.org/5.4.1/skin/minimalist.css">
+   href="//releases.flowplayer.org/5.4.1/skin/minimalist.css"/>
