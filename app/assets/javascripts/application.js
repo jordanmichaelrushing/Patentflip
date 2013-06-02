@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery-ui-1.10.3.custommin
 //= require autocomplete-rails
-//= require bootstrap
+//= require bootstrapmin
 //= require twitter-bootstrap-hover-dropdown.min
 //= flowplayermin
 //= require_tree .
