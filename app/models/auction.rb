@@ -11,9 +11,7 @@ class Auction < ActiveRecord::Base
   has_attached_file :pic3, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic4, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic5, styles: { a: "600x400>", tiny: "250x250>" }
-  has_attached_file :video, :styles => {
-    :mobile => {:geometry => "1920x1080>", :format => 'mp4', :streaming => true}
-  }, :processors => [:ffmpeg]
+  has_attached_file :video
   validates :title, presence: {message: 'Patent title cannot be blank'}
   validates :pat_num, presence: {message: 'Patent number cannot be blank'}
   #validates :category, presence: {message: 'Patent category cannot be blank'}  
