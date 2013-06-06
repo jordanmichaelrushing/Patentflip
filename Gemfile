@@ -22,6 +22,7 @@ source 'https://rubygems.org'
  gem 'mandrill-api'
  gem 'tire'
  gem 'uploadify-rails'
+ gem "friendly_id", "~> 4.0.9"
  
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

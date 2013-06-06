@@ -34,7 +34,7 @@
 .flowplayer .fp-subtitle p{display:inline;background-color:#333;background-color:rgba(51,51,51,0.9);color:#eee;padding:.1em .4em;font-size:16px;line-height:1.6;}
 .flowplayer .fp-subtitle p:after{content:'';clear:both}
 .flowplayer .fp-subtitle.fp-active{left:0;opacity:1;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)}
-.flowplayer .fp-fullscreen,.flowplayer .fp-unload,.flowplayer .fp-mute,.flowplayer .fp-embed,.flowplayer .fp-close,.flowplayer .fp-play{background-image:url(img/playful_white.png);background-size:37px 300px;}
+.flowplayer .fp-fullscreen,.flowplayer .fp-unload,.flowplayer .fp-mute,.flowplayer .fp-embed,.flowplayer .fp-close,.flowplayer .fp-play{background-image:url(/assets/playful_white.png);background-size:37px 300px;}
 .is-rtl.flowplayer .fp-fullscreen,.is-rtl.flowplayer .fp-unload,.is-rtl.flowplayer .fp-mute,.is-rtl.flowplayer .fp-embed,.is-rtl.flowplayer .fp-close,.is-rtl.flowplayer .fp-play{background-image:url(img/playful_white_rtl.png)}
 .color-light.flowplayer .fp-fullscreen,.color-light.flowplayer .fp-unload,.color-light.flowplayer .fp-mute,.color-light.flowplayer .fp-embed,.color-light.flowplayer .fp-close,.color-light.flowplayer .fp-play{background-image:url(img/playful_black.png);}
 .is-rtl.color-light.flowplayer .fp-fullscreen,.is-rtl.color-light.flowplayer .fp-unload,.is-rtl.color-light.flowplayer .fp-mute,.is-rtl.color-light.flowplayer .fp-embed,.is-rtl.color-light.flowplayer .fp-close,.is-rtl.color-light.flowplayer .fp-play{background-image:url(img/playful_black_rtl.png)}
@@ -42,7 +42,7 @@
 .is-rtl.color-light.flowplayer .fp-fullscreen,.is-rtl.color-light.flowplayer .fp-unload,.is-rtl.color-light.flowplayer .fp-mute,.is-rtl.color-light.flowplayer .fp-embed,.is-rtl.color-light.flowplayer .fp-close,.is-rtl.color-light.flowplayer .fp-play{background-image:url(img/playful_black_rtl@x2.png)}
 }@media (-webkit-min-device-pixel-ratio: 2){.flowplayer .fp-fullscreen,.flowplayer .fp-unload,.flowplayer .fp-mute,.flowplayer .fp-embed,.flowplayer .fp-close,.flowplayer .fp-play{background-image:url(img/playful_white@x2.png)}
 .is-rtl.flowplayer .fp-fullscreen,.is-rtl.flowplayer .fp-unload,.is-rtl.flowplayer .fp-mute,.is-rtl.flowplayer .fp-embed,.is-rtl.flowplayer .fp-close,.is-rtl.flowplayer .fp-play{background-image:url(img/playful_white_rtl@x2.png)}
-}.is-splash.flowplayer .fp-ui,.is-paused.flowplayer .fp-ui{background:url(img/play_white.png) center no-repeat;background-size:12%;}
+}.is-splash.flowplayer .fp-ui,.is-paused.flowplayer .fp-ui{background:url(/assets/play_white.png) center no-repeat;background-size:21%;}
 .is-rtl.is-splash.flowplayer .fp-ui,.is-rtl.is-paused.flowplayer .fp-ui{background:url(img/play_white_rtl.png) center no-repeat;background-size:12%}
 @media (-webkit-min-device-pixel-ratio: 2){.is-splash.flowplayer .fp-ui,.is-paused.flowplayer .fp-ui{background:url(img/play_white@x2.png) center no-repeat;background-size:12%}
 .is-rtl.is-splash.flowplayer .fp-ui,.is-rtl.is-paused.flowplayer .fp-ui{background:url(img/play_white_rtl@x2.png) center no-repeat;background-size:12%}
@@ -215,3 +215,9 @@
 .flowplayer.color-alt.is-touch.is-mouseover .fp-progress:before{background-color:#111}
 .flowplayer.color-alt2 .fp-progress,.flowplayer.color-alt2 .fp-volumelevel{background-color:#900}
 .flowplayer.color-alt2.is-touch.is-mouseover .fp-progress:before{background-color:#900}
+
+/* custom player skin */
+   .flowplayer .fp-controls { background-color: rgba(0, 0, 0, 0.22)}
+   .flowplayer .fp-timeline { background-color: rgba(0, 0, 0, 0.26)}
+   .flowplayer .fp-progress { background-color: rgba(0, 204, 0, 1)}
+   .flowplayer .fp-buffer { background-color: rgba(249, 249, 249, 1)}

@@ -6,7 +6,10 @@ class Auction < ActiveRecord::Base
     :pic5_file_name, :vid_url, :pic_descr_1, :pic_descr_2, :pic_descr_3, 
     :pic_descr_4, :pic_descr_5, :goog_url, :video, :video_file_name
 
-	has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>" }
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+	
+  has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic2, styles: { a: "600x400>", tiny: "250x250>" } 
   has_attached_file :pic3, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic4, styles: { a: "600x400>", tiny: "250x250>" }

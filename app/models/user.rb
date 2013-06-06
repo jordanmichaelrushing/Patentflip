@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
   :user_attributes, :avatar_file_name
 
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+  # def should_generate_new_friendly_id?
+  #   new_record?
+  # end
+
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"
   validates_attachment :avatar, :size => { :in => 0..1000.kilobytes }

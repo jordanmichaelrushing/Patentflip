@@ -8,11 +8,11 @@
             <li class="divider-vertical"></li>
             <% if current_user.unread_messages? %>
               <% if current_user.unread_message_count == 1 %>
-              <li><a href="<%= user_messengers_path(current_user) %>" title="<%= current_user.unread_message_count %> new message!">
+              <li><a href="<%= user_messengers_path(current_user) %>" title="<%= current_user.unread_message_count %> new message!"></a>
                 <% else %>
-              <li><a href="<%= user_messengers_path(current_user) %>" title="<%= current_user.unread_message_count %> new messages!">
+              <li><a href="<%= user_messengers_path(current_user) %>" title="<%= current_user.unread_message_count %> new messages!"></a>
                 <% end %>
-                <%= image_tag("/assets/messages_icon.png", id: "message_icon_open") %></a>
+                <%= image_tag("/assets/messages_icon.png", id: "message_icon_open") %>
               </li>
             <% else %>
               <li>
@@ -31,7 +31,7 @@
      				
             <li class="divider-vertical"></li>
 		  			<li>
-              <a href="<%= patents_path %>" title="Look at the patents on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon") %></a>
+              <a href="<%= auctions_path %>" title="Look at the patents on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon") %></a>
             </li>
    					
             <li class="divider-vertical"></li>

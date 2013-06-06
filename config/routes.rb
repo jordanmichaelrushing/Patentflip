@@ -27,8 +27,9 @@ match '/faq', to: 'static_pages#faq'
 match '/signup', to: 'users#new'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', only: :delete
-match '/patents', to: 'auctions#patents'
+match '/users/:name', to: 'users#show'
 
+match 'user/:name', :controller => 'users', :action => 'show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

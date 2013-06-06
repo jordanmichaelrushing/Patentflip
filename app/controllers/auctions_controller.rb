@@ -4,8 +4,8 @@ class AuctionsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @user = User.find(params[:user_id])
     @auctions = Auction.paginate(page: params[:page])
+    @users = User.paginate(page: params[:user_id])
   end
 
 	def new
@@ -27,6 +27,9 @@ class AuctionsController < ApplicationController
 		@auction = Auction.find(params[:id])
     @user = User.find_by_id(@auction.user_id)
     @vid_url = :vid_url
+    if request.path != auction_path(@auction)
+      redirect_to @auction, status: :moved_permanently
+    end
 	end
 
   def edit

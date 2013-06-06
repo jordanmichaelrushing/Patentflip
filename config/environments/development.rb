@@ -40,7 +40,7 @@ MydeaSample::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      bucket: 'ideasm-patent-photos-and-videos',
+      bucket: 'Ideasm_Patent_Photos_And_Videos',
       access_key_id: 'AKIAJKBXJPEW7KTDO56Q',
       secret_access_key: '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'
     }
