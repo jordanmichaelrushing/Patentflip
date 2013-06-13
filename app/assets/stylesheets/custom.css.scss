@@ -7,6 +7,11 @@
 	padding-top: 4px;
 }
 
+img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .barney {
 	margin-top: 60px;
 	border: 4px solid #ddd;
@@ -14,6 +19,8 @@
 	-moz-border-radius: 9px;
 	border-radius: 9px;
 	box-shadow: 10px 10px 5px #888888;
+  height: 100%;
+  margin-bottom: 150px;
 }
 
 .trouble {
@@ -21,6 +28,8 @@
 	background-color: white;
 		-moz-border-radius: 6px;
 	border-radius: 6px;
+  padding-bottom: 30px;
+  min-height: 100%;
 }
 
 .crumble {
@@ -34,6 +43,7 @@
 }
 
 .carousel-inner{
+	margin-bottom: -20px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
@@ -161,7 +171,6 @@ aside {
 }
 
 .gravatar-patent {
-  margin-left: 25px;
   margin-top: 10px;
   margin-right: 10px;
   border: 2px solid #00cc00;
@@ -577,7 +586,7 @@ iframe {
 	margin-left: 5px;
 }
 
-.carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
+.carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s; background-color: black; margin-left: auto; margin-right: auto;}
 .carousel .active.left {left:0;opacity:0;z-index:2;}
 .carousel .next {left:0;opacity:1;z-index:1;}
 
@@ -706,13 +715,22 @@ gcse:search {
   background-color: black;
 }
 
-.digit {
-  margin-top: 30px;
-  text-shadow: 7px 7px 5px #888888;
+digit {
+  font-size: 2.8em;
+  letter-spacing: -2px;
+  text-align:left;
+  float:left;
+  font-weight: bold;
+  display:inline-block;
 }
 
 #countdown_dashboard {
-  margin-left: 100px;
+  float:right;
+  margin-left: 0px;
+  height: 20px;
+  border-bottom: 1px solid #ddd;
+  width: 97%;
+  padding-bottom: 5px;
 }
 
 .dash_title {

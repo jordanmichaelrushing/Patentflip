@@ -11,9 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui-1.10.3.custommin
+//= require jquery-ui-1103custommin
 //= require autocomplete-rails
 //= require bootstrapmin
 //= require twitter-bootstrap-hover-dropdown.min
-//= flowplayermin
+//= flowplayer
 //= require_tree .

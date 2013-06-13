@@ -14,17 +14,19 @@
           <% if @auction.goog_url == true %>
              <h1 href="//www.google.com/patents/<%=@auction.pat_num%>"><%=@auction.pat_num%></h1> 
           <% else %>
-            <%= @auction.pat_num %>
+            <h1><%= @auction.pat_num %></h1>
           <% end %>
             <h4>Days Left:</h4>
         <div id="countdown_dashboard">
           <div class="dash days_dash">
-            <div class="digit">0</div>
-            <div class="digit">0</div>
+            <digit>0</digit>
+            <digit>0</digit>
           </div>
         </div>
-
-        <%= image_tag @user.avatar.url(:thumb), class: "gravatar-patent" %></br></br> <h4>Flipping by:</h4>
+        </br>
+        <%= image_tag @user.avatar.url(:thumb), class: "gravatar-patent" %>
+        </br></br> 
+        <h4>Flipping By:</h4>
         <h2><%= link_to @user.name, @user %></h2>
       </listingblurb>
 
@@ -32,6 +34,7 @@
         <% if @auction.video.url == "/original/missing.png" %>
           <div class="barney">
             <div class="crumble">
+              <floop>
               <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
               <% else %>
                 <div id="this-carousel-id" class="carousel slide">
@@ -114,6 +117,7 @@
                   <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
                 </div>
               <% end %>
+            </floop>
             </div>
           </div></br>
           <h2><%=@auction.title%>'s official description:</h2></br>
@@ -138,6 +142,7 @@
 
           <div class="barney">
             <div class="crumble">
+              <floop>
               <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
               <% else %>
                 <div id="this-carousel-id" class="carousel slide">
@@ -220,6 +225,7 @@
                   <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
                 </div>
               <% end %>
+            </floop>
             </div>
           </div></br>
         <% end %>
@@ -227,10 +233,6 @@
     </div>
   </div>
 
-  <script src="/assets/jquery-ui-1.10.3.custom.min.js"></script>
-<script>window.jQuery || document.write('<script src="/assets/jquery-ui-1.10.3.custom.min.js"><\/script>')</script>
-
-<script src="/assets/bootstrapmin.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
     $('.carousel').carousel({
@@ -239,9 +241,8 @@
   });
 </script>
 
-        <script language="Javascript" type="text/javascript" src="/assets/countdown.js"></script>
-        <script language="Javascript" type="text/javascript" src="/assets/misc.js"></script>
-        <script language="javascript" type="text/javascript">
+
+<script language="javascript" type="text/javascript">
 
           jQuery(document).ready(function() {
             $('#countdown_dashboard').countDown({
@@ -260,16 +261,3 @@
 
         </script>
 
-<!-- 1. jquery library -->
-<script type="text/javascript"
-   src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js">
-</script>
- 
-<!-- 2. flowplayer -->
-<script type="text/javascript"
-   src="/assets/flowplayermin.js">
-</script>
- 
-   <link rel="stylesheet" type="text/css"
-      href="/assets/playful.css">
-   <link rel="stylesheet" type="text/css" href="http://flowplayer.org/designer/playlist.css" />

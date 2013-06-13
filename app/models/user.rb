@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"
-  validates_attachment :avatar, :size => { :in => 0..1000.kilobytes }
 
   has_many :auctions, dependent: :destroy
   accepts_nested_attributes_for :auctions
