@@ -1,16 +1,15 @@
 <% provide(:title, @user.name) %>
-	<div class="barney">
-		<div class="trouble">
+	<div class="outtie">
+    <div class="innie">
 			<div class="row-fluid">
-				<div class="span3">
+				<div class="span4">
 					<section>
-						<%= image_tag @user.avatar.url(:medium), class: "gravatar" %>
-					</section>
-						<%= link_to "Message User", new_user_messenger_path(@user), class: "btn btn-small btn-primary", id: "sign_btn4"%>
+						<%= image_tag @user.avatar.url(:medium), class: "gravatar-user-show" %>
+					</section></br>
+            <div class="baloo"><%= @user.name %></div>
+						<%= link_to "Message User", new_user_messenger_path(@user), class: "btn btn-mini btn-primary", id: "sign_btn4"%>
           <%= render 'shared/stats' %>
-				</div>
-				<div class="span3">
-						<div class="baloo"><%= @user.name %></div>
+				
 				</div>
         <section>
         </section>

@@ -1,6 +1,6 @@
 <% provide(:title, "Edit user") %>
-	<div class="barney">
-		<div class="trouble">
+	<div class="outtie">
+    <div class="innie">
 			<h1>Update Your Profile</h1>
 
 			<div class="row">
@@ -21,7 +21,7 @@
 					<%= f.password_field :password_confirmation %>
 					
 					<%= f.label :avatar, "Edit User Image" %>
-					<%= f.file_field :avatar, id: "shit" %>
+					<%= f.file_field :avatar, id: "upload-form" %>
 						<%= f.submit "Save changes", class: "btn btn-big btn-primary", id: "sign_btn2" %>
 					<% end %>
 				</div>

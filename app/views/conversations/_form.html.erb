@@ -1,7 +1,7 @@
 <%= form_for :conversation, url: :conversations do |f| %>
-  <%= f.text_area :recipients, id: 'pussy' %>
-  <%= f.text_area :subject, id: 'pussy' %>
-  <%= f.text_area :body, id: 'pussy' %>
+  <%= f.text_area :recipients, id: 'my-form' %>
+  <%= f.text_area :subject, id: 'my-form' %>
+  <%= f.text_area :body, id: 'my-form' %>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn-primary' %>
     <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-danger' %>

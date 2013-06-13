@@ -1,6 +1,6 @@
 <% provide(:title, 'Sign up') %>
-	<div class="barney">
-		<div class="trouble">
+	<div class="outtie">
+    <div class="innie">
 			<h1>Sign up</h1>
 			<div class="row">
 				<div class="span6 offset3">
@@ -20,7 +20,7 @@
 					<%= f.password_field :password_confirmation %>
 					
 					<%= f.label :avatar, "Upload User Image" %>
-					<%= f.file_field :avatar, id: "shit" %>
+					<%= f.file_field :avatar, id: "upload-form" %>
 
 				<%= f.submit "Create my account", class: "btn btn-big btn-primary", id: "sign_btn2" %>
 				<% end %>

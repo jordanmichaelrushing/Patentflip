@@ -1,5 +1,5 @@
 <%= form_for(@micropost) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
-	<%= f.text_area :content, placeholder: "Compose new micropost...", id: 'pussy' %>
-	<%= f.submit "Post", class: "btn btn-large btn-primary", id: "btn_align" %>
+	<%= f.text_area :content, placeholder: "Compose new micropost...", id: 'my-form' %>
+	<%= f.submit "Post", class: "btn btn-micro btn-primary", id: "btn_align" %>
 <% end %>

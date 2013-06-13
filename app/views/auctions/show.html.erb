@@ -4,8 +4,8 @@
 <div class="info_message" id="complete_info_message" style="display: none;">
         Patent Listing Completed!
 </div>
-  <div class="barney">
-    <div class="crumble">
+  <div class="outtie">
+    <div class="inner">
       <listingblurb>
         <% if @user == current_user %>
           <%= link_to "Edit Patent Listing", edit_auction_path %>
@@ -32,8 +32,8 @@
 
       <listingfeed>   
         <% if @auction.video.url == "/original/missing.png" %>
-          <div class="barney">
-            <div class="crumble">
+          <div class="outtie">
+            <div class="inner">
               <floop>
               <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
               <% else %>
@@ -140,8 +140,8 @@
           <h2>My comments about <%=@auction.title%>:</h2></br>
           <h5> <%=@auction.descrip%> </h5></br>
 
-          <div class="barney">
-            <div class="crumble">
+          <div class="outtie">
+            <div class="inner">
               <floop>
               <% if ((@auction.pic1.url(:a) == "/pic1s/a/missing.png") && (@auction.pic2.url(:a) == "/pic2s/a/missing.png") && (@auction.pic3.url(:a) == "/pic3s/a/missing.png") && (@auction.pic4.url(:a) == "/pic4s/a/missing.png") && (@auction.pic5.url(:a) == "/pic5s/a/missing.png")) %>
               <% else %>
