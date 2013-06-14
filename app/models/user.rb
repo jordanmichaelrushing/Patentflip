@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
   #   new_record?
   # end
 
+  searchable do
+    text :name
+  end
+
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"
 

@@ -11,4 +11,6 @@ class Messenger < ActiveRecord::Base
   end
 
   default_scope order: 'messengers.created_at ASC'
+
+  has_attached_file :message_attach
 end
