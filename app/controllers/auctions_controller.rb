@@ -4,7 +4,10 @@ class AuctionsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @auctions = Auction.paginate(page: params[:page])
+    @search = Auction.search do
+      fulltext params[:search]
+    end
+    @auctions = @search.results
     @users = User.paginate(page: params[:user_id])
   end
 
@@ -15,6 +18,7 @@ class AuctionsController < ApplicationController
 	def create
 		@auction = Auction.create(params[:auction])
 		@auction.user_id = current_user.id
+    current_user.pat_selling += 1
     if @auction.save
 			flash[:success] = "Uploaded your patent on the marketplace!"
 			redirect_to @auction

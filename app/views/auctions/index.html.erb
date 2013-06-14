@@ -3,16 +3,23 @@
     <div class="innie">
       <h1>All Patents</h1>
 
+        <%= form_tag auction_path, method: :get do %>
+          <p>
+            <%= text_field_tag :search, params{:search} %>
+            <%= submit_tag "Search", name: nil %>
+          </p>
+        <% end %>
+
       <%= will_paginate %>
 
       <ul class="users">
         <% @auctions.each do |auction| %>
-          <div class="userborder"></div>
           <li>
             <%= image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index" %>
             <%= link_to auction.title, auction_path(auction.id), id: 'user_index', style: 'color: #000000'%>:</br>
             <%= truncate auction.descrip, length: 150 %></br></br>
           </li>
+          <div class="userborder"></div>
         <% end %>
       </ul>
 

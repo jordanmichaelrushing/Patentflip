@@ -9,6 +9,11 @@ class Auction < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 	
+  searchable do
+    text :title, :descrip, :pat_off_desc
+    integer :pat_num
+  end
+
   has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic2, styles: { a: "600x400>", tiny: "250x250>" } 
   has_attached_file :pic3, styles: { a: "600x400>", tiny: "250x250>" }

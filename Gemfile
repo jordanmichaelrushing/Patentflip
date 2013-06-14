@@ -23,7 +23,10 @@ source 'https://rubygems.org'
  gem 'tire'
  gem 'uploadify-rails'
  gem "friendly_id", "~> 4.0.9"
- 
+ gem 'sunspot_rails'
+ gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+ gem 'progress_bar'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
