@@ -12,7 +12,7 @@ resources :users do
     end
 end
 
-resources :auctions, path: "patent"
+resources :auctions, path: "patents"
 resources :sessions, only: [:new, :create, :destroy]
 resources :microposts, only: [:create, :destroy]
 resources :relationships, only: [:create, :destroy]

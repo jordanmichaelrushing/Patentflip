@@ -1,7 +1,15 @@
-<% if @feed_items.any? %>
-	<h3>Recent Patent Listings</h3>
-	<ol class="microposts">
-		<%= render partial: 'feed_item', collection: @feed_items %>
-	</ol>
-	<p id="loading">Loading...</p>
-<% end %>
+		<% @feed_items.each do |feed_item| %>
+      <li id="<%= feed_item.id %>">
+        <span class="user">
+            <%= image_tag @user.avatar.url(:thumb), class: "thumb_nail" %>
+          <%= link_to feed_item.user.name, feed_item.user %>
+        </span>
+        <span class="content"><%= feed_item.content %></span>
+        <span class="timestamp">
+          Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+        </span>
+        <% if current_user?(feed_item.user) %>
+          <%= link_to "delete", feed_item, method: :delete,confirm: "You sure?", title: feed_item.content %>
+        <% end %>
+      </li>
+    <% end %>

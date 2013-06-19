@@ -1,0 +1,6 @@
+$('.users').append('<%= j render("index") %>');
+<% if @auctions.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

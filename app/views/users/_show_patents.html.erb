@@ -1,0 +1,21 @@
+<% @auctions.each do |auction| %>
+    <% if auction.user_id == @user.id %>
+      <div class="underborder"></div></br>
+      <%= link_to (image_tag auction.pic1.url(:micro)), auction_path(auction.id) %></br>
+      <%= link_to auction.title, auction_path(auction.id), id: 'user_index', style: 'color: #000000'%>
+      <% @auction_count += 1 %>
+    <% end %>
+    </br></br>
+  <% end %>
+<% if @auction_count == 0 %>
+  <h4>No Patents on the marketplace thus far, 
+      <% if @user.sex == "male" %>
+        he needs to step his
+      <% elsif @user.sex == "female"%>
+        she needs to step her
+      <% else %>
+        they need to step their
+      <% end %>
+      game up!
+  </h4>
+<% end %>

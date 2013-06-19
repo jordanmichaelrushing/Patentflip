@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-    @auctions = Auction.paginate(page: params[:user_id], per_page: 15)
+    @auctions = Auction.paginate(page: params[:page], per_page: 15)
 		@user = User.find(params[:id])
 		@microposts = @user.microposts.paginate(page: params[:page], per_page: 15)
     if request.path != user_path(@user)
