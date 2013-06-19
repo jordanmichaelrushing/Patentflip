@@ -1,8 +1,9 @@
 <% provide(:title, @user.name) %>
+<% javascript :defaults, 'endless_page' %>
 	<div class="outtie">
     <div class="innie">
 			<div class="row-fluid">
-				<div class="span3">
+				<div class="span3" id="user_info">
 					<section>
 						<%= image_tag @user.avatar.url(:medium), class: "gravatar-user-show" %>
 					</section></br>
@@ -14,16 +15,42 @@
 				</div>
         <section>
         </section>
-        <div class="span8">
+        <div class="span9">
 				    <div class="span5">
               <% if @user.microposts.any? %>
-						    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+						    <h3>I'm working on...</h3>
 						    <ol class="microposts">
 						      <%= render @microposts %>
 						    </ol>
-						    <%= will_paginate @microposts %>
+						    <p id="loading">Loading...</p>
+              <% else %>
+                <h3>No posts from <%=@user.name%>...yet!</h3>
               <% end %>
 				    </div>
+            <div class="span7">
+              <patentlisting>
+              <h3>Recent Patent Listings..</h3>
+              <% @auctions.each do |auction| %>
+                <% if auction.user_id == @user.id %>
+                  <div class="underborder"></div></br>
+                  <%= link_to (image_tag auction.pic1.url(:micro)), auction_path(auction.id) %></br>
+                  <%= link_to auction.title, auction_path(auction.id), id: 'user_index', style: 'color: #000000'%>
+                <% else %>
+                  <h4> No Patents on the marketplace thus far, 
+                    <% if @user.sex == "male" %>
+                      he needs to step his
+                    <% elsif @user.sex == "female"%>
+                      she needs to step her
+                    <% else %>
+                      they need to step their
+                    <% end %>
+                    game up!</h4>
+                <% end %>
+                </br></br>
+              <% end %>
+              <p id="loading">Loading...</p>
+              </patentlisting>
+            </div>
         </div>
 			</br></br></br></br></br></br></br></br></br></br></br></br>
 		  </div>

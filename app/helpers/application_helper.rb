@@ -7,4 +7,8 @@ module ApplicationHelper
   	  	"#{page_title} | #{base_title}"
   	  end
   end
+
+  def javascript(*args)
+    content_for(:head) { javascript_include_tag(*args) }
+  end
 end

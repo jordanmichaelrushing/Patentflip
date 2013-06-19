@@ -1,16 +1,8 @@
 <% provide(:title, 'All Patents') %>
+<% javascript :defaults, 'endless_page' %>
   <div class="outtie">
     <div class="innie">
       <h1>All Patents</h1>
-
-        <%= form_tag auction_path, method: :get do %>
-          <p>
-            <%= text_field_tag :search, params{:search} %>
-            <%= submit_tag "Search", name: nil %>
-          </p>
-        <% end %>
-
-      <%= will_paginate %>
 
       <ul class="users">
         <% @auctions.each do |auction| %>
@@ -23,6 +15,6 @@
         <% end %>
       </ul>
 
-      <%= will_paginate %>
+      <p id="loading">Loading...</p>
     </div>
   </div>

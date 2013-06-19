@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613172104) do
+ActiveRecord::Schema.define(:version => 20130618233252) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -101,13 +101,17 @@ ActiveRecord::Schema.define(:version => 20130613172104) do
   create_table "messengers", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
-    t.boolean  "sender_deleted",    :default => false
-    t.boolean  "recipient_deleted", :default => false
+    t.boolean  "sender_deleted",              :default => false
+    t.boolean  "recipient_deleted",           :default => false
     t.string   "subject"
     t.text     "body"
     t.datetime "read_at"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "message_attach_file_name"
+    t.string   "message_attach_content_type"
+    t.integer  "message_attach_file_size"
+    t.datetime "message_attach_updated_at"
   end
 
   create_table "microposts", :force => true do |t|
@@ -167,8 +171,8 @@ ActiveRecord::Schema.define(:version => 20130613172104) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.string   "remember_token"
     t.boolean  "admin",               :default => false
     t.string   "avatar_file_name"
@@ -188,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20130613172104) do
     t.integer  "pat_buy",             :default => 0
     t.integer  "pat_sold",            :default => 0
     t.integer  "pat_selling",         :default => 0
+    t.string   "sex",                 :default => "undefined"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

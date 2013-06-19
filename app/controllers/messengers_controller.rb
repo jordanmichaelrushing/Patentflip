@@ -31,7 +31,7 @@ class MessengersController < ApplicationController
   def create
     @messenger = Messenger.new(params[:messenger])
     @messenger.sender = current_user
-    @messenger.recipient = User.find(@@suser)
+    @messenger.recipient = User.find(params[:user_id])
 
     if @messenger.save
       flash[:success] = "Message sent"

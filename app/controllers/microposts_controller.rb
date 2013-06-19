@@ -14,13 +14,13 @@ class MicropostsController < ApplicationController
 
 	def destroy
     @micropost.destroy
-    redirect_back_or root_path
+    redirect_to root_path
 	end
 
   private
   
     def correct_user
       @micropost = current_user.microposts.find_by_id(params[:id])
-      redirect_to home_path if @micropost.nil?
+      redirect_to root_path if @micropost.nil?
     end
 end

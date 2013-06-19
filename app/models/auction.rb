@@ -11,7 +11,7 @@ class Auction < ActiveRecord::Base
 	
   
 
-  has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>" }
+  has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>", micro: "60x60>" }
   has_attached_file :pic2, styles: { a: "600x400>", tiny: "250x250>" } 
   has_attached_file :pic3, styles: { a: "600x400>", tiny: "250x250>" }
   has_attached_file :pic4, styles: { a: "600x400>", tiny: "250x250>" }

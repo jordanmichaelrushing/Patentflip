@@ -4,8 +4,8 @@ class AuctionsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @auctions = Auction.paginate(page: params[:page])
-    @users = User.paginate(page: params[:user_id])
+    @auctions = Auction.paginate(page: params[:page], per_page: 15)
+    @users = User.paginate(page: params[:user_id], per_page: 15)
   end
 
 	def new

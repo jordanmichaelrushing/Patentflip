@@ -454,7 +454,7 @@ footer {
 	border-radius: 6px;
 	box-shadow: 5px 5px 5px #888888;
 	margin-top: 10px;
-	margin-left: 20px;
+	margin-left: 50px;
   display:inline-block;
 }
 
@@ -518,11 +518,19 @@ footer {
 A:hover {
 	text-decoration: none;
 }
+
 .userborder {
-		border-top: 1px solid #999;
-		margin-left: auto;
-		margin-right: auto;
-    width: 175px;
+	border-top: 1px solid #999;
+	margin-left: auto;
+	margin-right: auto;
+  width: 175px;
+}
+
+.underborder {
+  border-bottom: 1px solid #e8e8e8;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
 }
 
 #user_index {
@@ -530,6 +538,10 @@ A:hover {
 	font-size: 2.0em;
 }
 
+#user_info {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #home_css {
 	color: #bbb;
@@ -571,6 +583,12 @@ A:hover {
 	}
 }
 
+loading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.5em;
+}
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -599,17 +617,21 @@ input, textarea, select, .uneditable-input {
 	float: right;
 }
 
-
+.patentlisting {
+  margin-left: 15px;
+}
 
 
 /* microposts */
 
 .microposts {
 	list-style: none;
-	margin: 0 0 0 20px;
+	margin: 0 -10px 0 20px;
+  border-right: 1px solid #e8e8e8;
 	li {
 		padding: 30px 0;
 		border-top: 1px solid #e8e8e8;
+    width:80%;
 	}
 }
 
@@ -634,7 +656,7 @@ aside {
 	margin-bottom: 10px;
 	border: 8px ridge #eee;
 	moz-border-radius: 6px;
-	border-radius: 16px;
+	border-radius: 100px;
 	box-shadow: 10px 10px 5px #888888;
 }
 

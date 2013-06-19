@@ -5,6 +5,18 @@ namespace :db do
 						email: "Puait02@gmail.com",
 						password: "Texman02",
 						password_confirmation: "Texman02")
+    admin.toggle!(:admin)
+99.times do |n|
+name = Faker::Name.name
+email = "example-#{n+1}@railstutorial.org"
+password = "password"
+User.create!(name: name,
+email: email,
+password: password,
+password_confirmation: password)
+end
+
+
 		users = User.all(limit: 6)
 		50.times do
 			content = Faker::Lorem.sentence(5)

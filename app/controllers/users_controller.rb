@@ -5,12 +5,18 @@ class UsersController < ApplicationController
 	before_filter :admin_user, only: :destroy
  
 	def index
-    @users = User.paginate(page: params[:page])
+    @users = User.order(:created_at).page(params[:page]).per_page(10)
+    respond_to do |format|
+      format.js
+      format.html # index.html.erb
+      format.xml  { render :xml => @users }
+    end
 	end
 
 	def show
+    @auctions = Auction.paginate(page: params[:user_id], per_page: 15)
 		@user = User.find(params[:id])
-		@microposts = @user.microposts.paginate(page: params[:page])
+		@microposts = @user.microposts.paginate(page: params[:page], per_page: 15)
     if request.path != user_path(@user)
       redirect_to @user, status: :moved_permanently
     end

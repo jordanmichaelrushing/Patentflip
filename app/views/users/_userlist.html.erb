@@ -1,0 +1,34 @@
+        <% @users.each do |user| %>
+        <li>
+          <%= image_tag user.avatar.url(:thumb), class: "gravatar" %>
+
+          <%= link_to user.name, user, id: 'user_index', style: 'color: #000000'%></br>
+          <%= link_to "Message User", new_user_messenger_path(user), class: "btn btn-small btn-primary", id: "sign_btn5"%>
+          <% unless current_user?(user) %>
+            <div id="follow_form">
+              <% if current_user.following?(user) %>
+                <%= form_for(current_user.relationships.find_by_followed_id(user), html: { method: :delete }, remote: true) do |f| %>
+                  <div><%= f.hidden_field :followed_id %></div></br>
+                  <%= f.submit "Unfollow", class: "btn btn-mini btn-primary", id: "sign-follow" %>
+                <% end %>
+              <% else %>
+                <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
+                  <div><%= f.hidden_field :followed_id %></div></br>
+                  <%= f.submit "Follow", class: "btn btn-mini btn-primary", id: "sign-follow" %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+          </br>
+          <% if current_user.admin? && !current_user?(user) %>
+            | <%= link_to "delete", user, method: :delete, confirm: "Are you sure you want to delete this user?" %>
+          <% end %>
+      
+          <div class="userlinks">
+            <%= link_sale%></br>
+            <%= link_sold%></br>
+            <%= link_buy%>
+          </div>
+        </li>
+        <div class="userborder"></div>
+        <% end %>
