@@ -1,7 +1,7 @@
 		<% @feed_items.each do |feed_item| %>
       <li id="<%= feed_item.id %>">
         <span class="user">
-            <%= image_tag @user.avatar.url(:thumb), class: "thumb_nail" %>
+            <%= image_tag feed_item.user.avatar.url(:thumb), class: "thumb_nail" %>
           <%= link_to feed_item.user.name, feed_item.user %>
         </span>
         <span class="content"><%= feed_item.content %></span>
