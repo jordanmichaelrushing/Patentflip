@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/assets/Patent_Flip_Photo.png"/>
+    <title><%= full_title(yield(:title)) %></title>
+      <%= stylesheet_link_tag "application", media: "all" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+      <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/footer' %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <% provide(:title, '404 Error') %>
+          <div class="outtie">
+            <div class="innie">
+              <!-- This file lives in public/404.html -->
+              <div class="dialog">
+                <h1>The page you were looking for doesn't exist.</h1>
+                <p>You may have mistyped the address or the page may have moved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

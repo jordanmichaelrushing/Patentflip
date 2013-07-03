@@ -1,0 +1,39 @@
+<div class='span12'> 
+  <div class="outtie">
+    <div class="innie-message">
+      <%= form_for @messenger, url: user_messengers_path(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+        <h5> 
+          From:</h5>
+          <div class='span12 offset1'> 
+        <h4>
+          <%= image_tag current_user.avatar.url(:micro), class: "gravatar-message-show" %>
+          <%= current_user.name %>
+        </h4>
+          </div>
+        <h5>
+          To:</h5>
+          <div class='span12 offset1'>
+            <h4>
+              <% if @reply_name == 'r' %>
+                <%= image_tag @reply_to.sender.avatar.url(:micro), class: "gravatar-message-show" %>
+                <%= @reply_to.sender.name %>
+              <% elsif @reply_name == 'n' %>
+                <%= image_tag @user.avatar.url(:micro), class: "gravatar-message-show" %>
+                <%= @user.name %>
+              <% end %>
+            </h4>
+          </div>
+          <p>
+            Message</br>
+            <%= f.text_area :body, id: 'my-form' %>
+          </p>
+          <h4>Add an optional file to send.</br>
+                <%= f.file_field :message_attach, id: "upload-form"  %></h4>
+          <p>
+            <%= submit_tag "Send" %>
+          </p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+module ApplicationHelper
+  def full_title(page_title)
+  	base_title = "Patentflip"
+  	  if page_title.empty?
+  	  	base_title
+  	  else
+  	  	"#{page_title} | #{base_title}"
+  	  end
+  end
+
+  def javascript(*args)
+    content_for(:head) { javascript_include_tag(*args) }
+  end
+end

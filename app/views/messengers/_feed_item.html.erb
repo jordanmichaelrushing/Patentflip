@@ -1,0 +1,14 @@
+<li id="<%= feed_item.id %>">
+  <span class="user">
+      <%= image_tag @user.avatar.url(:thumb), class: "thumb_nail" %>
+    <%= link_to feed_item.messenger.name, feed_item.messenger %>
+  </span>
+  <span class="content"><%= feed_item.content %></span>
+  <span class="timestamp">
+    Sent <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </span>
+  <% if current_user?(feed_item.user) %>
+    <%= link_to "Delete", feed_item, method: :delete, confirm: "You sure?",
+          title: feed_item.content %>
+  <% end %>
+</li>

@@ -1,0 +1,66 @@
+<div class='span12'>
+  <div class="outtie">
+    <div class="innie-message">
+      <h6>Inbox</h6>
+    	<% if @messengers.size == 0 %>
+        <tr>
+          <td colspan="4">
+            </br><h8>Your inbox is empty, you should start talking to more people</h8>
+          </td>
+        </tr>
+      <% else %>
+        <mess>
+    		  <th>Delete?</th>
+            <% for messenger in @messengers %>
+              <tr>
+                </br><td>&nbsp&nbsp&nbsp&nbsp<%= check_box_tag "delete[]", messenger.id %></td>
+              </tr>
+            <% end %>
+        </mess>
+        
+        <mess>
+    		  <th>Message</th>
+          <% for messenger in @messengers %>
+            <tr>
+              </br><td>
+                <% if messenger.message_read? %>
+                  <%= link_to h(messenger.body)[0..9], user_messenger_path(@user, messenger) %>
+                <% else %>
+                  <%= link_to "#{h(messenger.body)[0..9]} (unread)", user_messenger_path(@user, messenger) %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </mess>
+
+        <mess>
+    		  <th>Sender</th>
+            <% for messenger in @messengers %>
+              <tr>
+                </br><td>
+                  <%= link_to h(messenger.sender.name), user_path(messenger.sender) %>
+                </td>
+              </tr>
+            <% end %>
+        </mess>
+
+        <mess>
+          <th>Sent At</th>
+            <% for messenger in @messengers %>
+  		        <tr>
+  				      </br><td>
+                  <%= h messenger.created_at.strftime("%b %d %Y   %I:%M:%S %p") %>
+                </td>
+  		        </tr>
+  		      <% end %>
+        </mess>
+      			
+      	<%= submit_tag "Delete", class: "btn btn-small btn-primary", id: "sign_btn10" %>	
+      <% end %>
+      </br>
+      </br></br><mess>
+        <%= link_to "Sent Folder", user_messengers_path(@user, :mailbox => :sent) %>
+      </mess>
+    </div>
+  </div>
+</div>

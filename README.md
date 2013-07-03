@@ -1,0 +1,1 @@
+First attempt at mydea project using a twitter like application as background

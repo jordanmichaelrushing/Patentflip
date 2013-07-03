@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/assets/Patent_Flip_Photo.png"/>
+    <title>500 Error</title>
+    <style type="text/css">
+
+    @import "bootstrap";
+
+/* universal */
+
+
+.navbar-search {
+  padding-top: 4px;
+}
+
+.barney {
+  margin-top: 60px;
+  border: 4px solid #ddd;
+  background-color: white;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.trouble {
+  border: 1px solid #aaa;
+  background-color: white;
+    -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.crumble {
+  border: 1px solid #aaa;
+  background-color: white;
+    -moz-border-radius: 6px;
+  border-radius: 6px;
+  postion: absolute;
+}
+
+.carousel-inner{
+  margin-bottom: -20px;
+}
+
+#boogy {
+  margin-top: 181px;
+}
+
+.navbar .divider-vertical {
+  height: 20px;
+  background-color: #999;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #999;
+  margin-top: 10px;
+}
+
+#myModal {
+  width: 1255px;
+  margin: -250px 0 0 -450px;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding-top: 10px;
+  align-right: 10px;
+  background-color: #eee;
+}
+
+.baloo {
+  padding-top: 200px;
+  font-size: 1.5em;
+}
+
+section {
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-bottom: -10px;
+}
+textarea {
+  resize: vertical;
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.content {
+  display: block;
+}
+
+.timestamp {
+  color: #bbb;
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px;
+    &:first-child {
+      border: 10;
+      padding-top: 100;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      margin-left: 30px;
+      line-height: 1;
+    }
+    h1 {
+      margin-left: 25px;
+      margin-top: -15px;
+      font-size: 2.1em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      color: #00cc00;
+    }
+  }
+}
+
+.gravatar {
+  margin-left: 25px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 2px solid #00cc00;
+  moz-border-radius: 6px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 5px #888888;
+  &:hover {
+    opacity:0.9;
+  }
+}
+
+#grav_user {
+  margin-top: -20px;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+.alert-success {
+  padding-top: 40px;
+}
+
+
+/* Jordan's Edit's */
+
+.navbar-inner {
+  background-image: -moz-linear-gradient(top, #7f7f7f, #191919);
+  background-image: -ms-linear-gradient(top, #7f7f7f, #191919);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7f7f7f), to(#191919));
+  background-image: -webkit-linear-gradient(top, #7f7f7f, #191919);
+  background-image: -o-linear-gradient(top, #7f7f7f, #191919);
+  background-image: linear-gradient(top, #7f7f7f, #191919);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'7f7f7f, endColorstr='#'191919, GradientType=0);
+}
+
+.btn {
+  color: #ffffff;
+  background-image: -moz-linear-gradient(top, #00cc00, #007c00);
+  background-image: -ms-linear-gradient(top, #00cc00, #007c00);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#007c00));
+  background-image: -webkit-linear-gradient(top, #00cc00, #007c00);
+  background-image: -o-linear-gradient(top, #00cc00, #007c00);
+  background-image: linear-gradient(top, #00cc00, #007c00);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'00cc00, endColorstr='#'007c00, GradientType=0);
+}
+
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+  color: #ffffff;
+  background-color: #007c00;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6, l1 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.8em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+h3 {
+  padding-left: 20px;
+}
+
+l1 {
+  font-size: 2.8em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  text-align: left;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+.h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+h4 {
+  color: #888;
+}
+
+h8 {
+  color: #888;
+  align: center;
+  font-size: 1.2em;
+}
+
+
+/* header */
+
+
+#logo {
+  float: left;
+  margin-top: 8px;
+  margin-right: 10px;
+  width: 135px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+
+/* footer */
+
+footer {
+  background-image: -moz-linear-gradient(top, #7f7f7f, #191919);
+  background-image: -ms-linear-gradient(top, #7f7f7f, #191919);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7f7f7f), to(#191919));
+  background-image: -webkit-linear-gradient(top, #7f7f7f, #191919);
+  background-image: -o-linear-gradient(top, #7f7f7f, #191919);
+  background-image: linear-gradient(top, #7f7f7f, #191919);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'7f7f7f, endColorstr='#'191919, GradientType=0);
+  padding-top: 5px;
+  clear: both;
+  color: white;
+  ul {
+    margin-right: 100px;
+    float: right;
+    list-style: none;
+    li {
+      color: #bbb;
+      float: left;
+      margin-left: 10px;
+    }
+  }
+  a {
+    color: #bbb;
+    &:hover {
+    color: #fff;
+    }
+  }
+  small {
+    margin-left: 100px;
+    float: left;
+  }
+}
+
+.tempstuff {
+  margin-right: 20px;
+}
+
+#sign_btn1 {
+  margin:auto;
+  width: 200px;
+  moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+#sign_btn2 {
+  margin-left: 40px;
+  margin-top: -10px;
+  width: 150px;
+  moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+#sign_btn3 {
+  float: right;
+  margin-left: 60px;
+  width: 200px;
+  moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+#sign_btn4 {
+  width: 110px;
+  moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888888;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+#sign_btn5 {
+  width: 110px;
+  moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888888;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+/* users index */
+
+.users {
+  list-style: none;
+  ul {
+    float: left;
+  }
+  li {
+    overflow: auto;
+    margin-right: 30px;
+  }
+}
+
+.miname {
+  color: #00cc00;
+  &:hover {
+    color: #007c00;
+
+  }
+}
+
+#upload-form {
+  border-radius: 6px;
+  width: 300px;
+  padding-top: 0px;
+  height: 38px;
+  background-color: white;
+}
+
+#btn_align {
+  float: right;
+  margin-right: 15px;
+}
+
+.bordes {
+    border-top: 1px solid #999;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+A:hover {
+  text-decoration: none;
+}
+.userborder {
+    border-top: 1px solid #999;
+    margin-left: auto;
+    margin-right: auto;
+    width: 175px;
+}
+
+#user_index {
+  margin-left: 40px;
+  font-size: 2.0em;
+}
+
+
+#home_css {
+  color: #bbb;
+  &:hover {
+    color: #fff;
+  }
+}
+
+#help_css {
+  color: #bbb;
+  &:hover {
+    color: #fff;
+  }
+}
+
+#sign_css {
+  color: #bbb;
+  &:hover {
+    color: #fff;
+  }
+}
+
+#delete_css {
+  color: red;
+}
+
+
+.navbar .nav > li > a {
+  color: #bbb;
+  &:hover {
+    color: #fff;
+  }
+}
+
+#users_css {
+  color: #bbb;
+  &:hover {
+    color: #fff;
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+.userlinks {
+  float: right;
+}
+
+
+
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 0 0 0 20px;
+  li {
+    padding: 30px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.content {
+  display: block;
+}
+
+.timestamp {
+  color: #bbb;
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+.thumb_nail {
+  margin-top: -20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border: 8px ridge #eee;
+  moz-border-radius: 6px;
+  border-radius: 16px;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+iframe {
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+
+.cats {
+  margin-left: 5px;
+}
+
+.carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
+.carousel .active.left {left:0;opacity:0;z-index:2;}
+.carousel .next {left:0;opacity:1;z-index:1;}
+
+#the-form {
+  height: 42px;
+  font-size: 1.3em;
+}
+
+#my-form {
+  height: 150px;
+  font-size: 1.0em;
+  margin-bottom: 75px;
+}
+
+.container-fluid {
+  padding-bottom: 130px;
+}
+
+.tab-content {
+  padding-bottom: 25px;
+}
+
+
+
+/* sidebar */
+
+.stats {
+  margin-top: 15px;
+  margin-left: 35px;
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #aaa;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.field {
+  float: left;
+  width: 30%;
+}
+
+</style>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to image_tag("/assets/Patent_Lettering.png", id: "logo"), root_path %>
+      <nav>
+
+        <form class="navbar-search">
+          <div class="span2">
+          <input type="text" class="search-query" placeholder="Search"> </div>
+        </form>
+        
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+            <li class="divider-vertical"></li>
+            <% if current_user.unread_messages? %>
+              <li><%= link_to "Inbox (#{current_user.unread_message_count})", user_messengers_path(current_user), id: "home_css" %></li>
+            <% else %>
+              <li><%= link_to "Inbox", user_messengers_path(current_user), id: "home_css" %>
+            </li>
+            <% end %>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "List Patent", new_user_auction_path(current_user), id: "home_css" %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "Me", current_user, id: "home_css" %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "Help", help_path, id: "help_css" %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "Uncover A Patent", users_path, id: "users_css" %></li>
+            <li class="divider-vertical"></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="200">
+                Account
+              </a>
+              <ul class="dropdown-menu">
+
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete", id: "delete_css" %>
+                </li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "FAQ's", faq_path%></li>
+          <% else %>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "Home", root_path, id: "home_css" %></li>
+
+            <li class="divider-vertical"></li>
+            <li><%= link_to "Help", help_path, id: "help_css" %></li>
+            
+            <li class="divider-vertical"></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="200">
+                Sign In
+              </a>
+              <ul class="dropdown-menu">
+                <div class="span4">
+                  <div class="tempstuff">
+                  <%= form_for(:session, url: sessions_path) do |f| %>
+                    <%= f.label :email %>
+                    <%= f.text_field :email %>
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                    <%= f.submit "Sign in", class: "btn btn-small btn-primary" %>
+                  <% end %>
+                </div>
+                </div>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "FAQ's", faq_path%></li>
+            <li class="divider-vertical"></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <script>$('#example').tooltip(options)</script>
+  <script src="/assets/dropdown.js"></script>
+<script type="text/javascript">$('.dropdown-toggle').dropdownHover();</script>
+</header>
+    <myfoot>
+<footer class="footer navbar-fixed-bottom">
+  <div class="userborder"></div>
+  <small>
+    Founded by:
+      <a href="http://JordanRushing.com/">Jordan Rushing</a>
+  </small>
+  <nav>
+    <ul>
+      <li><a href="http://Jordanrushing.com/about/">About"</a></li>
+      <li><a href="http://Jordanrushing.com/contact/">Contact"</a></li>
+      <li><a href="http://facebook.com/jordan.rushing/">News</a></li>
+    </ul>
+  </nav>
+</footer>
+</myfoot>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <div class="outtie">
+            <div class="innie">
+              <div class="dialog">
+                <h1>We're sorry, but something went wrong.</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

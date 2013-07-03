@@ -1,0 +1,12 @@
+<% provide(:title, 'All Lawyers') %>
+	<div class="outtie">
+    <div class="innie">
+			<h1>All Users</h1>
+      <ul class="users">
+        <%= render "lawyerlist" %>
+      </ul>
+        <loading>
+          <%= will_paginate %>
+        </loading>
+		</div>
+	</div>

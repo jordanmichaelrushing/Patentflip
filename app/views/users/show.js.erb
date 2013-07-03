@@ -1,0 +1,13 @@
+$('.microposts-list').append('<%= j render(@microposts) %>');
+<% if @microposts.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@microposts) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
+
+$('patentlisting').append('<%= j render("show_patents") %>');
+<% if @auctions.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@auctions) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
