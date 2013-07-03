@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 $('.microposts-list').append('<%= j render(@microposts) %>');
+=======
+$('.microposts').append('<%= j render(@microposts) %>');
+>>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
 <% if @microposts.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@microposts) %>');
 <% else %>

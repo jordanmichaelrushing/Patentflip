@@ -26,7 +26,10 @@ match '/faq', to: 'static_pages#faq'
 match '/signup', to: 'users#new'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', only: :delete
+<<<<<<< HEAD
 match '/lawyers', to: 'users#lawyers'
+=======
+>>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

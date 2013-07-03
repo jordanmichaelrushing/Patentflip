@@ -1,5 +1,6 @@
 <div class='span6 offset3'>
   <div class="outtie">
+<<<<<<< HEAD
     <div class="innie-message">  
       <p><strong>From:</strong> <%= link_to((image_tag @messenger.sender.avatar.url(:micro), class: "gravatar-message-show"), user_path(@messenger.sender)) %> <%= @messenger.sender == @user ? link_to("Me", user_path(@user)) : link_to(h(@messenger.sender.name), user_path(@messenger.sender)) %></p>
       <p><strong>To:</strong> <%= link_to((image_tag @messenger.recipient.avatar.url(:micro), class: "gravatar-message-show"), user_path(@messenger.recipient)) %> <%= @messenger.recipient == @user ? link_to("Me", user_path(@user)) : link_to(h(@user.name), user_path(@messenger.recipient)) %></p>
@@ -10,6 +11,17 @@
         &nbsp; &nbsp; &nbsp; &nbsp;<%=h @messenger.body %>
       </h4>
       <% if @messenger.message_attach.url != "/message_attaches/original/missing.png" %>
+=======
+    <div class="innie">     
+      <p><strong>From:</strong> <%= @messenger.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@messenger.sender.name), user_path(@messenger.sender)) %></p>
+      <p><strong>Received:</strong> <%= @messenger.created_at.strftime("%b %d %Y   %I:%M:%S %p") %></p>
+      <p><strong>To:</strong> <%= @messenger.recipient == @user ? link_to("You", user_path(@user)) : link_to(h(@user.name), user_path(@messenger.recipient)) %></p>
+      <p>
+        <strong>Message</strong><br />
+        <%=h @messenger.body %>
+      </p>
+      <% if @messenger.message_attach.url != "/message_attach/original/missing.png" %>
+>>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
         <% if (@messenger.message_attach.content_type == "application/pdf") %>
          <h2><%= link_to "[--View PDF--]", @messenger.message_attach.url, :target => '_blank' %></h2>
         <% else %>
