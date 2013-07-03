@@ -53,11 +53,7 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
-<<<<<<< HEAD
     bcrypt-ruby (3.0.1)
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
-    bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.6)
@@ -111,21 +107,12 @@ GEM
       i18n (~> 0.5)
     faraday (0.8.7)
       multipart-post (~> 1.1)
-<<<<<<< HEAD
     ffi (1.7.0)
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
-    ffi (1.7.0-x86-mingw32)
     flowplayer (0.1.4)
       json
     formatador (0.2.4)
     friendly_id (4.0.9)
-<<<<<<< HEAD
     gherkin (2.11.8)
-      multi_json (~> 1.3)
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
-    gherkin (2.11.8-x86-mingw32)
       multi_json (~> 1.3)
     guard (1.7.0)
       formatador (>= 0.2.4)
@@ -153,10 +140,7 @@ GEM
       addressable (~> 2.2)
       faraday (~> 0.8)
       multi_json (~> 1.3)
-<<<<<<< HEAD
     libv8 (3.11.8.17)
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
     listen (0.7.3)
     lumberjack (1.0.3)
     mail (2.4.4)
@@ -173,7 +157,6 @@ GEM
     multi_json (1.7.2)
     multipart-post (1.2.0)
     nifty-generators (0.4.6)
-<<<<<<< HEAD
     nokogiri (1.5.9)
 =======
 >>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
@@ -186,7 +169,6 @@ GEM
       mime-types
     paperclip-ffmpeg (0.11.0)
       paperclip (>= 2.5.2)
-<<<<<<< HEAD
     pg (0.15.1)
     pg (0.15.1-x86-mingw32)
     polyglot (0.3.3)
@@ -194,10 +176,6 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-=======
-    pg (0.15.1-x86-mingw32)
-    polyglot (0.3.3)
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
     pry (0.9.12-x86-mingw32)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -230,10 +208,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
-<<<<<<< HEAD
     ref (1.0.5)
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
       rspec-expectations (~> 2.9.0)
@@ -265,15 +240,11 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-<<<<<<< HEAD
     sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
-=======
-    sqlite3 (1.3.7-x86-mingw32)
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
     thor (0.18.1)
     tilt (1.3.7)
     treetop (1.4.12)
@@ -292,10 +263,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
-<<<<<<< HEAD
   ruby
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
   x86-mingw32
 
 DEPENDENCIES
