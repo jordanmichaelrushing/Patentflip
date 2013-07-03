@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%=form_tag delete_selected_user_messengers_path(@user, :method => :post) do %>
 <div class='spaninnie'>
   <div class="mess-outtie">
@@ -66,12 +66,10 @@
     </div>
   </div>
 </div>
-=======
 <% if @feed_items.any? %>
   <h3>Inbox</h3>
   <ol class="inbox">
     <%= render partial: 'feed_item', collection: @feed_items %>
     </ol>
   <%= will_paginate @feed_items %>
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
 <% end %>

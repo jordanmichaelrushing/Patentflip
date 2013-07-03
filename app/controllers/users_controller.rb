@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     end
 	end
 
-<<<<<<< HEAD
 	def lawyers
 		@users = User.order(:name).page(params[:page]).per_page(10)
     respond_to do |format|
@@ -23,8 +22,6 @@ class UsersController < ApplicationController
     end
 	end
 
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
 	def show
     @auctions = Auction.paginate(page: params[:page], per_page: 15)
 		@user = User.find(params[:id])

@@ -35,7 +35,7 @@ MydeaSample::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  Paperclip.options[:command_path] = "/c/IMAGE~1.5-Q/"
+  Paperclip.options[:command_path] = "/usr/bin/"
 
   config.paperclip_defaults = {
     :storage => :s3,

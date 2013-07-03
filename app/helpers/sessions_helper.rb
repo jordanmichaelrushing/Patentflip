@@ -49,12 +49,8 @@ module SessionsHelper
   def store_user
     @@suser = @messenger.sender.id
   end
-<<<<<<< HEAD
 
   def messen 
   	@messengers = @user.received_messages
   end
-
-=======
->>>>>>> 5dfd98770cdc1068ec21ccd5e94eedf6c5af489e
 end
