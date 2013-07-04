@@ -52468,3 +52468,3201 @@ Served asset /static_pages.js - 304 Not Modified (2ms)
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 00:28:42 -0400
 Served asset /users.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 00:58:08 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (8.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (80.5ms)
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered shared/_micropost_form.html.erb (5.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.3ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (340.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (448.5ms)
+Compiled all-skins.css  (0ms)  (pid 7887)
+Compiled auctions.css  (4ms)  (pid 7887)
+Compiled boostrapper.css  (0ms)  (pid 7887)
+Compiled bootstrap.min.css  (0ms)  (pid 7887)
+Compiled countdown.css  (0ms)  (pid 7887)
+Compiled custom.css  (2500ms)  (pid 7887)
+Compiled functional.css  (0ms)  (pid 7887)
+Compiled jquery.countdown.css  (0ms)  (pid 7887)
+Compiled minimalist.css  (0ms)  (pid 7887)
+Compiled playful.css  (0ms)  (pid 7887)
+Compiled sessions.css  (0ms)  (pid 7887)
+Compiled south-street/jquery-ui-1.10.3.custom.css  (0ms)  (pid 7887)
+Compiled south-street/jquery-ui-1.10.3.custom.min.css  (0ms)  (pid 7887)
+Compiled static_pages.css  (0ms)  (pid 7887)
+Compiled users.css  (0ms)  (pid 7887)
+Compiled application.css  (2636ms)  (pid 7887)
+Compiled jquery.js  (6ms)  (pid 7887)
+Compiled jquery-ui-1103custommin.js  (4ms)  (pid 7887)
+Compiled autocomplete-rails.js  (0ms)  (pid 7887)
+Compiled bootstrapmin.js  (49ms)  (pid 7887)
+Compiled twitter-bootstrap-hover-dropdown.min.js  (0ms)  (pid 7887)
+Compiled auctions.js  (107ms)  (pid 7887)
+Compiled countdown.js  (0ms)  (pid 7887)
+Compiled embedmin.js  (0ms)  (pid 7887)
+Compiled endless_page.js  (0ms)  (pid 7887)
+Compiled flowplayer.js  (0ms)  (pid 7887)
+Compiled flowplayermin.js  (1ms)  (pid 7887)
+Compiled jquery.countdown.min.js  (0ms)  (pid 7887)
+Compiled jquery.sausage.js  (0ms)  (pid 7887)
+Compiled jsl-test.js  (0ms)  (pid 7887)
+Compiled misc.js  (0ms)  (pid 7887)
+Compiled sessions.js  (1ms)  (pid 7887)
+Compiled static_pages.js  (14ms)  (pid 7887)
+Compiled users.js  (17ms)  (pid 7887)
+Compiled application.js  (319ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered shared/_scripts.html.erb (0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (51.9ms)
+  Rendered layouts/_header.html.erb (60.9ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 3902ms (Views: 3671.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /all-skins.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /auctions.css - 304 Not Modified (89ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /countdown.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /boostrapper.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /functional.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /custom.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /minimalist.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:12 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /static_pages.css - 304 Not Modified (75ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /auctions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /embedmin.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /endless_page.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /flowplayer.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /jsl-test.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /sessions.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:13 -0400
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 00:58:38 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (4.4ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (4.5ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (129.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (146.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.5ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (20.9ms)
+  Rendered layouts/_header.html.erb (26.7ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 201ms (Views: 192.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:38 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /boostrapper.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /custom.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /minimalist.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (73ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /sessions.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 00:58:39 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:01:31 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (4.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (4.6ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_micropost_form.html.erb (2.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.1ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (69.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (87.0ms)
+Compiled custom.css  (2612ms)  (pid 7887)
+Compiled application.css  (11ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (13.4ms)
+  Rendered layouts/_header.html.erb (19.1ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3010ms (Views: 3002.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /custom.css - 200 OK (96ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /flowplayer.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /static_pages.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:01:35 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:02:09 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (4.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (4.1ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (68.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (85.2ms)
+Compiled custom.css  (2544ms)  (pid 7887)
+Compiled application.css  (10ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (13.5ms)
+  Rendered layouts/_header.html.erb (18.8ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2943ms (Views: 2935.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /custom.css - 200 OK (77ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /sessions.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:02:12 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /embedmin.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /jsl-test.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:02:13 -0400
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:07:22 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (5.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (4.2ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (1.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (0.9ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (130.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (147.3ms)
+Compiled custom.css  (2643ms)  (pid 7887)
+Compiled application.css  (10ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.4ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (14.8ms)
+  Rendered layouts/_header.html.erb (20.2ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 3049ms (Views: 3041.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /auctions.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /custom.css - 200 OK (13ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:25 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:26 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:26 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:26 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:07:26 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/?page=2&_=1372914446145" for 127.0.0.1 at 2013-07-04 01:07:46 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"page"=>"2", "_"=>"1372914446145"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.3ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 15[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (89.2ms)
+  Rendered static_pages/home.js.erb (94.8ms)
+Completed 200 OK in 102ms (Views: 95.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/?_=1372914446146&page=3" for 127.0.0.1 at 2013-07-04 01:07:48 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"_"=>"1372914446146", "page"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.2ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 30[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (87.7ms)
+  Rendered static_pages/home.js.erb (92.2ms)
+Completed 200 OK in 98ms (Views: 92.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/?_=1372914446147&page=4" for 127.0.0.1 at 2013-07-04 01:07:50 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"_"=>"1372914446147", "page"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 45[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (85.4ms)
+  Rendered static_pages/home.js.erb (90.3ms)
+Completed 200 OK in 97ms (Views: 90.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/?_=1372914446148&page=5" for 127.0.0.1 at 2013-07-04 01:07:51 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"_"=>"1372914446148", "page"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 60[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (7.3ms)
+  Rendered static_pages/home.js.erb (8.4ms)
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:13:50 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (4.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (4.7ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (69.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (87.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (14.9ms)
+  Rendered layouts/_header.html.erb (20.9ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 210ms (Views: 201.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /all-skins.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /minimalist.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:13:51 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:15:20 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (4.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (4.2ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (68.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (84.7ms)
+Compiled custom.css  (2688ms)  (pid 7887)
+Compiled application.css  (57ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.4ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (14.0ms)
+  Rendered layouts/_header.html.erb (19.4ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 3092ms (Views: 3084.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /all-skins.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /minimalist.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /custom.css - 200 OK (14ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:23 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:24 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:24 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:24 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:24 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:24 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:24 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:15:39 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (5.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (5.1ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.2ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (87.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (107.5ms)
+Compiled custom.css  (2619ms)  (pid 7887)
+Compiled application.css  (9ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (13.0ms)
+  Rendered layouts/_header.html.erb (18.4ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2972ms (Views: 2963.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /all-skins.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /custom.css - 200 OK (18ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:42 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:43 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:43 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:43 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:43 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:43 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:15:43 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:16:46 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (4.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (4.4ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (72.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (90.9ms)
+Compiled custom.css  (2738ms)  (pid 7887)
+Compiled application.css  (10ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (13.2ms)
+  Rendered layouts/_header.html.erb (18.3ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3103ms (Views: 3095.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /custom.css - 200 OK (86ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:49 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:50 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:50 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:50 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:50 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:50 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:16:50 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:17:00 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (4.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (3.8ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.3ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (132.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (149.2ms)
+Compiled custom.css  (2586ms)  (pid 7887)
+Compiled application.css  (10ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (14.2ms)
+  Rendered layouts/_header.html.erb (19.8ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2966ms (Views: 2958.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:03 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:03 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:03 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:03 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:03 -0400
+Served asset /custom.css - 200 OK (90ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /countdown.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /sessions.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /users.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:17:04 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:19:08 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (4.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (3.9ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_micropost_form.html.erb (1.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (70.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (87.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.7ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (16.4ms)
+  Rendered layouts/_header.html.erb (22.3ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 205ms (Views: 195.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /static_pages.js - 304 Not Modified (64ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:09 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:19:16 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (4.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (4.4ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (69.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (87.8ms)
+Compiled custom.css  (2605ms)  (pid 7887)
+Compiled application.css  (9ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.4ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (14.0ms)
+  Rendered layouts/_header.html.erb (19.2ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2891ms (Views: 2883.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:19 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:19 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:19 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:19 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:19 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:19 -0400
+Served asset /custom.css - 200 OK (143ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:19:20 -0400
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/?page=2&_=1372915160528" for 127.0.0.1 at 2013-07-04 01:19:48 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"page"=>"2", "_"=>"1372915160528"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 15[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (150.2ms)
+  Rendered static_pages/home.js.erb (155.2ms)
+Completed 200 OK in 162ms (Views: 155.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/?_=1372915160529&page=3" for 127.0.0.1 at 2013-07-04 01:19:50 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"_"=>"1372915160529", "page"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.2ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 30[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (107.7ms)
+  Rendered static_pages/home.js.erb (112.5ms)
+Completed 200 OK in 119ms (Views: 113.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/?_=1372915160530&page=4" for 127.0.0.1 at 2013-07-04 01:19:50 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"_"=>"1372915160530", "page"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 45[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (94.6ms)
+  Rendered static_pages/home.js.erb (100.4ms)
+Completed 200 OK in 108ms (Views: 100.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/?_=1372915160531&page=5" for 127.0.0.1 at 2013-07-04 01:19:52 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"_"=>"1372915160531", "page"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 60[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (8.2ms)
+  Rendered static_pages/home.js.erb (9.4ms)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:25:25 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (14.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (4.8ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.2ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (2.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (96.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (125.0ms)
+Compiled custom.css  (2511ms)  (pid 7887)
+Compiled application.css  (88ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (13.5ms)
+  Rendered layouts/_header.html.erb (19.1ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 2977ms (Views: 2961.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /all-skins.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /boostrapper.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /custom.css - 200 OK (87ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /static_pages.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:25:29 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/?page=2&_=1372915529867" for 127.0.0.1 at 2013-07-04 01:33:47 -0400
+Processing by StaticPagesController#home as JS
+  Parameters: {"page"=>"2", "_"=>"1372915529867"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 15[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (85.5ms)
+  Rendered static_pages/home.js.erb (89.9ms)
+Completed 200 OK in 98ms (Views: 90.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:35:14 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (4.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (4.4ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_micropost_form.html.erb (1.9ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (70.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (87.5ms)
+Compiled custom.css  (2570ms)  (pid 7887)
+Compiled application.css  (10ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (14.0ms)
+  Rendered layouts/_header.html.erb (19.3ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2932ms (Views: 2923.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (85ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /custom.css - 200 OK (52ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:17 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:35:18 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:36:52 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1
+  Rendered shared/_user_info.html.erb (4.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1
+  Rendered shared/_stats.html.erb (3.7ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mMicropost Load (1.1ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered static_pages/_feeds.html.erb (132.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (149.1ms)
+Compiled custom.css  (2583ms)  (pid 7887)
+Compiled application.css  (10ms)  (pid 7887)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (13.5ms)
+  Rendered layouts/_header.html.erb (19.3ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2989ms (Views: 2981.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /all-skins.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /auctions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /custom.css - 200 OK (86ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /endless_page.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:36:55 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/jordan-michael-rushing/messengers" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Processing by MessengersController#index as HTML
+  Parameters: {"user_id"=>"jordan-michael-rushing"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'jordan-michael-rushing' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'jordan-michael-rushing' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  Rendered messengers/_inbox.html.erb (8.4ms)
+  Rendered messengers/index.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.4ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (10.0ms)
+  Rendered layouts/_header.html.erb (72.3ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 111ms (Views: 104.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /auctions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:38:08 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/help" for 127.0.0.1 at 2013-07-04 01:38:13 -0400
+Processing by StaticPagesController#help as HTML
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  Rendered messengers/_inboxer.html.erb (59.4ms)
+  Rendered layouts/_header.html.erb (64.7ms)
+Completed 500 Internal Server Error in 88ms
+
+ActionController::RoutingError (No route matches {:action=>"delete_selected", :controller=>"messengers", :method=>:post, :user_id=>nil}):
+  app/views/messengers/_inboxer.html.erb:1:in `_app_views_messengers__inboxer_html_erb__706278600__621445308'
+  app/views/layouts/_header.html.erb:29:in `_app_views_layouts__header_html_erb___752590616__580396538'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__428015140__621636428'
+
+
+  Rendered /home/patentflip/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/help" for 127.0.0.1 at 2013-07-04 01:39:16 -0400
+Processing by StaticPagesController#help as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  Rendered static_pages/help.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.2ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (99.2ms)
+  Rendered layouts/_header.html.erb (106.9ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 230ms (Views: 129.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /boostrapper.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /sessions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:17 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Processing by StaticPagesController#about as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  Rendered static_pages/about.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.4ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered messengers/_inboxer.html.erb (15.3ms)
+  Rendered layouts/_header.html.erb (20.8ms)
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 156ms (Views: 151.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /boostrapper.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:23 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /minimalist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:24 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-04 01:39:53 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'O4I2rBDUf-8grubvK25qpw' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = 1[0m
+  Rendered shared/_user_info.html.erb (5.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 1[0m
+  Rendered shared/_stats.html.erb (11.2ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_micropost_form.html.erb (2.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 15 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships 
+ WHERE follower_id = 1) OR user_id = 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered static_pages/_feeds.html.erb (73.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (99.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered shared/_scripts.html.erb (0.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE (recipient_id = 1 AND read_at IS NULL and recipient_deleted = 'f')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f')[0m
+  [1m[35mMessenger Load (0.3ms)[0m  SELECT "messengers".* FROM "messengers" WHERE "messengers"."recipient_id" = 1 AND (messengers.recipient_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f')
+  [1m[36mMessenger Load (0.3ms)[0m  [1mSELECT "messengers".* FROM "messengers" WHERE "messengers"."sender_id" = 1 AND (messengers.sender_deleted = 'f') ORDER BY messengers.created_at ASC, messengers.created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)
+  Rendered messengers/_inboxer.html.erb (14.3ms)
+  Rendered layouts/_header.html.erb (20.3ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 232ms (Views: 210.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/all-skins.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:53 -0400
+Served asset /all-skins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:53 -0400
+Served asset /auctions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/boostrapper.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /boostrapper.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /countdown.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/functional.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /functional.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /jquery.countdown.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/minimalist.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /minimalist.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/south-street/jquery-ui-1.10.3.custom.min.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /south-street/jquery-ui-1.10.3.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/autocomplete-rails.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /autocomplete-rails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter-bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /twitter-bootstrap-hover-dropdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/embedmin.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /embedmin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/auctions.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /auctions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/endless_page.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flowplayer.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /flowplayer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.countdown.min.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /jquery.countdown.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sausage.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /jquery.sausage.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jsl-test.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /jsl-test.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-07-04 01:39:54 -0400
+Served asset /sessions.js - 304 Not Modified (0ms)

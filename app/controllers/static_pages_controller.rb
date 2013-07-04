@@ -15,4 +15,22 @@ class StaticPagesController < ApplicationController
   	@user = User.new
   	end
 	end
+
+  def help
+    if signed_in?
+      @user = current_user
+    end
+  end
+
+  def faq
+    if signed_in?
+      @user = current_user
+    end
+  end
+
+  def about
+    if signed_in?
+      @user = current_user
+    end
+  end
 end
