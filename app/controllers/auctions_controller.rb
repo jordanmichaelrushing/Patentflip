@@ -15,6 +15,7 @@ class AuctionsController < ApplicationController
 	end
 
 	def create
+    @user = current_user
 		@auction = Auction.create(params[:auction])
 		@auction.user_id = current_user.id
     current_user.pat_selling += 1
@@ -28,7 +29,8 @@ class AuctionsController < ApplicationController
 
 	def show
 		@auction = Auction.find(params[:id])
-    @user = User.find_by_id(@auction.user_id)
+    @user = current_user
+    @users = User.find_by_id(@auction.user_id)
     @vid_url = :vid_url
     if request.path != auction_path(@auction)
       redirect_to @auction, status: :moved_permanently
@@ -56,6 +58,7 @@ class AuctionsController < ApplicationController
   end
 
   def patents
+    @user = current_user
     @users = User.paginate(page: params[:page])
     @auctions = Auction.paginate(page: params[:page])
   end

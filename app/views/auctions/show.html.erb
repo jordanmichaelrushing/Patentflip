@@ -1,13 +1,13 @@
 </br></br></br></br>
 <h6><%=@auction.title%></h6>
-<h8>Filed by: <%= @user.name %></h8>
+<h8>Filed by: <%= @users.name %></h8>
 <div class="info_message" id="complete_info_message" style="display: none;">
         Patent Listing Completed!
 </div>
   <div class="outtie">
     <div class="inner">
       <listingblurb>
-        <% if @user == current_user %>
+        <% if @users == @user %>
           <%= link_to "Edit Patent Listing", edit_auction_path %>
         <% end %>        
         <h4>Patent Number:</h4>
@@ -24,10 +24,10 @@
           </div>
         </div>
         </br>
-        <%= image_tag @user.avatar.url(:thumb), class: "gravatar-patent" %>
+        <%= image_tag @users.avatar.url(:thumb), class: "gravatar-patent" %>
         </br></br> 
         <h4>Flipping By:</h4>
-        <h2><%= link_to @user.name, @user %></h2>
+        <h2><%= link_to @users.name, @users %></h2>
       </listingblurb>
 
       <listingfeed>   

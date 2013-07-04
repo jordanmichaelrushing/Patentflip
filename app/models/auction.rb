@@ -25,7 +25,7 @@ class Auction < ActiveRecord::Base
   #validates :lic_or_sell, presence: {message: 'You need to specify if you want to sell or license your patent'}
   validates :pic1, presence: {message: 'You need to have at least one picture in the first picture spot'}
   validates :pic_descr_1, presence: {message: 'You need to have a description for your picture'}
-  validates_attachment :video, content_type: { content_type: "video/flv", message: "Your video needs to be in a flv format." }
+  validates_attachment :video, content_type: { content_type: "video/flv", content_type: "video/mp4", message: "Your video needs to be in a flv format." }
 
 
   has_one :user
