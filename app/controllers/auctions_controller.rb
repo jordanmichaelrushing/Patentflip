@@ -4,12 +4,14 @@ class AuctionsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
+    @user = current_user
     @auctions = Auction.paginate(page: params[:page], per_page: 1)
     @users = User.paginate(page: params[:user_id], per_page: 1)
   end
 
 	def new
 		@auction = Auction.new
+    @user = current_user
 	end
 
 	def create

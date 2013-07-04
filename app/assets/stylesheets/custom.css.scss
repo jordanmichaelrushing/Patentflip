@@ -2,9 +2,41 @@
 
 /* universal */
 
-<<<<<<< HEAD
 .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
   width: 90%;
+}
+
+nav-list > li > a, .nav-list .nav-header {
+  font-size: 0.8em;
+  margin-left: -33px;
+  color: black;
+}
+
+ul.nav.nav-pills {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#tab-pills-active {
+  margin-right: 35px;
+  color: white;
+  background-color: #00c700;
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+#tab-pills-tab {
+  background-color:#eee;
+  margin-right: 35px;
+  color: #00c700;
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+li.actives {
+  background-color: #00c700;
 }
 
 .dropdown-menu {
@@ -760,6 +792,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .userlinks {
+  margin-top: -120px;
 	float: right;
 }
 

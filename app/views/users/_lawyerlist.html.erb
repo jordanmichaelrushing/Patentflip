@@ -26,11 +26,11 @@
     <% end %>
 
     <div class="userlinks">
-      <%= link_sale%></br>
-      <%= link_sold%></br>
-      <%= link_buy%>
-    </div>
+    <h4>Patents Bought: <%= user.pat_buy %><br>
+    Patents Sold: <%= user.pat_sold %><br>
+    Patents Currently For Sale: <%= user.pat_selling %></h4>
+  </div>
+</li>
   <div class="userborder"></div>
-  </li>
   <% end %>
 <% end %>
