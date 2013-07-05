@@ -887,8 +887,17 @@ aside {
 }
 
 iframe {
-	margin-left: 25px;
-	margin-bottom: 15px;
+	margin-left: 0px;
+	margin-bottom: -5px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+embed#player1 {
+  margin-left: 0px;
+  margin-bottom: -5px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 .cats {
