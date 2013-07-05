@@ -16,4 +16,5 @@
 .env
 
 # Ignore production.rb
-/config/production.rb
+/config/environments/production.rb
+/config/environments/development.rb
