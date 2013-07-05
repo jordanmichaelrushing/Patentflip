@@ -1,5 +1,8 @@
 MydeaSample::Application.routes.draw do
 
+  resources :search_suggestions
+
+
 resources :users do 
     resources :messengers  do
       get :autocomplete_user_name, on: :collection

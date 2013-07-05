@@ -54,6 +54,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.6)
@@ -108,11 +109,14 @@ GEM
     faraday (0.8.7)
       multipart-post (~> 1.1)
     ffi (1.7.0)
+    ffi (1.7.0-x86-mingw32)
     flowplayer (0.1.4)
       json
     formatador (0.2.4)
     friendly_id (4.0.9)
     gherkin (2.11.8)
+      multi_json (~> 1.3)
+    gherkin (2.11.8-x86-mingw32)
       multi_json (~> 1.3)
     guard (1.7.0)
       formatador (>= 0.2.4)
@@ -158,6 +162,7 @@ GEM
     multipart-post (1.2.0)
     nifty-generators (0.4.6)
     nokogiri (1.5.9)
+    nokogiri (1.5.9-x86-mingw32)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -179,6 +184,8 @@ GEM
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-mini-profiler (0.1.27)
+      rack (>= 1.1.3)
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -286,6 +293,7 @@ DEPENDENCIES
   nifty-generators
   paperclip (= 3.4.2)
   pg
+  rack-mini-profiler
   rails (= 3.2.12)
   rails3-jquery-autocomplete
   rspec-rails (= 2.9.0)
