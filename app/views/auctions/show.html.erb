@@ -31,7 +31,7 @@
       </listingblurb>
 
       <listingfeed>   
-        <% if ((@auction.video.url == "/original/missing.png") && (@auction.vid_url == "")) %>
+        <% if ((@auction.video.url == "/videos/original/missing.png") && (@auction.vid_url == "")) %>
           <div class="outtie">
             <div class="inner">
               <floop>
@@ -126,7 +126,7 @@
 
           <h2>My comments about <%=@auction.title%>:</h2></br>
           <h5> <%=@auction.descrip%> </h5></br>
-        <% elsif (@auction.video.url != "/original/missing.png") %>
+        <% elsif (@auction.video.url != "/videos/original/missing.png") %>
           <div class="flowplayer">
             <video>
                <source type="video/flv" src="<%= @auction.video.url%>"/>
@@ -229,10 +229,10 @@
             </div>
           </div></br>
 
-          <% elsif ((@auction.video.url == "/original/missing.png") && (@auction.vid_url != "")) %>
+          <% elsif ((@auction.video.url == "/videos/original/missing.png") && (@auction.vid_url != "")) %>
           <div class="outtie">
             <div class="inner">
-            <iframe width="590" height="332" src="//www.youtube.com/embed/IsIU4Lzdew8" frameborder="0" allowfullscreen></iframe>
+            <iframe width="590" height="332" src="//www.youtube.com/embed/<%= @auction.vid_url %>" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
 

@@ -71,8 +71,8 @@
             <h1> Your patent video </h1>
             <h4> <%= f.label :vid_url, "Add a video from your computer or youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just upload the file (flv, mp4, or wmv) here:" %></br>
             <%= f.file_field :video, id: "upload-form"  %>
-            <%= f.label :vid_url, "Or add the youtube video link here:" %></br>
-            <%= f.text_area :vid_url, id: "the-form", placeholder: "https://www.youtube.com/watch?v=abcd12345efg" %></h4>
+            <%= f.label :vid_url, "Or add the youtube video id # here (the part after 'v=' in the url):" %></br>
+            http://www.youtube.com/watch?v=<%= f.text_area :vid_url, id: "tube-form", placeholder: "oHZ4Zgu1DEw" %></h4>
           </div>
         </div>
         <div class="tab-pane fade in" id="tab5">
