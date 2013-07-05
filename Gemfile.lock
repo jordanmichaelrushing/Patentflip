@@ -164,8 +164,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
-    paperclip-ffmpeg (0.11.0)
-      paperclip (>= 2.5.2)
     pg (0.15.1)
     pg (0.15.1-x86-mingw32)
     polyglot (0.3.3)
@@ -287,7 +285,6 @@ DEPENDENCIES
   mandrill-api
   nifty-generators
   paperclip (= 3.4.2)
-  paperclip-ffmpeg
   pg
   rails (= 3.2.12)
   rails3-jquery-autocomplete

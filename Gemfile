@@ -12,7 +12,6 @@ source 'https://rubygems.org'
  gem "koala"
 
  gem "paperclip", '3.4.2'
- gem 'paperclip-ffmpeg'
  gem 'flowplayer'
  gem 'delayed_job'
  gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
