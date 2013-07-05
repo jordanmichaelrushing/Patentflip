@@ -1,4 +1,43 @@
-<ul class="nav nav-list">
+<% if (params[:controller] == 'auctions' && params[:action] == 'show') %>
+<ul class="nav nav-list-patent">
+		<div class="outtie">
+			<div class="innie">
+				<div class="cats">
+ 					<h3><li class="nav-header">Categories</li></h3>
+ 				</div>
+ 				<div class="userborder"></div>
+ 				<li class="divider"></li>
+ 				<div class="cats">
+ 					<li><a href="#">Agricultural</a></li>
+ 					<li><a href="#">Apparel</a></li>
+ 					<li><a href="#">Arts</a></li>
+ 					<li><a href="#">Automotive</a></li>
+ 					<li><a href="#">Biological</a></li>
+ 					<li><a href="#">Business</a></li>
+ 					<li><a href="#">Chemical</a></li>
+ 					<li><a href="#">Construction</a></li>
+ 					<li><a href="#">Electronic</a></li>
+ 					<li><a href="#">Environmental</a></li>
+ 					<li><a href="#">Extensions</a></li>
+ 					<li><a href="#">Hardware</a></li>
+ 					<li><a href="#">International</a></li>
+ 					<li><a href="#">Machinery</a></li>
+ 					<li><a href="#">Machinery</a></li>
+ 					<li><a href="#">Miscellaneous</a></li>
+ 					<li><a href="#">Machinery</a></li>
+ 					<li><a href="#">Patent Pending</a></li>
+ 					<li><a href="#">Machinery</a></li>
+ 					<li><a href="#">Machinery</a></li>
+ 					<li><a href="#">Machinery</a></li>
+ 					<li><a href="#">Structural</a></li>
+ 					<li><a href="#">Telecomm</a></li>
+ 			</div>
+ 		</div>
+ 	</div>
+</ul>
+
+<% else %>
+	<ul class="nav nav-list">
 		<div class="outtie">
 			<div class="innie">
 				<div class="cats">
@@ -33,3 +72,5 @@
  		</div>
  	</div>
 </ul>
+
+<% end %>

@@ -3,6 +3,12 @@
     <div class="container">
       <%= link_to image_tag("/assets/Patent_Lettering.png", id: "logo"), root_path %>
       <nav>
+
+      	<form class="navbar-search">
+          <div class="span2">
+          <input type="text" class="search-query" placeholder="Search"> </div>
+        </form>
+
 		<ul class="nav pull-right">
 		  <% if signed_in? %>
             <li class="divider-vertical"></li>

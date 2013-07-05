@@ -11,7 +11,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
-  :user_attributes, :avatar_file_name
+  :user_attributes, :avatar_file_name, :lawyer
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]

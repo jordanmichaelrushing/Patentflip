@@ -68,11 +68,11 @@
         </div>
         <div class="tab-pane fade" id="tab4">
           <div class="span7 offset2">
-            <%= f.file_field :video, id: "upload-form"  %>
             <h1> Your patent video </h1>
-            <div class="bordes"></div>
-            <h4> <%= f.label :vid_url, "Add a video from youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just add the youtube video link here:" %></br>
-                <%= f.text_area :vid_url, id: "the-form", placeholder: "https://www.youtube.com/watch?v=abcd12345efg" %></h4>
+           <h4> <%= f.label :video, "Add a video from your computer or youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just upload the file (flv, mp4, or wmv) here:" %></br>
+            <%= f.file_field :video, id: "upload-form"  %>
+            <%= f.label :vid_url, "Or add the youtube video link here:" %></br>
+            <%= f.text_area :vid_url, id: "the-form", placeholder: "https://www.youtube.com/watch?v=abcd12345efg" %></h4>
           </div>
         </div>
         <div class="tab-pane fade" id="tab5">
