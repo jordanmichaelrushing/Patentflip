@@ -19,7 +19,7 @@
                 <%= @reply_to.sender.name %>
               <% elsif $reply_name == 'n' %>
                 <% if @user.name == current_user.name %>
-                  <%= f.autocomplete_field :recipient, autocomplete_user_name_user_messengers_path, id_element: :user_messenger_id, id: "tube-form" %>
+                  <%= f.autocomplete_field :to, autocomplete_user_name_user_messengers_path, update_elements: {user_messenger_id: :id_element}, id: "tube-form" %>
                 <% else %>
                   <%= image_tag @user.avatar.url(:micro), class: "gravatar-message-show" %>
                   <%= @user.name %>

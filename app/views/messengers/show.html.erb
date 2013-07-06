@@ -1,9 +1,18 @@
 <div class='span6 offset3'>
   <div class="outtie">
     <div class="innie-message">  
-      <p><strong>From:</strong> <%= link_to((image_tag @messenger.sender.avatar.url(:micro), class: "gravatar-message-show"), user_path(@messenger.sender)) %> <%= @messenger.sender == @user ? link_to("Me", user_path(@user)) : link_to(h(@messenger.sender.name), user_path(@messenger.sender)) %></p>
-      <p><strong>To:</strong> <%= link_to((image_tag @messenger.recipient.avatar.url(:micro), class: "gravatar-message-show"), user_path(@messenger.recipient)) %> <%= @messenger.recipient == current_user ? link_to("Me", user_path(@user)) : link_to(h(@messenger.recipient.name), user_path(@messenger.recipient)) %></p>
+      <p>
+        <strong>From:</strong> 
+          <%= link_to((image_tag @messenger.sender.avatar.url(:micro), class: "gravatar-message-show"), user_path(@messenger.sender)) %> <%= @messenger.sender == @user ? link_to("Me", user_path(@user)) : link_to(h(@messenger.sender.name), user_path(@messenger.sender)) %>
+      </p>
+      
+      <p>
+        <strong>To:</strong> 
+          <%= link_to((image_tag @messenger.recipient.avatar.url(:micro), class: "gravatar-message-show"), user_path(@messenger.recipient)) %> <%= @messenger.recipient == current_user ? link_to("Me", user_path(@user)) : link_to(h(@messenger.recipient.name), user_path(@messenger.recipient)) %>
+      </p>
+      
       <p><strong>Received:</strong> <%= @messenger.created_at.strftime("%b %d %Y   %I:%M:%S %p") %></p>
+      
       <p>
         <strong>Message:</strong><br></p>
       <h4>

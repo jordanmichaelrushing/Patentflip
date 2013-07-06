@@ -1,5 +1,5 @@
 class MessengersController < ApplicationController
-  autocomplete :user, :name, :full => true
+  autocomplete :user, :name, column_name: :name, :full => true, update_elements: {user_messenger_id: :id_element}
   
   before_filter :set_user
   before_filter :correct_user, only: [:show, :index]
@@ -22,8 +22,9 @@ class MessengersController < ApplicationController
       $reply_name = 'r'
       @reply_to = @user.received_messages.find(params[:reply_to])
       unless @reply_to.nil?
+        $replied = @reply_to.sender.name
         @messenger.to = @reply_to
-        @messenger.body = "\n\n*Original message*\n\n #{@reply_to.body}"
+        @messenger.body = "\n \n *Original message from #{@reply_to.sender.name}* \n \n #{@reply_to.body}"
       end
     end
   end
@@ -32,13 +33,13 @@ class MessengersController < ApplicationController
     @messenger = Messenger.new(params[:messenger])
     @messenger.sender = current_user
     if $reply_name == 'n'
-      if current_user.name == User.find(params[:user_id]).name
-        @messenger.recipient = User.find(params[:user_messenger_id])
+      if @user.name == current_user.name
+        @messenger.recipient = User.find_by_name(@messenger.to)
       else
         @messenger.recipient = User.find(params[:user_id])
       end
     else
-      @messenger.recipient = User.find(params[:user_id])
+      @messenger.recipient = User.find_by_name($replied)
     end
 
     if @messenger.save
