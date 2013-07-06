@@ -17,9 +17,9 @@ class MessengersController < ApplicationController
   
   def new
     @messenger = Messenger.new
-    @reply_name = 'n'
+    $reply_name = 'n'
     if params[:reply_to]
-      @reply_name = 'r'
+      $reply_name = 'r'
       @reply_to = @user.received_messages.find(params[:reply_to])
       unless @reply_to.nil?
         @messenger.to = @reply_to
@@ -31,7 +31,15 @@ class MessengersController < ApplicationController
   def create
     @messenger = Messenger.new(params[:messenger])
     @messenger.sender = current_user
-    @messenger.recipient = User.find(params[:user_id])
+    if $reply_name == 'n'
+      if current_user.name == User.find(params[:user_id]).name
+        @messenger.recipient = User.find(params[:user_messenger_id])
+      else
+        @messenger.recipient = User.find(params[:user_id])
+      end
+    else
+      @messenger.recipient = User.find(params[:user_id])
+    end
 
     if @messenger.save
       flash[:success] = "Message sent"

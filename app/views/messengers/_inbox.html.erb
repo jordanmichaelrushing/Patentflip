@@ -59,7 +59,8 @@
       <% end %>
       </br>
       </br></br><mess>
-        <%= link_to "Sent Folder", user_messengers_path(@user, :mailbox => :sent) %>
+        <%= link_to "Sent Folder", user_messengers_path(@user, :mailbox => :sent) %> | 
+        <%= link_to "Compose", new_user_messenger_path %>
       </mess>
     </div>
   </div>

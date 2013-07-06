@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705065828) do
+ActiveRecord::Schema.define(:version => 20130705110926) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20130705065828) do
     t.string   "message_attach_content_type"
     t.integer  "message_attach_file_size"
     t.datetime "message_attach_updated_at"
+    t.integer  "user_messenger_id"
   end
 
   create_table "microposts", :force => true do |t|

@@ -5,18 +5,32 @@ class UsersController < ApplicationController
 	before_filter :admin_user, only: :destroy
  
 	def index
-	@user = current_user
-    @users = User.order(:created_at).page(params[:page]).per_page(10)
-    respond_to do |format|
-      format.js
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
+		@user = current_user
+		if params[:search]
+			@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['name like ?', "%#{params[:search]}%"])
+			if @users.size.zero? 
+				flash[:notice] = "No Users Found" 
+				@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all) 
+			end
+
+		else
+	    	@users = User.order(:created_at).page(params[:page]).per_page(10)
+		end
+	    respond_to do |format|
+	      format.js
+	      format.html # index.html.erb
+	      format.xml  { render :xml => @users }
+	    end
 	end
 
 	def lawyers
   		@user = current_user
+
+	if params[:search]
+		@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['name like ?', "%#{params[:search]}%"])
+	else
 	  @users = User.order(:name).page(params[:page]).per_page(10)
+	 end
 	    respond_to do |format|
 	      format.js
 	      format.html # index.html.erb

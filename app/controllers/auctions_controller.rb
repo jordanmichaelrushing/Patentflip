@@ -5,8 +5,16 @@ class AuctionsController < ApplicationController
 
   def index
     @user = current_user
-    @auctions = Auction.paginate(page: params[:page], per_page: 1)
-    @users = User.paginate(page: params[:user_id], per_page: 1)
+    if params[:search]
+      @auctions = Auction.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['title like ?', "%#{params[:search]}%"])
+      if @auctions.size.zero? 
+        flash[:notice] = "No Patents Found" 
+        @auctions = Auction.order(:created_at).page(params[:page]).per_page(10).find(:all) 
+      end
+    else
+      @auctions = Auction.paginate(page: params[:page], per_page: 10)
+    end
+    @users = User.paginate(page: params[:user_id], per_page: 10)
   end
 
 	def new

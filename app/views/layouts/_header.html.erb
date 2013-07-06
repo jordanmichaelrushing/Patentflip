@@ -6,7 +6,12 @@
 
       	<form class="navbar-search">
           <div class="span2">
-          <input type="text" class="search-query" placeholder="Search"></div>
+          <%= form_for (users_path || auctions_path || lawyers_path), :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search" %>
+        </p>
+      <% end %>
+      	</div>
         </form>
 
 		<ul class="nav pull-right">

@@ -9,7 +9,13 @@ class Auction < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 	
-  
+  def self.search(search)
+  if search
+    find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
 
   has_attached_file :pic1, styles: { a: "600x400>", tiny: "250x250>", micro: "60x60>" }
   has_attached_file :pic2, styles: { a: "600x400>", tiny: "250x250>" } 
