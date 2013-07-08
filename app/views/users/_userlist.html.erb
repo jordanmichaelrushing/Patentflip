@@ -28,7 +28,7 @@
     <div class="userlinks">
       <h4>Patents Bought: <%= user.pat_buy %><br>
       Patents Sold: <%= user.pat_sold %><br>
-      Patents Currently For Sale: <%= user.pat_selling %></h4>
+      <%= link_to "Patents Currently For Sale: #{user.pat_selling}", "/users/#{user.id}/patents" %></h4>
     </div>
   <% end %>
 </li>

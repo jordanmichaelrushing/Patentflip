@@ -2,28 +2,109 @@
 	<div class="outtie">
     <div class="innie">
 			<h1>Update Your Profile</h1>
+			<div class="tabbable"> <!-- Only required for left/right tabs -->
+				<ul class="nav nav-pills">
+					<li class="active"><a href="#tab1" data-toggle="tab">Basic User Info</a></li>
+  				<% if @user.lawyer == true %>
+				  	<li><a href="#tab2" data-toggle="tab">Lawyer Info</a></li>
+				  <% end %>
+				  <% if @user.business == true %>
+				  	<li><a href="#tab3" data-toggle="tab">Business Info</a></li>
+				  <% end %>
+				  <li><a href="#tab4" data-toggle="tab">Extra User Info</a></li>
+				  <li><a href="#tab5" data-toggle="tab">Amazon Payments</a></li>
+				  <li><a href="#tab6" data-toggle="tab">Review</a></li>
+				</ul>
+	      <div class="tab-content">
+	        <div class="tab-pane fade in active" id="tab1">
+						<div class="row">
+							<div class="span6 offset3">
+								<%= form_for(@user, html: { multipart: true}) do |f| %>
+						
+								<%= render 'shared/error_messages', object: f.object %>
+								<%= f.label :name %>
+								<%= f.text_field :name %>
+							
+								<%= f.label :email %>
+								<%= f.text_field :email %>
+							
+								<%= f.label :password %>
+								<%= f.password_field :password %>
+							
+								<%= f.label :password_confirmation, "Confirmation" %>
+								<%= f.password_field :password_confirmation %>
 
-			<div class="row">
-				<div class="span6 offset3">
-					<%= form_for(@user, html: { multipart: true}) do |f| %>
-			
-					<%= render 'shared/error_messages', object: f.object %>
-					<%= f.label :name %>
-					<%= f.text_field :name %>
-				
-					<%= f.label :email %>
-					<%= f.text_field :email %>
-				
-					<%= f.label :password %>
-					<%= f.password_field :password %>
-				
-					<%= f.label :password_confirmation, "Confirmation" %>
-					<%= f.password_field :password_confirmation %>
-					
-					<%= f.label :avatar, "Edit User Image" %>
-					<%= f.file_field :avatar, id: "upload-form" %>
-						<%= f.submit "Save changes", class: "btn btn-big btn-primary", id: "sign_btn2" %>
+								<%= f.label :avatar, "Edit User Image" %>
+								<%= image_tag @user.avatar.url(:medium), class: "gravatar-user-edit" %>
+								<%= f.file_field :avatar, id: "edit-form" %><br><br>
+							</div>
+						</div>
+					</div>
+  				<% if @user.lawyer == true %>
+						<div class="tab-pane fade in" id="tab2">
+							<div class="row">
+								<div class="span6 offset3">
+									<%= f.label :firm %>
+									<%= f.text_field :firm %>
+								
+									<%= f.label :years_practicing %>
+									<%= f.text_field :years_practicing %>
+								
+									<%= f.label :billable_hours %>
+									<%= f.password_field :billable_hours %>
+
+									<%= f.label :firm_site %>
+									<%= f.password_field :firm_site %>
+
+									<%= f.label :pat_bar_num %>
+									<%= f.password_field :pat_bar_num %>
+
+									<%= f.label :agent_or_lawyer %>
+									<%= f.password_field :agent_or_lawyer %><br><br>
+								</div>
+							</div>
+						</div>
 					<% end %>
+					<% if @user.business == true %>
+						<div class="tab-pane fade in" id="tab3">
+							<div class="row">
+								<div class="span6 offset3">
+									<%= f.label :biz %>
+									<%= f.text_field :biz %>
+								
+									<%= f.label :biz_site %>
+									<%= f.text_field :biz_site %>
+								
+									<%= f.label :biz_position %>
+									<%= f.password_field :biz_position %><br><br>
+								</div>
+							</div>
+						</div>
+					<% end %>
+					<div class="tab-pane fade in" id="tab4">
+						<div class="row">
+							<div class="span6 offset3">
+								Extra info!
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade in" id="tab5">
+						<div class="row">
+							<div class="span6 offset3">
+								<p>Howdy, I'm an Amazon Payment Page!</p><br><br>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade in" id="tab6">
+						<div class="row">
+							<div class="span6 offset3">
+							<br>
+								Sure?<br><br>
+								<%= f.submit "Save changes", class: "btn btn-big btn-primary", id: "sign_btn8" %>
+								<% end %>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -26,10 +26,12 @@
     <% end %>
 
     <div class="userlinks">
-    <h4>Patents Bought: <%= user.pat_buy %><br>
-    Patents Sold: <%= user.pat_sold %><br>
-    Patents Currently For Sale: <%= user.pat_selling %></h4>
-  </div>
+      <h4>Firm:<br>
+      Average Billable Hours: $<%= user.billable_hours %>/hr<br>
+      Years Practicing: <%= user.years_practicing %><br>
+      Bar #: <%= user.pat_bar_num %><br>
+      Patents Specializing In:</h4>
+    </div>
 </li>
   <div class="userborder"></div>
   <% end %>

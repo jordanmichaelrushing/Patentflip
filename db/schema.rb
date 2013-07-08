@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705110926) do
+ActiveRecord::Schema.define(:version => 20130708211140) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -160,6 +160,11 @@ ActiveRecord::Schema.define(:version => 20130705110926) do
     t.integer  "pat_selling",         :default => 0
     t.string   "sex",                 :default => "undefined"
     t.string   "password_digest"
+    t.boolean  "business"
+    t.string   "biz"
+    t.string   "biz_site"
+    t.string   "biz_position"
+    t.boolean  "hidden"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

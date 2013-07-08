@@ -20,14 +20,15 @@ class AuctionsController < ApplicationController
 	def new
 		@auction = Auction.new
     @user = current_user
+    @user.pat_selling += 1
 	end
 
 	def create
     @user = current_user
 		@auction = Auction.create(params[:auction])
 		@auction.user_id = current_user.id
-    current_user.pat_selling += 1
     if @auction.save
+      @user.pat_selling = @user.pat_selling + 1
 			flash[:success] = "Uploaded your patent on the marketplace!"
 			redirect_to @auction
 		else
@@ -66,8 +67,7 @@ class AuctionsController < ApplicationController
   end
 
   def patents
-    @user = current_user
-    @users = User.paginate(page: params[:page])
+    @user = User.find(params[:user_id])
     @auctions = Auction.paginate(page: params[:page])
   end
 

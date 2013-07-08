@@ -1,20 +1,34 @@
 <% provide(:title, 'All Patents') %>
   <div class="outtie">
     <div class="innie">
-      <h1>All Patents</h1>
+      <h1><%= @user.name %>'s Patents</h1>
 
       <ul class="users">
         <% @auctions.each do |auction| %>
-        <% @users.each do |user| %>
-        <div class="userborder"></div>
-          <li>
-            <%= image_tag auction.pic1.url(:tiny), class: "gravatar" %>
-            Listed By:<%= link_to user.name, user, id: 'user_index', style: 'color: #00cc00' %>
-            <h3><%= link_to auction.title, user_auction_path(user, auction), style: 'color: #000000' %></h3></br>
-            <%= auction.descrip[0..79] %>
-          </li>
+          <% if auction.user_id == @user.id %>
+            <div class="userborder"></div>
+            <li>
+              <%= @user.pat_selling += 1 %>
+              <%= link_to(image_tag(auction.pic1.url(:tiny), class: "gravatar"), auction_path(auction)) %>
+              Listed By:<%= link_to "#{@user.name}", @user, id: 'user_index', style: 'color: #00cc00' %>
+              <h3><%= link_to "#{auction.title}", auction_path(auction), style: 'color: #000000' %></h3></br>
+              <%= auction.descrip[0..79] %>
+            </li>
+          <% end %>
         <% end %>
-        <% end %>
+        <%= @user.pat_selling %>
+          <% if @user.pat_selling == 0 %>
+            <h4>No Patents on the marketplace thus far, <%= @user.name %>
+                <% if @user.sex == "male" %>
+                  needs to step his
+                <% elsif @user.sex == "female"%>
+                  needs to step her
+                <% else %>
+                  needs to step their
+                <% end %>
+                game up!
+            </h4>
+          <% end %>
       </ul>
 
       <%= will_paginate %>

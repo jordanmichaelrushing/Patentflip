@@ -30,6 +30,8 @@ match '/signup', to: 'users#new'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', only: :delete
 match '/lawyers', to: 'users#lawyers'
+match '/users/:user_id/patents', to: 'auctions#patents'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

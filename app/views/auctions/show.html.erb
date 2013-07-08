@@ -11,6 +11,7 @@
           <%= link_to "Edit Patent Listing", edit_auction_path %>
         <% end %>        
         <h4>Patent Number:</h4>
+        <%= @user.pat_selling %>
           <% if @auction.goog_url == true %>
              <h1 href="//www.google.com/patents/<%=@auction.pat_num%>"><%=@auction.pat_num%></h1> 
           <% else %>

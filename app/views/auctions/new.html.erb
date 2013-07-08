@@ -40,7 +40,7 @@
             <h4>Add the official description of your patent in this box.
                 <%= f.text_area :pat_off_desc, id: "my-form" %></br>
                 Add any personal description you want to add here. Be sure to let people understand why your patent really stands out, and why it has significant value.
-                <%= f.text_area :descrip, id: "my-form" %></h4>
+                <%= f.text_area :descrip, id: "my-form" %></h4><% @user.pat_selling += 1 %>
           </div>
         </div>
         <div class="tab-pane fade in" id="tab3">
@@ -52,6 +52,7 @@
                 </br>Add Second Picture and it's description.</br>
                 <%= f.file_field :pic2, id: "upload-form"  %>
                 <%= f.text_area :pic_descr_2, id: "my-form" %></br>
+                <% @user.pat_selling += 1 %>
       
                 </br>Add Third Picture and it's description.</br>
                 <%= f.file_field :pic3, id: "upload-form"  %>

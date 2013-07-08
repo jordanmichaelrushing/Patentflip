@@ -11,22 +11,19 @@
   width: 425px;
 }
 
-.nav-header {
-  font-size: 0.8em;
-  margin-left: -33px;
-  color: black;
-  font-weight: bold;
-  margin-left: -34px;
-  margin-bottom: 10px;
-  text-shadow: 5px 5px 5px #888888;
+#sidebar-list-active {
+  margin-left: 30px;
+}
+
+#sidebar-list {
+  margin-left: -15px;
 }
 
 .nav-list > li > a, .nav-list .nav-header {
   font-size: 0.8em;
-  margin-left: -33px;
   color: black;
   font-weight: bold;
-  margin-left: -34px;
+  margin-left: -45px;
   margin-bottom: 10px;
   text-shadow: 5px 5px 5px #888888;
 }
@@ -88,8 +85,10 @@ li.actives {
 }
 
 #sign-in-drop {
-  margin-top: 9px;
-  margin-left: -350px;
+  margin-top: 20px;
+  margin-left: -337px;
+  color: #ccc;
+  font-size: 1.3em;
 }
 
 #sign-in-home {
@@ -150,6 +149,10 @@ li#divide-signin.divider-vertical {
 img {
   margin-left: auto;
   margin-right: auto;
+}
+
+#this-carousel-id {
+  margin-right: -1px;
 }
 
 .outer {
@@ -359,6 +362,20 @@ aside {
   width: 165px;
   margin-left: 10px;
   margin-top: 10px;
+  margin-right: auto;
+  border: 2px solid #00cc00;
+  moz-border-radius: 100px;
+  border-radius: 100px;
+  box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.4);
+  &:hover {
+    opacity:0.9;
+  }
+}
+
+.gravatar-user-edit {
+  width: 95px;
+  margin-left: 20px;
+  margin-top: 0px;
   margin-right: auto;
   border: 2px solid #00cc00;
   moz-border-radius: 100px;
@@ -711,6 +728,15 @@ height: 100%;
   display: inline-block;
 }
 
+#sign_btn8 {
+  margin-left: 0px;
+  margin-top: -10px;
+  width: 150px;
+  moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.4);
+}
+
 #sign_btn10 {
   idth: 60px;
   margin-right: 30px;
@@ -755,6 +781,16 @@ height: 100%;
  	background-color: white;
 }
 
+#edit-form {
+  border-radius: 6px;
+  width: 300px;
+  padding-top: 0px;
+  margin-top: 15px;
+  margin-left: 49px;
+  height: 38px;
+  background-color: white;
+}
+
 #btn_align {
 	float: right;
 	margin-right: 15px;
@@ -791,6 +827,12 @@ A:hover {
 #user_index {
 	margin-left: 40px;
 	font-size: 2.0em;
+}
+
+#patent_index {
+  display:inline-block;
+  margin-left: 40px;
+  font-size: 2.0em;
 }
 
 .row-fluid .spanshow {
