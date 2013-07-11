@@ -11,7 +11,8 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
-  :user_attributes, :avatar_file_name, :lawyer
+  :user_attributes, :avatar_file_name, :lawyer, :firm, :years_practicing, 
+  :billable_hours, :firm_site, :pat_bar_num, :agent_or_lawyer
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
@@ -19,17 +20,24 @@ class User < ActiveRecord::Base
   #   new_record?
   # end
 
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
+  def purchase
+    response = GATEWAY.purchase(charge_amount_total, credit_card, purchase_options)
+    transactions.create!(:action => "purchase", :amount => charge_amount_total, :response => response)
+    response.success?
   end
 
-  def funky_method
-    "#{self.id}"
+  def charge_amount_total
+    charge_amount_total = (charge_amount_dollars * 100) + charge_amount_cents
   end
+
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
+  
 
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"
@@ -109,4 +117,38 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
+
+    def purchase_options
+    {
+      :ip => request.remote_ip,
+      :billing_address => {
+        :name     => "#{card_first_name} #{card_last_name}",
+        :address1 => "#{card_address}",
+        :city     => "#{card_city}",
+        :state    => "#{card_state}",
+        :country  => "#{card_country}",
+        :zip      => "#{card_zip}"
+      }
+    }
+  end
+  
+  def validate_card
+    unless credit_card.valid?
+      credit_card.errors.full_messages.each do |message|
+        errors.add_to_base message
+      end
+    end
+  end
+
+  def credit_card
+    @credit_card ||= ActiveMerchant::Billing::CreditCard.new(
+      :type               => "#{card_type}",
+      :number             => "#{card_num}",
+      :verification_value => "#{verify_code}",
+      :month              => "#{exp_month}",
+      :year               => "#{exp_year}",
+      :first_name         => "#{card_first_name}",
+      :last_name          => "#{card_last_name}"
+    )
+  end
 end

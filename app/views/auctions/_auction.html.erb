@@ -1,0 +1,6 @@
+<h6>Patent Listing</h6>
+<li>
+  <%= link_to( (image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(auction)) %>
+  <%= link_to "#{auction.title}:", auction_path(auction), id: 'user_index', style: 'color: #00c700'%></br>
+  <h4><%= truncate auction.descrip, length: 150 %></h4></br></br>
+</li>

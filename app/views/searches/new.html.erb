@@ -1,0 +1,13 @@
+<% provide(:title, 'New Search') %>
+  <div class="outtie">
+    <div class="innie">
+      <h1>New Search</h1>
+      <div class="span2">
+        <%= form_for @search do |f| %>
+          <p>
+            <%= f.text_field :keywords, class: "search-query", placeholder: "Search" %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>

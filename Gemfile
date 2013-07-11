@@ -16,12 +16,12 @@ source 'https://rubygems.org'
  gem 'delayed_job'
  gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
  gem 'rails3-jquery-autocomplete'
- gem 'activemerchant', require: 'active_merchant'
  gem 'aws-sdk'
  gem 'mandrill-api'
  gem 'uploadify-rails'
  gem "friendly_id", "~> 4.0.9"
 
+ gem 'activemerchant', require: 'active_merchant'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

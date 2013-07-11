@@ -5,15 +5,21 @@
       <nav>
     		<ul class="nav pull-right">
     		  <% if signed_in? %>
-            <form class="navbar-search">
               <div class="span2">
-                <%= form_for (users_path || auctions_path || lawyers_path), :method => 'get' do %>
-                  <p>
-                    <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search" %>
-                  </p>
+                <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
+                  <%= form_for @searches do |f| %>
+                    <p>
+                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
+                    </p>
+                  <% end %>
+                <% else %>
+                  <%= form_for @search do |f| %>
+                    <p>
+                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
+                    </p>
+                  <% end %>
                 <% end %>
               </div>
-            </form>
             <li class="divider-vertical"></li>
             <% if current_user.unread_messages? %>
               <% if current_user.unread_message_count == 1 %>

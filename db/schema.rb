@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708211140) do
+ActiveRecord::Schema.define(:version => 20130711085121) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -135,36 +135,67 @@ ActiveRecord::Schema.define(:version => 20130708211140) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "searches", :force => true do |t|
+    t.string   "keywords"
+    t.string   "catg"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "slug"
+  end
+
+  add_index "searches", ["slug"], :name => "index_searches_on_slug", :unique => true
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.string   "remember_token"
-    t.boolean  "admin",               :default => false
+    t.boolean  "admin",                :default => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "lawyer",              :default => false
+    t.boolean  "lawyer",               :default => false
     t.string   "firm"
     t.integer  "years_practicing"
     t.integer  "billable_hours"
     t.string   "firm_site"
     t.integer  "billable_rate"
     t.integer  "pat_bar_num"
-    t.boolean  "agent_or_lawyer",     :default => false
+    t.boolean  "agent_or_lawyer",      :default => false
     t.string   "slug"
-    t.integer  "pat_buy",             :default => 0
-    t.integer  "pat_sold",            :default => 0
-    t.integer  "pat_selling",         :default => 0
-    t.string   "sex",                 :default => "undefined"
+    t.integer  "pat_buy",              :default => 0
+    t.integer  "pat_sold",             :default => 0
+    t.integer  "pat_selling",          :default => 0
+    t.string   "sex",                  :default => "undefined"
     t.string   "password_digest"
     t.boolean  "business"
     t.string   "biz"
     t.string   "biz_site"
     t.string   "biz_position"
     t.boolean  "hidden"
+    t.integer  "card_num"
+    t.integer  "exp_month"
+    t.integer  "exp_year"
+    t.integer  "verify_code"
+    t.string   "card_first_name"
+    t.string   "card_last_name"
+    t.integer  "charge_amount_dollar"
+    t.integer  "charge_amount_cents"
+    t.string   "card_type"
+    t.integer  "my_fee_dollars"
+    t.integer  "my_fee_cents"
+    t.string   "ip_address"
+    t.integer  "charge_amount_total"
+    t.integer  "my_fee_total"
+    t.string   "card_address"
+    t.string   "card_city"
+    t.string   "card_state"
+    t.string   "card_country"
+    t.integer  "card_zip"
+    t.string   "trans_id"
+    t.string   "usr_name"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

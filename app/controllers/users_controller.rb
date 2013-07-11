@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	before_filter :admin_user, only: :destroy
  
 	def index
+    @search = Search.new
 		@user = current_user
 		if params[:search]
 			@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['name like ?', "%#{params[:search]}%"])
@@ -24,13 +25,9 @@ class UsersController < ApplicationController
 	end
 
 	def lawyers
-  		@user = current_user
-
-	if params[:search]
-		@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['name like ?', "%#{params[:search]}%"])
-	else
-	  @users = User.order(:name).page(params[:page]).per_page(10)
-	 end
+    @search = Search.new
+    @users = User.paginate(page: params[:page], per_page: 15)
+  	@user = current_user
 	    respond_to do |format|
 	      format.js
 	      format.html # index.html.erb
@@ -39,6 +36,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
+    @search = Search.new
     @auctions = Auction.paginate(page: params[:page], per_page: 15)
 		@user = User.find(params[:id])
 		@microposts = @user.microposts.paginate(page: params[:page], per_page: 15)
@@ -64,6 +62,7 @@ class UsersController < ApplicationController
 	end
  
 	def edit
+    @search = Search.new
 	end
  
 	def update

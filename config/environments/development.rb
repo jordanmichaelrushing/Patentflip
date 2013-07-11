@@ -44,4 +44,17 @@ MydeaSample::Application.configure do
       secret_access_key: 'o/fltAennrfbWjbgu1wJkaPCpxrtsLCAMtzpgx+A'
     }
   }
+
+config.after_initialize do
+  ActiveMerchant::Billing::Base.mode = :test
+  ::GATEWAY = ActiveMerchant::Billing::CreditCard.new(
+    :number     => '#{card_num}',
+    :month      => '#{exp_month}',
+    :year       => '#{exp_year}',
+    :first_name => '#{card_first_name}',
+    :last_name  => '#{card_last_name}',
+    :verification_value  => '#{verify_code}'
+  )
+end
+
 end

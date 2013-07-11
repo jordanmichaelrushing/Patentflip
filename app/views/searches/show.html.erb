@@ -1,0 +1,13 @@
+<% provide(:title, 'Search Results') %>
+  <div class="outtie">
+    <div class="innie">
+      <ul class="users">
+        <% if @search.products.any? %>
+          <h1>Search Results</h1>
+          <%= render @search.products %>
+        <% else %>
+          <h2>Search results? Nada!</h2>
+        <% end %>
+      </ul>
+    </div>
+  </div>

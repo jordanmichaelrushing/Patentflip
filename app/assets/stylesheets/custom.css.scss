@@ -13,12 +13,18 @@
 
 #sidebar-list-active {
   margin-left: 30px;
+  margin-bottom: 0px;
 }
 
 #sidebar-list {
   margin-left: -15px;
+  margin-bottom: 0px;
 }
 
+#user-grav-list {
+  margin-bottom: 10px;
+  display:inline-block;
+}
 .nav-list > li > a, .nav-list .nav-header {
   font-size: 0.8em;
   color: black;
@@ -26,6 +32,10 @@
   margin-left: -45px;
   margin-bottom: 10px;
   text-shadow: 5px 5px 5px #888888;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+  margin-bottom: 0px;
 }
 
 .nav-list-patent {
@@ -40,6 +50,10 @@
 ul.nav.nav-pills {
   margin-left: 50px;
   margin-top: 20px;
+}
+
+#micro-listing {
+  margin-left:20px;
 }
 
 #tab-pills-active {
@@ -136,11 +150,11 @@ li#divide-signin.divider-vertical {
   margin-right: auto;
 }
 
-.navbar-search {
+#navbar-search {
 	padding-top: 15px;
 }
 
-.navbar-search .search-query {
+#navbar-search .search-query {
   height: 25px;
   width: 200px;
   margin-left: -80px;
@@ -250,6 +264,13 @@ divider {
   margin-top: 20px;
 }
 
+#navbar_search {
+  margin-top: 15px;
+  margin-left: -60px;
+  height: 30px;
+  width: 175px;
+}
+
 #myModal {
 	width: 1255px;
 	margin: -250px 0 0 -450px;
@@ -314,7 +335,7 @@ textarea {
 aside {
 	textarea {
 		height: 100px;
-		margin-bottom: 5px;
+		margin-bottom: 15px;
 	}
 }
 
@@ -356,6 +377,10 @@ aside {
   &:hover {
     opacity:0.9;
   }
+}
+
+#shower {
+  padding-bottom: 20px;
 }
 
 .gravatar-user-show {
@@ -542,6 +567,7 @@ h2 {
 
 h4 {
 	color: #888;
+  display:inline-block;
 }
 
 h6 {
@@ -794,7 +820,11 @@ height: 100%;
 #btn_align {
 	float: right;
 	margin-right: 15px;
-  margin-top: 0px;
+  margin-top: 15px;
+}
+
+li.micro-search-results {
+  padding-top: 20px;
 }
 
 .bordes {

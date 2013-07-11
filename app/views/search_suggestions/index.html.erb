@@ -1,0 +1,15 @@
+<% provide(:title, 'Search Results') %>
+  <div class="outtie">
+    <div class="innie">
+      <h1>Search Results</h1>
+      <ul class="users">
+<ul class="users">
+<% (@auctions.each && @users.each) do |f| %>
+  <li>
+    <%= link_to( (image_tag f.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(f)) %>
+    <%= link_to "#{f.title}:", auction_path(f), id: 'user_index', style: 'color: #000000'%></br>
+    <%= truncate f.descrip, length: 150 %></br></br>
+  </li>
+  <div class="userborder"></div>
+<% end %>
+</ul>

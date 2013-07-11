@@ -1,8 +1,6 @@
 MydeaSample::Application.routes.draw do
 
-  resources :search_suggestions
-
-
+resources :search_suggestions
 resources :users do 
     resources :messengers  do
       get :autocomplete_user_name, on: :collection
@@ -20,6 +18,9 @@ resources :sessions, only: [:new, :create, :destroy]
 resources :microposts, only: [:create, :destroy]
 resources :relationships, only: [:create, :destroy]
 resources :convers, only: [:create, :destroy]
+resources :searches, path: "search" do
+      get :autocomplete_user_and_patent_search, on: :collection
+end
 
 root to: 'static_pages#home'
 match '/help', to: 'static_pages#help'
@@ -31,6 +32,7 @@ match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', only: :delete
 match '/lawyers', to: 'users#lawyers'
 match '/users/:user_id/patents', to: 'auctions#patents'
+match '/search', to: 'search_suggestions#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

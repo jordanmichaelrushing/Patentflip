@@ -4,6 +4,7 @@ class AuctionsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
+    @search = Search.new
     @user = current_user
     if params[:search]
       @auctions = Auction.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['title like ?', "%#{params[:search]}%"])
@@ -18,6 +19,7 @@ class AuctionsController < ApplicationController
   end
 
 	def new
+    @search = Search.new
 		@auction = Auction.new
     @user = current_user
     @user.pat_selling += 1
@@ -25,10 +27,11 @@ class AuctionsController < ApplicationController
 
 	def create
     @user = current_user
-		@auction = Auction.create(params[:auction])
+		@auction = Auction.create(params[:auction]){
+      @user.pat_selling = params[@user.pat_selling + 1]
+    }
 		@auction.user_id = current_user.id
     if @auction.save
-      @user.pat_selling = @user.pat_selling + 1
 			flash[:success] = "Uploaded your patent on the marketplace!"
 			redirect_to @auction
 		else
@@ -37,6 +40,7 @@ class AuctionsController < ApplicationController
 	end
 
 	def show
+    @search = Search.new
 		@auction = Auction.find(params[:id])
     @user = current_user
     @users = User.find_by_id(@auction.user_id)
@@ -47,6 +51,7 @@ class AuctionsController < ApplicationController
 	end
 
   def edit
+    @search = Search.new
     @user = User.find_by_id(@auction.user_id)
     @auction = Auction.find(params[:id])
   end
@@ -67,6 +72,7 @@ class AuctionsController < ApplicationController
   end
 
   def patents
+    @search = Search.new
     @user = User.find(params[:user_id])
     @auctions = Auction.paginate(page: params[:page])
   end

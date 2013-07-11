@@ -5,7 +5,7 @@ class SearchSuggestion < ActiveRecord::Base
   	Rails.cache.fetch(["search-terms", prefix]) do
 	  	suggestions = where("term like ?", "#{prefix}_%")
 	  	suggestions.order("popularity desc").limit(10).pluck(:term)
-	end
+	 end
   end
 
   def self.index_products
@@ -24,7 +24,7 @@ class SearchSuggestion < ActiveRecord::Base
   end
 
   def self.index_term(term)
-  	where(term: term.titleize).first_or_initialize.tap do |suggestion|
+  	where(term: term.downcase).first_or_initialize.tap do |suggestion|
   		suggestion.increment! :popularity
   	end
   end

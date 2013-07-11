@@ -2,7 +2,7 @@
 	<div class="outtie">
     <div class="innie">
 			<div class="row">
-				<aside class="span5 offset1">
+        <aside class="span5 offset1" id="shower">
 					<section>
 						<%= render 'shared/user_info' %>
 					</section>
@@ -21,6 +21,8 @@
             <loading>
               <%= will_paginate(@feed_items) %>
             </loading>
+          <% else %>
+            <br><br><br><br><br><br><h2>I'm not working on anything right now...</h2>
           <% end %>
         </div>
 			</div>

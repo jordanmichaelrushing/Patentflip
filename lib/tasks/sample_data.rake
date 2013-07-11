@@ -7,15 +7,16 @@ namespace :db do
 						password_confirmation: "Texman02",
 						lawyer: true)
     admin.toggle!(:admin)
-10.times do |n|
-name = Faker::Name.name
-email = "example-#{n+1}@railstutorial.org"
-password = "password"
-User.create!(name: name,
-email: email,
-password: password,
-password_confirmation: password)
-end
+    
+		10.times do |n|
+		name = Faker::Name.name
+		email = "example-#{n+1}@railstutorial.org"
+		password = "password"
+		User.create!(name: name,
+		email: email,
+		password: password,
+		password_confirmation: password)
+		end
 
 
 		users = User.all(limit: 6)

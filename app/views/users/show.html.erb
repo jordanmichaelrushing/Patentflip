@@ -23,7 +23,7 @@
               <% if @user.microposts.any? %>
 						    <h3>I'm working on...</h3>
 						    <ol class="microposts-list">
-						      <%= render @microposts %>
+						      <%= render "microposts/micro_listing" %>
                   <div class="userborder"></div>
 						    </ol>
 						    <loading>

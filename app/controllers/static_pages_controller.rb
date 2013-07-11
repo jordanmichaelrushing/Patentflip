@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   def home
   	if signed_in?
   		@user = current_user
+      @search = Search.new
       @messengers = @user.received_messages
   		@micropost = @user.microposts.build 
     	@feed_items = @user.feed.paginate(page: params[:page], per_page: 15)
@@ -17,20 +18,17 @@ class StaticPagesController < ApplicationController
 	end
 
   def help
-    if signed_in?
-      @user = current_user
-    end
+    @search = Search.new
+    @user = current_user
   end
 
   def faq
-    if signed_in?
-      @user = current_user
-    end
+    @search = Search.new
+    @user = current_user
   end
 
   def about
-    if signed_in?
-      @user = current_user
-    end
+    @search = Search.new
+    @user = current_user
   end
 end

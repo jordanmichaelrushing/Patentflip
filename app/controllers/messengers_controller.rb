@@ -4,6 +4,7 @@ class MessengersController < ApplicationController
   before_filter :set_user
   before_filter :correct_user, only: [:show, :index]
   def index
+    @search = Search.new
     if params[:mailbox] == "sent"
       @messengers = @user.sent_messages
     else
@@ -12,10 +13,12 @@ class MessengersController < ApplicationController
   end
   
   def show
+    @search = Search.new
     @messenger = Messenger.read_message(params[:id], current_user)
   end
   
   def new
+    @search = Search.new
     @messenger = Messenger.new
     $reply_name = 'n'
     if params[:reply_to]

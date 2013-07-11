@@ -1,4 +1,5 @@
+<h6>User</h6>
 <li>
-  <%= image_tag @user.avatar.url(:micro), class: "gravatar" %>
-  <%= link_to user.name, user %>
+  <%= link_to((image_tag user.avatar.url(:medium), class: "gravatar", id: "user-grav-list"), user)%>
+  <%= link_to user.name, user, id: 'user_index', style: 'color: #00c700' %>
 </li>
