@@ -27,11 +27,10 @@
               <% end %>
             </h4>
           </div>
-          <p>Message</br>
-            <%= f.text_area :body, id: 'my-form' %>
-          </p>
-          <h4>Add an optional file to send.</br>
-            <%= f.file_field :message_attach, id: "upload-form"  %></h4>
+          <h5>Message:</h5></br>
+            <%= f.text_area :body, id: 'message-form' %><br>
+          <h5>Add an optional file to send. (PDF or Picture)</br>
+            <%= f.file_field :message_attach, id: "tube-form"  %></h5>
           <p>
             <%= submit_tag "Send" %>
           </p>
