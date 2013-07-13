@@ -38,6 +38,7 @@
 
 .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
   margin-bottom: 0px;
+  background-color: #00c700;
 }
 
 .nav-list-patent {
@@ -134,6 +135,10 @@ li#divide-signin.divider-vertical {
   &:hover{
     background: rgba(0,0,0,0);
   }
+}
+
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+  margin-top: 0px;
 }
 
 .navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
