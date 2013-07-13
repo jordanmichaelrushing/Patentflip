@@ -1,13 +1,13 @@
 <div class="outtie">
   <div class="innie">
-    <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <div class="tabbable">
       <ul class="nav nav-pills">
         <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
-          <li><a href="#tab2" data-toggle="tab">Descriptions</a></li>
-          <li><a href="#tab3" data-toggle="tab">Pictures</a></li>
-          <li><a href="#tab4" data-toggle="tab">Video</a></li>
-          <li><a href="#tab5" data-toggle="tab">Account Info</a></li>
-          <li><a href="#tab6" data-toggle="tab">Review</a></li>
+        <li><a href="#tab2" data-toggle="tab">Descriptions</a></li>
+        <li><a href="#tab3" data-toggle="tab">Pictures</a></li>
+        <li><a href="#tab4" data-toggle="tab">Video</a></li>
+        <li><a href="#tab5" data-toggle="tab">Account Info</a></li>
+        <li><a href="#tab6" data-toggle="tab">Review</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
@@ -21,7 +21,7 @@
               </br></br>
               Patent Publication Number
               <%= f.text_area :pat_num, id: "the-form" %>
-              </br></br>              
+              </br></br>
               Month to stop
               <%= f.text_area :timer_min, id: "the-form" %>
               </br></br>
@@ -34,77 +34,70 @@
               <%= f.check_box(:goog_url) %><%="  "%>Is your patent on google patents?
               <br><br>
               What Category would you put this patent in?
-              <%= f.select(:category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"]), { :prompt => false}, { :single => true, :size => 5 }) %><br>
-              <div class="form_row">
-                <label for="#{:lic_or_sell}">Would you prefer to license your patent or outright sell it?</label>
-                <% [ 'License', 'Sell'].each do |theme| %>
-                  <br><%= f.radio_button :lic_or_sell, theme, @theme == theme %>
-                  <%= theme.humanize %>
-                <% end %>
-              </div>
-            </h4>
+              <%= f.select(:category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "#{:category}"), { :prompt => false}, { :single => true, :size => 5 }) %>
+              Would you prefer to license your patent or outright sell it?<br></h4>
+              <h2>
+              License: <%= f.radio_button :lic_or_sell, true, id: "radio-sell" %>
+              Sell:    <%= f.radio_button :lic_or_sell, false %>
+              </h2>
           </div>
         </div>
-        <div class="tab-pane fade in" id="tab2">
+        <div class="tab-pane fade" id="tab2">
           <div class="span7 offset2">
             <h4>Add the official description of your patent in this box.
-                <%= f.text_area :pat_off_desc, id: "my-form" %></br>
-                Add any personal description you want to add here. Be sure to let people understand why your patent really stands out, and why it has significant value.
-                <%= f.text_area :descrip, id: "my-form" %></h4>
+                <%= f.text_area :pat_off_desc, id: "descrip-form" %></br>
+                Add any personal description you want to add here. Be sure to let people understand why your patent really stands out, and why it has significant value.<br>
+                <%= f.text_area :descrip, id: "descrip-form" %></h4>
           </div>
         </div>
-        <div class="tab-pane fade in" id="tab3">
+        <div class="tab-pane fade" id="tab3">
           <div class="span7 offset2">
-                Add First Picture and it's description.</br>
-                <%= f.file_field :pic1, id: "upload-form"  %>
-                <%= f.text_area :pic_descr_1, id: "my-form" %></br>
-
+            <h4>Add First Picture and it's description.</br>
+                <%= f.file_field :pic1, id: "upload-form", placeholder: "#{@auction.pic1.url}"  %>
+                <%= f.text_area :pic_descr_1, id: "descrip-form" %></br>
+                
                 </br>Add Second Picture and it's description.</br>
                 <%= f.file_field :pic2, id: "upload-form"  %>
-                <%= f.text_area :pic_descr_2, id: "my-form" %></br>
+                <%= f.text_area :pic_descr_2, id: "descrip-form" %></br>
       
                 </br>Add Third Picture and it's description.</br>
                 <%= f.file_field :pic3, id: "upload-form"  %>
-                <%= f.text_area :pic_descr_3, id: "my-form" %></br>
+                <%= f.text_area :pic_descr_3, id: "descrip-form" %></br>
       
                 </br>Add Fourth Picture and it's description.</br>
                 <%= f.file_field :pic4, id: "upload-form"  %>
-                <%= f.text_area :pic_descr_4, id: "my-form" %></br>
+                <%= f.text_area :pic_descr_4, id: "descrip-form" %></br>
 
                 </br>Add Fifth Picture and it's description.</br>
                 <%= f.file_field :pic5, id: "upload-form"  %>
-                <%= f.text_area :pic_descr_5, id: "my-form" %></br></h4>
-          </div>
+                <%= f.text_area :pic_descr_5, id: "descrip-form" %></br></h4>
+              </div>
         </div>
-        <div class="tab-pane fade in" id="tab4">
+        <div class="tab-pane fade" id="tab4">
           <div class="span7 offset2">
-            <h1> Your patent video </h1>
-            <h4> <%= f.label :vid_url, "Add a video from your computer or youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just upload the file (flv, mp4, or wmv) here:" %></br>
+            <h4> Your patent video<br><br>
+            <%= f.label :video, "Add a video from your computer or youtube that helps to display your patent and its primary functions or what you conceptualize it to do or become. Just upload the file (flv, mp4, or wmv) here:" %></br>
             <%= f.file_field :video, id: "upload-form"  %>
-            <%= f.label :vid_url, "Or add the youtube video id # here (the part after 'v=' in the url):" %></br>
+            <%= f.label :vid_url, "Or add the youtube video id # (the part after 'v=' in the url) here:" %></br>
             http://www.youtube.com/watch?v=<%= f.text_area :vid_url, id: "tube-form", placeholder: "oHZ4Zgu1DEw" %></h4>
           </div>
         </div>
-        <div class="tab-pane fade in" id="tab5">
-            <div class="row">
-              <div class="span6 offset3">
-
-                           
-              </div>
-            </div>
+        <div class="tab-pane fade" id="tab5">
+          <div class="span7 offset2">
+            <p>Howdy, I'm an Amazon Payment Page!</p>
           </div>
-        <div class="tab-pane fade in" id="tab6">
+        </div>
+        <div class="tab-pane fade" id="tab6">
           <div class="span7 offset2">
             <p>
               <h3> Before you submit your patent on the marketplace...</h3>
               <div class="boreds"></div>
                 <h5> Verify all contents on the previous pages are correct. When you're satisfied, click the button below to list your patent.</br>After you have submitted your patent, let everyone know you have listed your patent on the site. </h5></br>
-              <%= f.submit "Add Patent", class: "btn btn-big btn-primary", id: "sign_btn2" %>
-                <% end %>
-            </p>
+              <%= f.submit "Save Patent", class: "btn btn-big btn-primary", id: "sign_btn2" %>
+                <% end %></p>
           </div>
         </div>
       </div>
     </div>
-	</div>
+  </div>
 </div>
