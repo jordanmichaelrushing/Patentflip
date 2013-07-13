@@ -5,13 +5,13 @@
 			<div class="tabbable"> <!-- Only required for left/right tabs -->
 				<ul class="nav nav-pills">
 					<li class="active"><a href="#tab1" data-toggle="tab">Basic User Info</a></li>
-  				<% if @user.lawyer == true %>
+  				<% if @user.biz_law == "lawyer" %>
 				  	<li><a href="#tab2" data-toggle="tab">Lawyer Info</a></li>
 				  <% end %>
-				  <% if @user.business == true %>
+				  <% if @user.biz_law == "business" %>
 				  	<li><a href="#tab3" data-toggle="tab">Business Info</a></li>
 				  <% end %>
-				  <li><a href="#tab4" data-toggle="tab">Extra User Info</a></li>			  
+				  <li><a href="#tab4" data-toggle="tab">Extra Info</a></li>			  
 				  <li><a href="#tab5" data-toggle="tab">Review</a></li>
 				</ul>
 	      <div class="tab-content">
@@ -39,7 +39,7 @@
 							</div>
 						</div>
 					</div>
-  				<% if @user.lawyer == true %>
+  				<% if @user.biz_law == "lawyer" %>
 						<div class="tab-pane fade in" id="tab2">
 							<div class="row">
 								<div class="span6 offset3">
@@ -64,7 +64,7 @@
 							</div>
 						</div>
 					<% end %>
-					<% if @user.business == true %>
+					<% if @user.biz_law == "business" %>
 						<div class="tab-pane fade in" id="tab3">
 							<div class="row">
 								<div class="span6 offset3">
@@ -83,7 +83,10 @@
 					<div class="tab-pane fade in" id="tab4">
 						<div class="row">
 							<div class="span6 offset3">
-								Extra info!
+								<h4>Are you a male, female, or super secretive?
+								Male: <%= f.radio_button :sex, "male", id: "radio-sell" %>
+              	Female: <%= f.radio_button :sex, "female" %>
+              	Undecided <%= f.radio_button :sex, "undefined" %><br><br>
 							</div>
 						</div>
 					</div>

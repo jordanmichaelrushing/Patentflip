@@ -15,5 +15,6 @@
 //= require autocomplete-rails
 //= require bootstrapmin
 //= require twitter-bootstrap-hover-dropdown.min
-//= flowplayer
+//= require flowplayer
+//= require countdown
 //= require_tree .

@@ -26,10 +26,11 @@ class AuctionsController < ApplicationController
 	end
 
 	def create
+    @search = Search.new
     @user = current_user
-		@auction = Auction.create(params[:auction]){
-      @user.pat_selling = params[@user.pat_selling + 1]
-    }
+		@auction = Auction.create(params[:auction])
+    @user.pat_selling = @user.pat_selling + 1
+    @auction.category = @auction.category.sub!(/---\s-\s\D\D\s-\s/n, '')
 		@auction.user_id = current_user.id
     if @auction.save
 			flash[:success] = "Uploaded your patent on the marketplace!"
@@ -45,6 +46,7 @@ class AuctionsController < ApplicationController
     @user = current_user
     @users = User.find_by_id(@auction.user_id)
     @vid_url = :vid_url
+
     if request.path != auction_path(@auction)
       redirect_to @auction, status: :moved_permanently
     end
@@ -54,6 +56,7 @@ class AuctionsController < ApplicationController
     @search = Search.new
     @user = User.find_by_id(@auction.user_id)
     @auction = Auction.find(params[:id])
+    @auction.category = @auction.category.sub!(/---\s-\s\D\D\s-\s/n, '')
   end
  
   def update
@@ -69,6 +72,18 @@ class AuctionsController < ApplicationController
   def destroy
     @auctions.destroy
     redirect_back_or root_path
+  end
+
+  def categories
+    @perms = params[:cat_search]
+    if (@perms == "Agricultural") || (@perms == "Apparel") || (@perms == "Arts") || (@perms == "Automotive") || (@perms == "Biological") || (@perms == "Business") || (@perms == "Chemical") || (@perms == "Construction") || (@perms == "Electronic") || (@perms == "Environmental") || (@perms == "Extensions") || (@perms == "Hardware") || (@perms == "Machinery") || (@perms == "PatentPending") || (@perms == "Structural") || (@perms == "Telecomm") || (@perms == "International") || (@perms == "Miscellaneous")
+      @search = Search.new
+      @user = current_user
+      @auctions = Auction.paginate(page: params[:page], per_page: 10)
+      @users = User.paginate(page: params[:user_id], per_page: 10)
+    else
+      redirect_back_or root_path
+    end
   end
 
   def patents

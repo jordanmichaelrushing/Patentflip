@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711085121) do
+ActiveRecord::Schema.define(:version => 20130713055720) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130711085121) do
     t.datetime "video_updated_at"
     t.string   "slug"
     t.string   "vid_url"
+    t.string   "cat_search"
   end
 
   add_index "auctions", ["slug"], :name => "index_auctions_on_slug", :unique => true
@@ -196,6 +197,7 @@ ActiveRecord::Schema.define(:version => 20130711085121) do
     t.integer  "card_zip"
     t.string   "trans_id"
     t.string   "usr_name"
+    t.string   "biz_law",              :default => "user"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

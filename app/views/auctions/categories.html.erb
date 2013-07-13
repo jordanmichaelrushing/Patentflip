@@ -1,0 +1,35 @@
+<% provide(:title, "#{@perms}") %>
+  <div class="outtie">
+    <div class="innie">
+      <% if @perms == "PatentPending" %>
+        <h1>Patent Pending</h1>
+      <% else %>
+        <h1><%= @perms %></h1>
+      <% end %>
+      <ul class="users">
+        <% @counter = 0 %>
+        <% @auctions.each do |auction| %>
+          <% if auction.category == "#{@perms}" %>
+          <li>
+            <%= link_to( (image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(auction)) %>
+            <%= link_to "#{auction.title}:", auction_path(auction), id: 'user_index', style: 'color: #000000'%></br>
+            <%= truncate auction.descrip, length: 150 %></br></br>
+          </li>
+          <div class="userborder"></div>
+          <% @counter += 1 %>
+          <% end %>
+        <% end %>
+
+        <% if @counter == 0 %>
+            <% if @perms == "PatentPending" %>
+              <h5>No Patent Pending Listings Yet! </h5>
+            <% else %>
+              <h3>No <%= @perms %> Patents Listed Yet!</h3>
+            <% end %>
+        <% end %>
+      </ul>
+      <loading>
+        <%= will_paginate %>
+      </loading>
+    </div>
+  </div>

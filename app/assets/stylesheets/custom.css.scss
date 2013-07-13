@@ -14,11 +14,13 @@
 #sidebar-list-active {
   margin-left: 30px;
   margin-bottom: 0px;
+  padding-bottom: 5px;
 }
 
 #sidebar-list {
   margin-left: -15px;
   margin-bottom: 0px;
+  padding-bottom: 5px;
 }
 
 #user-grav-list {
@@ -72,6 +74,10 @@ ul.nav.nav-pills {
   &:hover {
     background-color: #ddd;
   }
+}
+
+#radio-sell {
+  margin-right: 20px;
 }
 
 li.actives {
@@ -580,6 +586,7 @@ h6 {
 }
 
 h8 {
+  margin-top: 3px;
   color: #888;
   margin-left: auto;
   margin-right: auto;
@@ -617,10 +624,11 @@ footer {
   background-image: linear-gradient(top, #7f7f7f, #191919);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'7f7f7f, endColorstr='#'191919, GradientType=0);
   position: static;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
+  padding-top: 10px;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
 	clear: both;
 	color: white;
 	ul {
@@ -847,6 +855,14 @@ A:hover {
   width: 95%;
 }
 
+.userborde {
+  border-top: 1px solid #ccc;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  width: 25%;
+}
+
 .underborder {
   border-bottom: 1px solid #e8e8e8;
   margin-left: auto;
@@ -1043,9 +1059,24 @@ embed#player1 {
   font-size: 1.3em;
 }
 
+#new-mess-form {
+  margin-left: 100px;
+  height: 55px;
+  width: 300px;
+  font-size: 1.3em;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
 #my-form {
   height: 150px;
   width: 300px;
+  font-size: 1.0em;
+}
+
+#descrip-form {
+  height: 150px;
+  width: 600px;
   font-size: 1.0em;
 }
 
@@ -1069,7 +1100,7 @@ embed#player1 {
   margin-top: 60px;
   border: 3px solid #ddd;
   -moz-border-radius: 9px;
-  border-radius: 3px;
+  border-radius: 9px;
 }
 
 /* sidebar */

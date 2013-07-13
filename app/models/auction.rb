@@ -25,14 +25,13 @@ end
   has_attached_file :video
   validates :title, presence: {message: 'Patent title cannot be blank'}
   validates :pat_num, presence: {message: 'Patent number cannot be blank'}
-  #validates :category, presence: {message: 'Patent category cannot be blank'}  
+  validates :category, presence: {message: 'Patent Category cannot be blank'}  
   validates :pat_off_desc, presence: {message: "You need to have your official patent description. Otherwise businesses won't take you seriously"}
   validates :descrip, presence: {message: 'Your personal description should not be blank'}
   #validates :lic_or_sell, presence: {message: 'You need to specify if you want to sell or license your patent'}
   validates :pic1, presence: {message: 'You need to have at least one picture in the first picture spot'}
   validates :pic_descr_1, presence: {message: 'You need to have a description for your picture'}
   validates_attachment_content_type :video, content_type: [ "video/flv", "video/mp4", "video/wmv"]
-
 
   has_one :user
 end

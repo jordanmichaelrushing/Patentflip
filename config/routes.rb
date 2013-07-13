@@ -33,6 +33,9 @@ match '/signout', to: 'sessions#destroy', only: :delete
 match '/lawyers', to: 'users#lawyers'
 match '/users/:user_id/patents', to: 'auctions#patents'
 match '/search', to: 'search_suggestions#index'
+match '/categories/:cat_search', to: 'auctions#categories'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

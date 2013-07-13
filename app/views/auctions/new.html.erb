@@ -32,7 +32,17 @@
               <%= f.text_area :timer_hr, id: "the-form" %>
               </br></br>
               <%= f.check_box(:goog_url) %><%="  "%>Is your patent on google patents?
-                
+              <br><br>
+              What Category would you put this patent in?
+              <%= f.select(:category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"]), { :prompt => false}, { :single => true, :size => 5 }) %><br>
+              <div class="form_row">
+                <label for="#{:lic_or_sell}">Would you prefer to license your patent or outright sell it?</label>
+                <% [ 'License', 'Sell'].each do |theme| %>
+                  <br><%= f.radio_button :lic_or_sell, theme, @theme == theme %>
+                  <%= theme.humanize %>
+                <% end %>
+              </div>
+            </h4>
           </div>
         </div>
         <div class="tab-pane fade in" id="tab2">
@@ -40,7 +50,7 @@
             <h4>Add the official description of your patent in this box.
                 <%= f.text_area :pat_off_desc, id: "my-form" %></br>
                 Add any personal description you want to add here. Be sure to let people understand why your patent really stands out, and why it has significant value.
-                <%= f.text_area :descrip, id: "my-form" %></h4><% @user.pat_selling += 1 %>
+                <%= f.text_area :descrip, id: "my-form" %></h4>
           </div>
         </div>
         <div class="tab-pane fade in" id="tab3">
@@ -52,7 +62,6 @@
                 </br>Add Second Picture and it's description.</br>
                 <%= f.file_field :pic2, id: "upload-form"  %>
                 <%= f.text_area :pic_descr_2, id: "my-form" %></br>
-                <% @user.pat_selling += 1 %>
       
                 </br>Add Third Picture and it's description.</br>
                 <%= f.file_field :pic3, id: "upload-form"  %>
@@ -80,18 +89,7 @@
             <div class="row">
               <div class="span6 offset3">
 
-                <form action="https://authorize.payments-sandbox.amazon.com/cobranded-ui/actions/start" method="get">
-                  <input type="hidden" name="collectEmailAddress" value="true" >
-                  <input type="hidden" name="recipientPaysFee" value="true" >
-                  <input type="hidden" name="maxVariableFee" value="10.00" >
-                  <input type="hidden" name="callerAccountId" value="SJBUVQNNAMTLXTUU917VR8VCGEK7MD5BF4UF8T" >
-                  <input type="hidden" name="pipelineName" value="Recipient" >
-                  <input type="hidden" name="callerKey" value="11SEM03K88SD016FS1G2" >
-                  <input type="hidden" name="maxFixedFee" value="0" >
-                  <input type="hidden" name="callerReference" value="25fa4b31-69c4-4d18-b896-b2b9c922989f" >
-                  <input type="hidden" name="returnURL" value="<% session[:return_to] %>" >
-                  <input type="image" src="http://g-ecx.images-amazon.com/images/G/01/asp/MarketPlaceFeeWithLogo.gif" border="0">
-                </form><br><br>               
+                           
               </div>
             </div>
           </div>
