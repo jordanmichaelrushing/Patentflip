@@ -5,7 +5,7 @@ namespace :db do
 						email: "jordan@rushingfitness.com",
 						password: "Texman02",
 						password_confirmation: "Texman02",
-						lawyer: true)
+						biz_law: "lawyer")
     admin.toggle!(:admin)
     
 		20.times do |n|

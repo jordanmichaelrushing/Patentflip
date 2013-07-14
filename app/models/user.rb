@@ -12,7 +12,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
   :user_attributes, :avatar_file_name, :lawyer, :firm, :years_practicing, 
-  :billable_hours, :firm_site, :pat_bar_num, :agent_or_lawyer
+  :billable_hours, :firm_site, :pat_bar_num, :agent_or_lawyer, :sex, :firm_agent_lawyer, :pat_cat
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]

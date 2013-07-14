@@ -1,4 +1,4 @@
-$('.microposts-list').append('<%= j render(microposts/micro_listing) %>');
+$('.microposts-list').append('<%= j render("microposts/micro_listing") %>');
 <% if @microposts.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@microposts) %>');
 <% else %>

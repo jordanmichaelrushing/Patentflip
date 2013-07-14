@@ -26,11 +26,17 @@
     <% end %>
 
     <div class="userlinks">
-      <h4>Firm:<br>
+      <h4>
+       Firm: <%= link_to user.firm, "http://#{user.firm_site}", :target => "_blank" %><br>
       Average Billable Hours: $<%= user.billable_hours %>/hr<br>
       Years Practicing: <%= user.years_practicing %><br>
       Bar #: <%= user.pat_bar_num %><br>
-      Patents Specializing In:</h4>
+      <% if user.pat_cat == "Any Kind" %>
+        Patents Specializing In: <%= link_to user.pat_cat, auctions_path %>
+      <% else %>
+        Patents Specializing In: <%= link_to user.pat_cat, "/categories/#{user.pat_cat}" %>
+      <% end %>
+      <br></h4>
     </div>
 </li>
   <div class="userborder"></div>

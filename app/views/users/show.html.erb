@@ -14,10 +14,27 @@
             <% end %>
           <%= render 'follow_form' if signed_in? %>
           <%= render 'shared/stats' %>
-				
+				  <h2><br>About:<br></h2>
+        <h5>
+        <% if @user.biz_law == "lawyer" %>
+          Firm: <br><%= link_to @user.firm, "http://#{@user.firm_site}", :target => "_blank" %><br><br>
+          Average Billable Hours: <br>$<%= @user.billable_hours %>/hr<br><br>
+          Years Practicing: <br><%= @user.years_practicing %><br><br>
+          Bar #: <br><%= @user.pat_bar_num %><br><br>
+          <% if @user.pat_cat == "Any Kind" %>
+            Patents Specializing In: <br><%= link_to @user.pat_cat, auctions_path %>
+          <% else %>
+            Patents Specializing In: <br><%= link_to @user.pat_cat, "/categories/#{user.pat_cat}" %>
+          <% end %>
+        <% elsif @user.biz_law == "business" %>
+          Business: <br><%= link_to @user.biz, "http://#{@user.biz_site}", :target => "_blank" %><br><br>
+          Business Position: <br>$<%= @user.biz_position %><br><br>
+        <% elsif @user.biz_law == "user" %>
+          Gender: <br><%= @user.sex %><br><br>
+          Patents sold on Patentflip: <br><%= @user.pat_sold %><br><br>
+        <% end %>
+        </h5>
 				</div>
-        <section>
-        </section>
         <div class="spanshow">
 				    <div class="span5">
               <% if @user.microposts.any? %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130713055720) do
+ActiveRecord::Schema.define(:version => 20130714065803) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -198,6 +198,8 @@ ActiveRecord::Schema.define(:version => 20130713055720) do
     t.string   "trans_id"
     t.string   "usr_name"
     t.string   "biz_law",              :default => "user"
+    t.string   "firm_agent_lawyer",    :default => "lawyer"
+    t.string   "pat_cat"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

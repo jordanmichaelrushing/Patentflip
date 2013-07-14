@@ -5,7 +5,7 @@
 			<div class="tabbable"> <!-- Only required for left/right tabs -->
 				<ul class="nav nav-pills">
 					<li class="active"><a href="#tab1" data-toggle="tab">Basic User Info</a></li>
-  				<% if @user.biz_law == "lawyer" %>
+  				<% if @user.lawyer == true %>
 				  	<li><a href="#tab2" data-toggle="tab">Lawyer Info</a></li>
 				  <% end %>
 				  <% if @user.biz_law == "business" %>
@@ -50,16 +50,21 @@
 									<%= f.text_field :years_practicing %>
 								
 									<%= f.label :billable_hours %>
-									<%= f.password_field :billable_hours %>
+									<%= f.text_field :billable_hours %>
 
 									<%= f.label :firm_site %>
-									<%= f.password_field :firm_site %>
+									<%= f.text_field :firm_site, placeholder: "www.myfirmsite.com" %>
 
 									<%= f.label :pat_bar_num %>
-									<%= f.password_field :pat_bar_num %>
+									<%= f.text_field :pat_bar_num %>
 
-									<%= f.label :agent_or_lawyer %>
-									<%= f.password_field :agent_or_lawyer %><br><br>
+									<%= f.label :pat_cat, "Do you specialize in a certain patent category?" %>
+									<%= f.select(:pat_cat, options_for_select(["Any Kind", "Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "Any Kind"), { :prompt => false}, { :single => true, :size => 5 }) %>
+
+									<h5>Are you a Patent Agent, Lawyer, or the firm itself?</h5>
+									Agent: <%= f.radio_button :firm_agent_lawyer, "agent", id: "radio-sell" %>
+			    				Lawyer: <%= f.radio_button :firm_agent_lawyer, "lawyer", id: "radio-sell" %>
+			    				Firm: <%= f.radio_button :firm_agent_lawyer, "firm" %><br><br>
 								</div>
 							</div>
 						</div>
