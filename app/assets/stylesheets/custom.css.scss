@@ -134,6 +134,7 @@ li#divide-signin.divider-vertical {
   color: #bbb;
   &:hover{
     background: rgba(0,0,0,0);
+    color: white;
   }
 }
 
@@ -812,12 +813,24 @@ height: 100%;
 	}
 }
 
+tabs {
+  margin-left: 10px;
+}
+
 #upload-form {
 	border-radius: 6px;
 	width: 300px;
 	padding-top: 0px;
 	height: 38px;
  	background-color: white;
+}
+
+#hire-btn {
+  margin-left: 25px;
+  margin-right: auto;
+  margin-top: 20px;
+  font-size: 2.4em;
+  width: 120px;
 }
 
 #edit-form {

@@ -13,52 +13,67 @@
 						  <%= link_to "Message User", new_user_messenger_path(@user), class: "btn btn-mini btn-primary", id: "sign_btn6"%>
             <% end %>
           <%= render 'follow_form' if signed_in? %>
+          <% if @user.biz_law == "lawyer" %>
+            <%= link_to "Hire Me", "#", class: "btn btn-large btn-primary", id: "hire-btn" %>
+          <% end %>
           <%= render 'shared/stats' %>
 				  <h2><br>About:<br></h2>
         <h5>
         <% if @user.biz_law == "lawyer" %>
-          Firm: <br><%= link_to @user.firm, "http://#{@user.firm_site}", :target => "_blank" %><br><br>
-          Average Billable Hours: <br>$<%= @user.billable_hours %>/hr<br><br>
-          Years Practicing: <br><%= @user.years_practicing %><br><br>
-          Bar #: <br><%= @user.pat_bar_num %><br><br>
+          &nbsp;Firm: <br><tabs><%= link_to @user.firm, "http://#{@user.firm_site}", :target => "_blank" %></tabs><br><br>
+          &nbsp;Average Billable Hours: <br><tabs>$<%= @user.billable_hours %>/hr</tabs><br><br>
+          &nbsp;Years Practicing: <br><tabs><%= @user.years_practicing %></tabs><br><br>
+          &nbsp;Bar #: <br><tabs><%= @user.pat_bar_num %></tabs><br><br>
           <% if @user.pat_cat == "Any Kind" %>
-            Patents Specializing In: <br><%= link_to @user.pat_cat, auctions_path %>
+            &nbsp;Patents Specializing In: <br><tabs><%= link_to @user.pat_cat, auctions_path %></tabs>
           <% else %>
-            Patents Specializing In: <br><%= link_to @user.pat_cat, "/categories/#{user.pat_cat}" %>
-          <% end %>
+            &nbsp;Patents Specializing In: <br><tabs><%= link_to @user.pat_cat, "/categories/#{user.pat_cat}" %></tabs>
+          <% end %><br><br>
         <% elsif @user.biz_law == "business" %>
-          Business: <br><%= link_to @user.biz, "http://#{@user.biz_site}", :target => "_blank" %><br><br>
-          Business Position: <br>$<%= @user.biz_position %><br><br>
+          &nbsp;Business: <br><tabs><%= link_to @user.biz, "http://#{@user.biz_site}", :target => "_blank" %></tabs><br><br>
+          &nbsp;Business Position: <br><tabs>$<%= @user.biz_position %></tabs><br><br>
         <% elsif @user.biz_law == "user" %>
-          Gender: <br><%= @user.sex %><br><br>
-          Patents sold on Patentflip: <br><%= @user.pat_sold %><br><br>
+          &nbsp;Gender: <br><tabs><%= @user.sex %></tabs><br><br>
+          &nbsp;Patents sold on Patentflip: <br><tabs><%= @user.pat_sold %></tabs><br><br>
         <% end %>
         </h5>
 				</div>
         <div class="spanshow">
 				    <div class="span5">
-              <% if @user.microposts.any? %>
-						    <h3>I'm working on...</h3>
-						    <ol class="microposts-list">
-						      <%= render "microposts/micro_listing" %>
-                  <div class="userborder"></div>
-						    </ol>
-						    <loading>
-                  <%= will_paginate(@microposts) %>
-                </loading>
+              <% if @user.biz_law == "lawyer" %>
+                <% #either render a jobs category to hire me for OR personal description (If a firm, the firms description with a group of firms users pages with avatars) %>
+              <% elsif @user.biz_law == "business" %>
+                <% #render personal description (If a firm, the firms description with a group of firms users pages with avatars) %>
               <% else %>
-                <h3>No posts from <%=@user.name%>...yet!</h3>
+                <% if @user.microposts.any? %>
+  						    <h3>I'm working on...</h3>
+  						    <ol class="microposts-list">
+  						      <%= render "microposts/micro_listing" %>
+                    <div class="userborder"></div>
+  						    </ol>
+  						    <loading>
+                    <%= will_paginate(@microposts) %>
+                  </loading>
+                <% else %>
+                  <h3>No posts from <%=@user.name%>...yet!</h3>
+                <% end %>
               <% end %>
 				    </div>
             <div class="span7">
-              <% @auction_count = 0 %>
-              <patentlisting>
-                <h3>Recent Patent Listings..</h3>
-                <%= render partial: "show_patents" %>
-              </patentlisting>
+            <% if user.biz_law == "lawyer" %>
+                <% #render the patent jobs they have succesfully filed on the site %>
+              <% elsif @user.biz_law == "business" %>
+                <% #render the patents they have succesfully bought on the site %>
+              <% else %>
+                <% @auction_count = 0 %>
+                <patentlisting>
+                  <h3>Recent Patent Listings..</h3>
+                  <%= render partial: "show_patents" %>
+                </patentlisting>
                 <loading>
                   <%= will_paginate(@auctions) %>
                 </loading>
+              <% end %>
             </div>
         </div>
 			</br></br></br></br></br></br></br></br></br></br></br></br>
