@@ -60,7 +60,7 @@
               <% end %>
 				    </div>
             <div class="span7">
-            <% if user.biz_law == "lawyer" %>
+            <% if @user.biz_law == "lawyer" %>
                 <% #render the patent jobs they have succesfully filed on the site %>
               <% elsif @user.biz_law == "business" %>
                 <% #render the patents they have succesfully bought on the site %>
