@@ -5,7 +5,7 @@
 			<div class="tabbable"> <!-- Only required for left/right tabs -->
 				<ul class="nav nav-pills">
 					<li class="active"><a href="#tab1" data-toggle="tab">Basic User Info</a></li>
-  				<% if @user.lawyer == true %>
+  				<% if @user.biz_law == "lawyer" %>
 				  	<li><a href="#tab2" data-toggle="tab">Lawyer Info</a></li>
 				  <% end %>
 				  <% if @user.biz_law == "business" %>
@@ -90,8 +90,8 @@
 							<div class="span6 offset3">
 								<h4>Are you a male, female, or super secretive?<br><br></h4>
 								<h5>
-								Male: <%= f.radio_button :sex, "male", id: "radio-sell" %>
-              	Female: <%= f.radio_button :sex, "female", id: "radio-sell" %>
+								Male: <%= f.radio_button :sex, "Male", id: "radio-sell" %>
+              	Female: <%= f.radio_button :sex, "Female", id: "radio-sell" %>
               	Undecided <%= f.radio_button :sex, "undefined" %><br><br>
               	</h5>
 							</div>
