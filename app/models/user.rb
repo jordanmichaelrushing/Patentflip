@@ -11,7 +11,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
-  :user_attributes, :avatar_file_name, :lawyer, :firm, :years_practicing, 
+  :user_attributes, :avatar_file_name, :lawyer, :firm, :years_practicing, :listing_attributes,
   :billable_hours, :firm_site, :pat_bar_num, :agent_or_lawyer, :sex, :firm_agent_lawyer, :pat_cat
 
   extend FriendlyId
@@ -41,6 +41,9 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"
+
+  has_many :listings, dependent: :destroy
+  accepts_nested_attributes_for :listings
 
   has_many :auctions, dependent: :destroy
   accepts_nested_attributes_for :auctions

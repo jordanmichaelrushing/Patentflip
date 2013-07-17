@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714065803) do
+ActiveRecord::Schema.define(:version => 20130716230104) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -80,6 +80,30 @@ ActiveRecord::Schema.define(:version => 20130714065803) do
   add_index "convers", ["receiver_id"], :name => "index_convers_on_receiver_id"
   add_index "convers", ["sender_id", "receiver_id"], :name => "index_convers_on_sender_id_and_receiver_id", :unique => true
   add_index "convers", ["sender_id"], :name => "index_convers_on_sender_id"
+
+  create_table "filings", :force => true do |t|
+    t.string   "milestone_title"
+    t.text     "milestone_content"
+    t.boolean  "milestone_success"
+    t.boolean  "milestone_on_time"
+    t.boolean  "milestone_late"
+    t.integer  "milestone_timer"
+    t.boolean  "minestone_user_accept"
+    t.boolean  "user_accept_filing"
+    t.integer  "pay_per_milestone"
+    t.string   "filing_title"
+    t.text     "filing_content"
+    t.integer  "user_current_filing_amount"
+    t.integer  "user_success_filing"
+    t.string   "filing_user_name"
+    t.string   "filing_lawyer_name"
+    t.string   "job_category"
+    t.string   "job_descrip"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false

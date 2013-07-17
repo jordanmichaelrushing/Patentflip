@@ -20,7 +20,7 @@
 				  <h2><br>About:<br></h2>
         <h5>
         <% if @user.biz_law == "lawyer" %>
-          &nbsp;Firm: <br><tabs><%= link_to @user.firm, "http://#{@user.firm_site}", :target => "_blank" %></tabs><br><br>
+          &nbsp;Firm: <br><tabs><%= link_to @user.firm, "https://#{@user.firm_site}", :target => "_blank" %></tabs><br><br>
           &nbsp;Average Billable Hours:<br><br><tabs>$<%= @user.billable_hours %>/hr</tabs><br><br>
           &nbsp;Years Practicing:<br><br><tabs><%= @user.years_practicing %></tabs><br><br>
           &nbsp;Bar #:<br><br><tabs><%= @user.pat_bar_num %></tabs><br><br>
@@ -30,7 +30,7 @@
             &nbsp;Patents Specializing In: <br><tabs><%= link_to @user.pat_cat, "/categories/#{user.pat_cat}" %></tabs>
           <% end %><br><br>
         <% elsif @user.biz_law == "business" %>
-          &nbsp;Business: <br><tabs><%= link_to @user.biz, "http://#{@user.biz_site}", :target => "_blank" %></tabs><br><br>
+          &nbsp;Business: <br><tabs><%= link_to @user.biz, "https://#{@user.biz_site}", :target => "_blank" %></tabs><br><br>
           &nbsp;Business Position: <br><tabs>$<%= @user.biz_position %></tabs><br><br>
         <% elsif @user.biz_law == "user" %>
           &nbsp;Gender:<br><br><tabs><%= @user.sex %></tabs><br><br>

@@ -44,7 +44,7 @@ class AuctionsController < ApplicationController
     @search = Search.new
 		@auction = Auction.find(params[:id])
     @user = current_user
-    @users = User.find_by_id(@auction.user_id)
+    @users = User.find(@auction.user_id)
     @vid_url = :vid_url
 
     if request.path != auction_path(@auction)
