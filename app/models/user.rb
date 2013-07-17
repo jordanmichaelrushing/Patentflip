@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
   :user_attributes, :avatar_file_name, :lawyer, :firm, :years_practicing, :listing_attributes,
@@ -16,9 +5,6 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
-  # def should_generate_new_friendly_id?
-  #   new_record?
-  # end
 
   def purchase
     response = GATEWAY.purchase(charge_amount_total, credit_card, purchase_options)

@@ -30,7 +30,6 @@ class AuctionsController < ApplicationController
     @user = current_user
 		@auction = Auction.create(params[:auction])
     @user.pat_selling = @user.pat_selling + 1
-    @auction.category = @auction.category.sub!(/---\s-\s\D\D\s-\s/n, '')
 		@auction.user_id = current_user.id
     if @auction.save
 			flash[:success] = "Uploaded your patent on the marketplace!"
@@ -100,3 +99,4 @@ class AuctionsController < ApplicationController
     redirect_to (new_auction_path), error: "Cannot edit others information!" unless current_user?(@user)
   end
 end
+
