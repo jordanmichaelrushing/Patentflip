@@ -7,9 +7,6 @@ class Filing < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :filing_title, use: [:slugged, :history]
-  # def should_generate_new_friendly_id?
-  #   new_record?
-  # end
 
   has_attached_file :picture, styles: { big: "600x400>", mid: "250x250>", micro: "60x60>" }
 

@@ -21,6 +21,7 @@ resources :convers, only: [:create, :destroy]
 resources :searches, path: "search" do
       get :autocomplete_user_and_patent_search, on: :collection
 end
+resources :filings
 
 root to: 'static_pages#home'
 match '/help', to: 'static_pages#help'

@@ -103,7 +103,7 @@
     }
     else 
     {
-      days = Math.ceil(diffSecs/60/60/24)%7;
+      days = Math.ceil(diffSecs/60/60/24);
       weeks = Math.floor(diffSecs/60/60/24/7);
     }
 

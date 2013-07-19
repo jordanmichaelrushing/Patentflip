@@ -14,6 +14,10 @@ class SearchesController < ApplicationController
     @user = current_user
     @searches = Search.new
     @search = Search.find(params[:id])
+    if ((@search.keywords == "") || (@search.keywords == " ") || (@seach.keywords == :undefined))
+      flash[:alert] = "Search results? Nada!"
+      redirect_back_or root_path
+    end
   end
 
 end
