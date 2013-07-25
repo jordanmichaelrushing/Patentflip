@@ -8,17 +8,29 @@
       <% end %>
       <ul class="users">
         <% @counter = 0 %>
-        <% @auctions.each do |auction| %>
-          <% if auction.category == "#{@perms}" %>
-          <li>
-            <%= link_to( (image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(auction)) %>
-            <%= link_to "#{auction.title}:", auction_path(auction), id: 'user_index', style: 'color: #000000'%></br>
-            <%= truncate auction.descrip, length: 150 %></br></br>
-          </li>
-          <div class="userborder"></div>
-          <% @counter += 1 %>
+          <% @auctions.each do |auction| %>
+            <% if auction.category == "#{@perms}" %>
+            <li>
+              <%= link_to( (image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(auction)) %>
+              <%= link_to "#{auction.title}:", auction_path(auction), id: 'user_index', style: 'color: #000000'%></br>
+              <%= truncate auction.descrip, length: 150 %></br></br>
+            </li>
+            <div class="userborder"></div>
+            <% @counter += 1 %>
+            <% end %>
           <% end %>
-        <% end %>
+
+          <% @filings.each do |auction| %>
+            <% if auction.job_category == "#{@perms}" %>
+            <li>
+              <%= link_to( (image_tag auction.picture.url(:mid), class: "gravatar-pat-index"), filing_path(auction)) %>
+              <%= link_to "#{auction.filing_title}:", filing_path(auction), id: 'user_index', style: 'color: #000000'%></br>
+              <%= truncate auction.job_descrip, length: 150 %></br></br>
+            </li>
+            <div class="userborder"></div>
+            <% @counter += 1 %>
+            <% end %>
+          <% end %>
 
         <% if @counter == 0 %>
             <% if @perms == "PatentPending" %>

@@ -76,6 +76,7 @@ class AuctionsController < ApplicationController
   def categories
     @perms = params[:cat_search]
     if (@perms == "Agricultural") || (@perms == "Apparel") || (@perms == "Arts") || (@perms == "Automotive") || (@perms == "Biological") || (@perms == "Business") || (@perms == "Chemical") || (@perms == "Construction") || (@perms == "Electronic") || (@perms == "Environmental") || (@perms == "Extensions") || (@perms == "Hardware") || (@perms == "Machinery") || (@perms == "PatentPending") || (@perms == "Structural") || (@perms == "Telecomm") || (@perms == "International") || (@perms == "Miscellaneous")
+      @filings = Filing.paginate(page: params[:page], per_page: 10)
       @search = Search.new
       @user = current_user
       @auctions = Auction.paginate(page: params[:page], per_page: 10)

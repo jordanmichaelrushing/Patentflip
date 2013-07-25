@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716230104) do
+ActiveRecord::Schema.define(:version => 20130725183017) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -103,7 +103,11 @@ ActiveRecord::Schema.define(:version => 20130716230104) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "slug"
+    t.integer  "user_id"
   end
+
+  add_index "filings", ["slug"], :name => "index_filings_on_slug", :unique => true
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false

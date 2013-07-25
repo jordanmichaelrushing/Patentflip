@@ -13,16 +13,25 @@
 						<%= render 'shared/micropost_form' %>
 				</aside>
 				<div class="span6">
-          <% if @feed_items.any? %>
-            <h3>Recent Patent Listings</h3>
-            <ol class="microposts">
-              <%= render 'feeds' %> 
-            </ol>
-            <loading>
-              <%= will_paginate(@feed_items) %>
-            </loading>
+        <% $law_query = "u" %>
+          <% unless @user.biz_law == "lawyer" %>
+            <% if @feed_items.any? %>
+              <h3>Recent Patent Listings</h3>
+              <ol class="users">
+                <%= render partial: 'auctions/index' %> 
+              </ol>
+              <loading>
+                <%= will_paginate(@auctions) %>
+              </loading>
+            <% else %>
+              <br><br><br><br><br><br><h2>No recent patent listings for now...</h2>
+            <% end %>
           <% else %>
-            <br><br><br><br><br><br><h2>I'm not working on anything right now...</h2>
+            <ol class="microposts">
+            <% $law_query = "l" %>
+            <% #Put in job listings here %>
+            </ol>
+            <%= will_paginate(@feed_items) %>
           <% end %>
         </div>
 			</div>

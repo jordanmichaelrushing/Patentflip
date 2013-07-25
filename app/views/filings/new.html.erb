@@ -1,7 +1,52 @@
 <% provide(:title, 'New Filing Job') %>
-  <div class="outtie">
-    <div class="innie">
+<div class="outtie">
+  <div class="innie">
     <h1>New Filing Job</h1>
-      
+    <div class="tabbable">
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
+        <li><a href="#tab2" data-toggle="tab">Picture</a></li>
+        <li><a href="#tab3" data-toggle="tab">Account Info</a></li>
+        <li><a href="#tab4" data-toggle="tab">Review</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <div class="span7 offset2">
+            <h4> 
+              <%= form_for(@filing, html: { multipart: true }) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+
+              What's your Job Title:
+              <%= f.text_area :filing_title, id: "the-form" %>
+              <br><br>
+              What Category would you put this patent in?
+              <%= f.select(:job_category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "#{:job_category}"), { :prompt => false}, { :single => true, :size => 5 }) %>
+              Add a generic description about the idea you want to patent. Don't be too specific about it as this can be viewed by the public and your idea can be stolen. 
+                <%= f.text_area :job_descrip, id: "descrip-form" %></br></h4>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab2">
+          <div class="span7 offset2">
+            <h4>Add A Picture for your job.</br>
+                <%= f.file_field :picture, id: "upload-form" %></br>
+            </h4>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab3">
+          <div class="span7 offset2">
+            <p>Howdy, I'm an Amazon Payment Page!</p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab4">
+          <div class="span7 offset2">
+            <h3> Before you submit your job to patent lawyers on the site...</h3>
+            <div class="boreds"></div>
+            <h5> Verify all contents on the previous pages are correct. When you're satisfied, click the button below to list your job.</h5></br>
+            <%= f.submit "Save Patent", class: "btn btn-big btn-primary", id: "sign_btn2" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>

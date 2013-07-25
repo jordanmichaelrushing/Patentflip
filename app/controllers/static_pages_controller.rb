@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   	if signed_in?
   		@user = current_user
       @search = Search.new
+      @auctions = Auction.paginate(page: params[:page], per_page: 15, :order => "created_at desc")
       @messengers = @user.received_messages
   		@micropost = @user.microposts.build 
     	@feed_items = @user.feed.paginate(page: params[:page], per_page: 15)

@@ -1,7 +1,17 @@
-$('.microposts').append('<%= j render("feeds") %>');
-<% if @feed_items.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@feed_items) %>');
+<% if $law_query == "l" %>
+  $('.microposts').append('<%= j render("feeds") %>');
+  <% if @feed_items.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@feed_items) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 1 %>
 <% else %>
-  $('.pagination').remove();
+  $('.users').append('<%= j render("auctions/index") %>');
+  <% if @auctions.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@auctions) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 1 %>
 <% end %>
-<% sleep 1 %>
