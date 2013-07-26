@@ -1,0 +1,12 @@
+<% provide(:title, 'All Jobs') %>
+  <div class="outtie">
+    <div class="innie">
+      <h1>All Jobs</h1>
+      <ul class="users">
+        <%= render partial: "index" %>
+      </ul>
+      <loading>
+        <%= will_paginate %>
+      </loading>
+    </div>
+  </div>

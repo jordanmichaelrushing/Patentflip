@@ -1,0 +1,21 @@
+<% @filings.each do |auction| %>
+  <% if auction.lawyer_id == @user.id %>
+    <div class="underborder"></div></br>
+    <%= link_to (image_tag auction.picture.url(:micro)), filing_path(auction) %>
+    <%= link_to auction.title, filing_path(auction), id: 'user_index', style: 'color: #000000'%>
+    <% @job_count += 1 %>
+  <% end %>
+  </br></br>
+<% end %>
+<% if @job_count == 0 %>
+  <h4>No Jobs posted thus far, 
+      <% if @user.sex == "Male" %>
+        he needs to step his
+      <% elsif @user.sex == "Female"%>
+        she needs to step her
+      <% else %>
+        they need to step their
+      <% end %>
+      game up!
+  </h4>
+<% end %>
