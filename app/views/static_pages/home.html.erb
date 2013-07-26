@@ -16,7 +16,7 @@
         <% $law_query = "u" %>
           <% unless @user.biz_law == "lawyer" %>
             <% if @feed_items.any? %>
-              <h3>Recent Patent Listings</h3>
+              <h1>Recent Patent Listings</h1>
               <ol class="users">
                 <%= render partial: 'auctions/index' %> 
               </ol>
@@ -24,14 +24,21 @@
                 <%= will_paginate(@auctions) %>
               </loading>
             <% else %>
-              <br><br><br><br><br><br><h2>No recent patent listings for now...</h2>
+              <br><br><br><br><br><br><h2>No recent patent listings, for now...</h2>
             <% end %>
           <% else %>
-            <ol class="microposts">
             <% $law_query = "l" %>
-            <% #Put in job listings here %>
-            </ol>
-            <%= will_paginate(@feed_items) %>
+            <% if @filings.any? %>
+              <h1>Recent Job Postings</h1>
+              <ol class="microposts">
+                <%= render partial: 'filings/index' %>
+              </ol>
+              <loading>
+                <%= will_paginate(@filings) %>
+              </loading>
+            <% else %>
+              <br><br><br><br><br><br><h2>No recent job postings, for now...</h2>
+            <% end %>
           <% end %>
         </div>
 			</div>

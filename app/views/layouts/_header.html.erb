@@ -55,7 +55,11 @@
             </li>
        			<li class="divider-vertical"></li>
   		  		<li>
-              <a href="<%= auctions_path %>" title="Look at the patents on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon_find") %><br>All Patents</a>
+              <% if @user.biz_law == "lawyer" %>
+                <a href="<%= filings_path %>" title="Look at the jobs!"><%= image_tag("/assets/pat_find_icon.png", id: "job_icon_find") %><br>All Jobs</a>
+              <% else %>
+                <a href="<%= auctions_path %>" title="Look at the patents on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon_find") %><br>All Patents</a>
+              <% end %>
             </li>
      				<li class="divider-vertical"></li>
   					<li id="fat-menu" class="dropdown">

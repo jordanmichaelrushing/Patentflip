@@ -7,16 +7,7 @@ class UsersController < ApplicationController
 	def index
     @search = Search.new
 		@user = current_user
-		if params[:search]
-			@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all, conditions: ['name like ?', "%#{params[:search]}%"])
-			if @users.size.zero? 
-				flash[:notice] = "No Users Found" 
-				@users = User.order(:created_at).page(params[:page]).per_page(10).find(:all) 
-			end
-
-		else
-	    	@users = User.order(:created_at).page(params[:page]).per_page(10)
-		end
+    @users = User.order(:created_at).page(params[:page]).per_page(10)
 	    respond_to do |format|
 	      format.js
 	      format.html # index.html.erb
@@ -38,6 +29,7 @@ class UsersController < ApplicationController
 	def show
     @search = Search.new
     @auctions = Auction.paginate(page: params[:page], per_page: 15)
+    @filings = Filing.paginate(page: params[:page], per_page: 15)
 		@user = User.find(params[:id])
 		@microposts = @user.microposts.paginate(page: params[:page], per_page: 15)
     if request.path != user_path(@user)

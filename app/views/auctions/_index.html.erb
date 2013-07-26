@@ -1,6 +1,6 @@
 <% @auctions.each do |auction| %>
   <li>
-    <%= link_to( (image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(auction)) %>
+    <%= link_to( (image_tag auction.pic1.url(:tiny), class: "gravatar-pat-index"), auction_path(auction)) %><br>
     <%= link_to "#{auction.title}:", auction_path(auction), id: 'user_index', style: 'color: #000000'%></br>
     <%= truncate auction.descrip, length: 150 %></br></br>
   </li>

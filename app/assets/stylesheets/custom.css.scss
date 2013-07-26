@@ -306,6 +306,12 @@ body {
   text-align: center;
 }
 
+.hire {
+  padding-top: 0px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 section {
 	padding-top: 10px;
 	margin-left: 10px;
@@ -656,6 +662,7 @@ footer {
  	small {
  		margin-left: 100px;
 		float: left;
+    font-size: 1.2em;
 	}
 }
 
@@ -813,6 +820,12 @@ height: 100%;
 	}
 }
 
+mid {
+  width: 211px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 tabs {
   margin-left: 10px;
 }
@@ -826,10 +839,10 @@ tabs {
 }
 
 #hire-btn {
-  margin-left: 25px;
+  margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  font-size: 2.4em;
+  font-size: 1.5em;
   width: 120px;
 }
 
@@ -1203,6 +1216,13 @@ embed#player1 {
   margin-top: 3px;
   margin-bottom: 1px;
   margin-left:22px;
+  width: 25px;
+}
+
+#job_icon_find {
+  margin-top: 3px;
+  margin-bottom: 1px;
+  margin-left: 13px;
   width: 25px;
 }
 

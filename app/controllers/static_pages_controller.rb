@@ -5,16 +5,18 @@ class StaticPagesController < ApplicationController
   		@user = current_user
       @search = Search.new
       @auctions = Auction.paginate(page: params[:page], per_page: 15, :order => "created_at desc")
+      @filings = Filing.paginate(page: params[:page], per_page: 15, :order => "created_at desc")
       @messengers = @user.received_messages
   		@micropost = @user.microposts.build 
     	@feed_items = @user.feed.paginate(page: params[:page], per_page: 15)
+      
       respond_to do |format|
-      format.js
-      format.html # index.html.erb
-      format.xml  { render :xml => @feed_items }
-    end
+        format.js
+        format.html # index.html.erb
+        format.xml  { render :xml => @feed_items }
+      end
   	else
-  	@user = User.new
+  	 @user = User.new
   	end
 	end
 
