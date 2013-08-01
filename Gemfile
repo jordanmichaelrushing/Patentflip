@@ -14,7 +14,7 @@ source 'https://rubygems.org'
  gem "paperclip", '3.4.2'
  gem 'flowplayer'
  gem 'delayed_job'
- gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+ gem 'simple-private-messages', '0.0.0', git: 'git://github.com/jongilbraith/simple-private-messages.git'
  gem 'rails3-jquery-autocomplete'
  gem 'aws-sdk'
  gem 'mandrill-api'
@@ -40,7 +40,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', platforms: :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end

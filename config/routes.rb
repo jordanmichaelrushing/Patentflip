@@ -35,8 +35,8 @@ match '/lawyers', to: 'users#lawyers'
 match '/users/:user_id/patents', to: 'auctions#patents'
 match '/search', to: 'search_suggestions#index'
 match '/categories/:cat_search', to: 'auctions#categories'
-
-
+match "/users/:id/hire_:id", to: 'users#hire_you', as: "hire_you"
+match "/filings/:id/hire_me", to: 'filings#hire_me', as: "hire_me"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

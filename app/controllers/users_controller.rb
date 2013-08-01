@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   	params[:user]
     @user = current_user
 		@users = User.create(params[:user])
-		if @user.save
+		if @users.save
 			sign_in @users
 			flash[:success] = "Welcome to Patentflip!"
 			redirect_to @users
@@ -91,6 +91,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def hire_you
+    @search = Search.new
+    @user = current_user
+    @users = User.find(params[:id])
+    @filing = Filing.paginate(page: params[:page], per_page: 5)
   end
 
 	private

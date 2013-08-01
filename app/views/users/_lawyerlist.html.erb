@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
-  <% if user.lawyer == true %>
+  <% if user.biz_law == "lawyer" %>
   <li>
     <%= image_tag user.avatar.url(:thumb), class: "gravatar" %>
 

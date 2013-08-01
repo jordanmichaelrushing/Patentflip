@@ -1,0 +1,8 @@
+<% @filings.each do |filing| %>
+  <li>
+    <%= link_to( (image_tag filing.picture.url(:mid), class: "gravatar-pat-index"), filing_path(filing)) %><br>
+    <%= link_to "#{filing.filing_title}:", filing_path(filing), id: 'user_index', style: 'color: #000000'%><br><br>
+    <%= truncate filing.job_descrip, length: 150 %></br></br>
+  </li>
+  <div class="userborder"></div>
+<% end %>

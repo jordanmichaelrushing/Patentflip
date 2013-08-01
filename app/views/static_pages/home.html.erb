@@ -19,7 +19,7 @@
             <% if @filings.any? %>
               <h1>Recent Job Postings</h1>
               <ol class="microposts">
-                <%= render partial: 'filings/index' %>
+                <%= render partial: 'shared/filings' %>
               </ol>
               <loading>
                 <%= will_paginate(@filings) %>

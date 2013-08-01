@@ -6,18 +6,16 @@
   <div class="outtie">
     <div class="inner">
       <listingblurb>
-        <% if @users == current_user %>
-          <%= link_to "Edit Patent Listing", edit_auction_path, class: "btn btn-large btn-primary", id: "edit-job" %><br>
+        <% if current_user.name == @users.name %>
+          <%= link_to "Edit Job Posting", edit_filing_path, class: "btn btn-large btn-primary", id: "edit-job" %><br>
         <% else %>
-            <%= link_to "Request Job", "#", class: "btn btn-large btn-primary", id: "request-job" %><br>
+            <%= link_to "Request Job", hire_me_path, class: "btn btn-large btn-primary", id: "request-job" %><br>
         <% end %>
         <h4>Category:</h4>
         <h2><%= link_to @filing.job_category, "/categories/#{@filing.job_category}" %></h2>
-        </br>
-        <%= image_tag @users.avatar.url(:thumb), class: "gravatar-patent" %>
-        </br></br> 
         <h4>Job By:</h4>
-        <h2><%= link_to @users.name, @users %></h2>
+        <h3>
+        <%= image_tag @users.avatar.url(:thumb), class: "gravatar-patent" %><%= link_to @users.name, @users %></h3>
       </listingblurb>
       
       <listingfeed> 

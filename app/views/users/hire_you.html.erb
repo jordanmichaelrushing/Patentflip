@@ -1,0 +1,24 @@
+<% provide(:title, "Hire #{@users.name}" ) %>
+<div class="outtie">
+  <div class="innie">
+    <h1>Hire Me</h1>
+    <ul class="users">
+      <h2>I want to hire you, <%= @users.name %>, for this job!</h2><br>
+      <patentlisting>            
+        <% @filing.each do |file| %>
+          <% if file.user_name == @user.name %>
+            <%= form_tag file, method: :put do %>
+              <h3><%= image_tag file.picture.url(:mid) %>
+              <%= file.filing_title %>
+              <%= check_box_tag :lawyer_name, @users.name, id: "radio-sell" %><br></h3>
+            <h2><%= submit_tag "Hire Lawyer", class: "btn btn-big btn-primary", id: "sign_btn8" %></h2>
+            <% end %>
+          <% end %>
+        <% end %>
+      </patentlisting>
+      <loading>
+        <%= will_paginate(@filing) %>
+      </loading>
+    </ul>
+  </div>
+</div>

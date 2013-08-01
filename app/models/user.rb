@@ -28,9 +28,6 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"
 
-  has_many :listings, dependent: :destroy
-  accepts_nested_attributes_for :listings
-
   has_many :auctions, dependent: :destroy
   accepts_nested_attributes_for :auctions
 

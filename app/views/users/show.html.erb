@@ -14,7 +14,7 @@
           <% end %>
         <%= render 'follow_form' if signed_in? %>
         <% if @users.biz_law == "lawyer" %>
-          <div class="hire"><%= link_to "Hire Me", "#", class: "btn btn-large btn-primary", id: "hire-btn" %></div>
+          <div class="hire"><%= link_to "Hire Me", hire_you_path, class: "btn btn-large btn-primary", id: "hire-btn" %></div>
         <% end %>
         <%= render 'shared/stats' %>
         <h5>
@@ -45,23 +45,23 @@
               <h2>I haven't updated my information yet!</h2>
             <% else %>
               <% unless @users.firm_site.nil? %>
-                &nbsp;<h4>Firm:</h4> <br><tabs><%= link_to @users.firm, "https://#{@users.firm_site}", target: "_blank" %></tabs><br><br>
+                &nbsp;<h4>Firm:</h4><tabs><h3><%= link_to @users.firm, "https://#{@users.firm_site}", target: "_blank" %></h3></tabs>
               <% end %>
               <% unless @users.billable_hours.nil? %>
-                &nbsp;<h4>Average Billable Hours:</h4><br><br><tabs>$<%= @users.billable_hours %>/hr</tabs><br><br>
+                &nbsp;<h4>Average Billable Hours:</h4><tabs><h3>$<%= @users.billable_hours %>/hr</h3></tabs>
               <% end %>
               <% unless @users.firm_agent_lawyer == "firm" %>
                 <% unless @users.years_practicing.nil? %>
-                  &nbsp;<h4>Years Practicing:</h4><br><br><tabs><%= @users.years_practicing %></tabs><br><br>
+                  &nbsp;<h4>Years Practicing:</h4><tabs><h3><%= @users.years_practicing %></h3></tabs>
                 <% end %>
                 <% unless @users.pat_bar_num.nil? %>
-                  &nbsp;<h4>Bar #:</h4><br><br><tabs><%= @users.pat_bar_num %></tabs><br><br>
+                  &nbsp;<h4>Bar #:</h4><tabs><h3><%= @users.pat_bar_num %></h3></tabs>
                 <% end %>
               <% end %>
               <% if @users.pat_cat == "Any Kind" %>
-                &nbsp;<h4>Patents Specializing In: </h4><br><tabs><%= link_to @users.pat_cat, auctions_path %></tabs>
+                &nbsp;<h4>Patents Specializing In: </h4><tabs><h3><%= link_to @users.pat_cat, auctions_path %></h3></tabs>
               <% elsif @users.pat_cat == ("Agricultural" || "Apparel" || "Arts" || "Automotive" || "Biological" || "Business" || "Chemical" || "Construction" || "Electronic" || "Environmental" || "Extensions" || "Hardware" || "International" || "Machinery" || "Miscellaneous" || "Patent" || "Structural" || "Telecomm") %>
-                &nbsp;<h4>Patents Specializing In: </h4><br><tabs><%= link_to @users.pat_cat, "/categories/#{@users.pat_cat}" %></tabs>
+                &nbsp;<h4>Patents Specializing In: </h4><tabs><h3><%= link_to @users.pat_cat, "/categories/#{@users.pat_cat}" %></h3></tabs>
               <% else %>
               <% end %><br><br>
             <% end %>

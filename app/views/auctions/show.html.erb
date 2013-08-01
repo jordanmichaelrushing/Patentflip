@@ -25,11 +25,9 @@
             <digit>0</digit>
           </div>
         </div>
-        </br>
-        <%= image_tag @users.avatar.url(:thumb), class: "gravatar-patent" %>
-        </br></br> 
         <h4>Flipping By:</h4>
-        <h2><%= link_to @users.name, @users %></h2>
+        <h3><%= image_tag @users.avatar.url(:thumb), class: "gravatar-patent" %>
+        <%= link_to @users.name, @users %></h3>
       </listingblurb>
 
       <listingfeed>   

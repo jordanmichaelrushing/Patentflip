@@ -53,4 +53,9 @@ module SessionsHelper
   def messen 
   	@messengers = @user.received_messages
   end
+
+  def message_user
+    @user = current_user
+  end
+  
 end
