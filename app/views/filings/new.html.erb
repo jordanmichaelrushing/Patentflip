@@ -1,4 +1,4 @@
-<% provide(:title, 'New Filing Job') %>
+<% provide(:title, 'New Job') %>
 <div class="outtie">
   <div class="innie">
     <h1>New Filing Job</h1>
@@ -20,7 +20,7 @@
               <%= f.text_area :filing_title, id: "the-form" %>
               <br><br>
               What Category would you put this patent in?
-              <%= f.select(:job_category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "#{:job_category}"), { :prompt => false}, { :single => true, :size => 5 }) %>
+              <%= f.select(:job_category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "#{:job_category}"), { :prompt => false}, { :single => true, :size => 5 }) %>
               Add a generic description about the idea you want to patent. Don't be too specific about it as this can be viewed by the public and your idea can be stolen. 
                 <%= f.text_area :job_descrip, id: "descrip-form" %></br></h4>
           </div>

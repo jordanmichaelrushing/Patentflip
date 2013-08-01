@@ -59,7 +59,8 @@
       <% end %>
       </br>
       </br></br></br><mess>
-        <%= link_to "Inbox", user_messengers_path(@user) %>
+        <%= link_to "Inbox", user_messengers_path(@user) %> |
+        <%= link_to "Compose", new_user_messenger_path %>
       </mess>
     </div>
   </div>

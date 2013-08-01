@@ -1,104 +1,117 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @users.name) %>
 <div class="outtie">
   <div class="innie">
 		<div class="row-fluid">
 			<div class="span3" id="user_info">
 				<section>
-					<%= image_tag @user.avatar.url(:medium), class: "gravatar-user-show" %>
+					<%= image_tag @users.avatar.url(:medium), class: "gravatar-user-show" %>
 				</section></br>
-          <div class="baloo"><%= @user.name %></div>
-          <% if @user == current_user %>
-            <%= link_to "Message User", new_user_messenger_path(@user), class: "btn btn-mini btn-primary", id: "sign_btn4"%>
+          <div class="baloo"><%= @users.name %></div>
+          <% if @users == current_user %>
+            <%= link_to "Message User", new_user_messenger_path(@users), class: "btn btn-mini btn-primary", id: "sign_btn4"%>
           <% else %>
-					  <%= link_to "Message User", new_user_messenger_path(@user), class: "btn btn-mini btn-primary", id: "sign_btn6"%>
+					  <%= link_to "Message User", new_user_messenger_path(@users), class: "btn btn-mini btn-primary", id: "sign_btn6"%>
           <% end %>
         <%= render 'follow_form' if signed_in? %>
-        <% if @user.biz_law == "lawyer" %>
+        <% if @users.biz_law == "lawyer" %>
           <div class="hire"><%= link_to "Hire Me", "#", class: "btn btn-large btn-primary", id: "hire-btn" %></div>
         <% end %>
         <%= render 'shared/stats' %>
-			  
-      <h5>
-      <% if @user.biz_law == "business" %>
-        <% unless @user.biz_site == "" %>
-          &nbsp;Business: <br><tabs><%= link_to @user.biz, "https://#{@user.biz_site}", :target => "_blank" %></tabs><br><br>
-        <% end %>
-        <% unless @user.biz_position == "" %>
-          &nbsp;Business Position: <br><tabs>$<%= @user.biz_position %></tabs><br><br>
-        <% end %>
-      <% elsif @user.biz_law == "user" %>
-        <h2><br>About:<br></h2>
-        &nbsp;Gender:<br><br><tabs><%= @user.sex %></tabs><br><br>
-        &nbsp;Patents sold on Patentflip:<br><br><tabs><%= @user.pat_sold %></tabs><br><br>
-      <% end %>
-      </h5>
+        <h5>
+          <% if @users.biz_law == "user" %>
+            <h2><br>About:<br></h2>
+            &nbsp;Gender:<br><br><tabs><%= @users.sex %></tabs><br><br>
+            &nbsp;Patents sold on Patentflip:<br><br><tabs><%= @users.pat_sold %></tabs><br><br>
+          <% end %>
+        </h5>
 			</div>
       <div class="spanshow">
-			    <div class="span5">
-            <% if @user.biz_law == "lawyer" %>
-              <h3>About:<br></h3>
-              <% if ((@user.firm_site.nil?) && (@user.billable_hours.nil?) && (@user.years_practicing.nil?) && (@user.pat_bar_num.nil?) && (@user.pat_cat.nil?)) %>
-                <h2>I haven't updated my information yet!</h2>
-              <% else %>
-                <% unless @user.firm_site.nil? %>
-                  &nbsp;Firm: <br><tabs><%= link_to @user.firm, "https://#{@user.firm_site}", :target => "_blank" %></tabs><br><br>
-                <% end %>
-                <% unless @user.billable_hours.nil? %>
-                  &nbsp;Average Billable Hours:<br><br><tabs>$<%= @user.billable_hours %>/hr</tabs><br><br>
-                <% end %>
-                <% unless @user.years_practicing.nil? %>
-                  &nbsp;Years Practicing:<br><br><tabs><%= @user.years_practicing %></tabs><br><br>
-                <% end %>
-                <% unless @user.pat_bar_num.nil? %>
-                  &nbsp;Bar #:<br><br><tabs><%= @user.pat_bar_num %></tabs><br><br>
-                <% end %>
-                <% if @user.pat_cat == "Any Kind" %>
-                  &nbsp;Patents Specializing In: <br><tabs><%= link_to @user.pat_cat, auctions_path %></tabs>
-                <% elsif @user.pat_cat == ("Agricultural" || "Apparel" || "Arts" || "Automotive" || "Biological" || "Business" || "Chemical" || "Construction" || "Electronic" || "Environmental" || "Extensions" || "Hardware" || "International" || "Machinery" || "Miscellaneous" || "Patent" || "Structural" || "Telecomm") %>
-                  &nbsp;Patents Specializing In: <br><tabs><%= link_to @user.pat_cat, "/categories/#{@user.pat_cat}" %></tabs>
-                <% else %>
-                <% end %><br><br>
-              <% end %>
-            <% elsif @user.biz_law == "business" %>
-              <% #render personal description (If a firm, the firms description with a group of firms users pages with avatars) %>
-            <% else %>
-              <% if @user.microposts.any? %>
-						    <h3>I'm working on...</h3>
-						    <ol class="microposts-list">
-						      <%= render "microposts/micro_listing" %>
-                  <div class="userborder"></div>
-						    </ol>
-						    <loading>
-                  <%= will_paginate(@microposts) %>
-                </loading>
-              <% else %>
-                <h3>No posts from <%=@user.name%>...yet!</h3>
-              <% end %>
-            <% end %>
-			    </div>
+        <% if @users.biz_law == "lawyer" %>
           <div class="span7">
-            <% if @user.biz_law == "lawyer" %>
-              <h3>Recent Job Postings:</h3>
-              <% @job_count = 0 %>
-              <patentlisting>
-                <%= render partial: "show_jobs" %>
-              </patentlisting>
-              <loading>
-                <%= will_paginate(@filings) %>
-              </loading>
-            <% elsif @user.biz_law == "business" %>
-              <% #render the patents they have succesfully bought on the site %>
+            <h3>Job's I've worked:
+            <div class="userborder"/></h3>
+            <% @job_count = 0 %>
+            <patentlisting>
+              <%= render partial: "show_jobs" %>
+            </patentlisting>
+            <loading>
+              <%= will_paginate(@filings) %>
+            </loading>
+		      </div>
+          <div class="span5">
+            <h3>About:<br>
+            <div class="userborder"/></h3>
+            <% if ((@users.firm_site.nil?) && (@users.billable_hours.nil?) && (@users.years_practicing.nil?) && (@users.pat_bar_num.nil?) && (@users.pat_cat.nil?)) %>
+              <h2>I haven't updated my information yet!</h2>
             <% else %>
-              <% @auction_count = 0 %>
-              <patentlisting>
-                <h3>Recent Patent Listings:</h3>
-                <%= render partial: "show_patents" %>
-              </patentlisting>
-              <loading>
-                <%= will_paginate(@auctions) %>
-              </loading>
+              <% unless @users.firm_site.nil? %>
+                &nbsp;<h4>Firm:</h4> <br><tabs><%= link_to @users.firm, "https://#{@users.firm_site}", target: "_blank" %></tabs><br><br>
+              <% end %>
+              <% unless @users.billable_hours.nil? %>
+                &nbsp;<h4>Average Billable Hours:</h4><br><br><tabs>$<%= @users.billable_hours %>/hr</tabs><br><br>
+              <% end %>
+              <% unless @users.firm_agent_lawyer == "firm" %>
+                <% unless @users.years_practicing.nil? %>
+                  &nbsp;<h4>Years Practicing:</h4><br><br><tabs><%= @users.years_practicing %></tabs><br><br>
+                <% end %>
+                <% unless @users.pat_bar_num.nil? %>
+                  &nbsp;<h4>Bar #:</h4><br><br><tabs><%= @users.pat_bar_num %></tabs><br><br>
+                <% end %>
+              <% end %>
+              <% if @users.pat_cat == "Any Kind" %>
+                &nbsp;<h4>Patents Specializing In: </h4><br><tabs><%= link_to @users.pat_cat, auctions_path %></tabs>
+              <% elsif @users.pat_cat == ("Agricultural" || "Apparel" || "Arts" || "Automotive" || "Biological" || "Business" || "Chemical" || "Construction" || "Electronic" || "Environmental" || "Extensions" || "Hardware" || "International" || "Machinery" || "Miscellaneous" || "Patent" || "Structural" || "Telecomm") %>
+                &nbsp;<h4>Patents Specializing In: </h4><br><tabs><%= link_to @users.pat_cat, "/categories/#{@users.pat_cat}" %></tabs>
+              <% else %>
+              <% end %><br><br>
             <% end %>
           </div>
+        <% elsif @users.biz_law == "business" %>
+          <div class="span7">
+            <h3>Patents We've Bought:</h3>
+            <% @buy_count = 0 %>
+            <patentlisting>
+              <%= render partial: "buy_patents" %>
+            </patentlisting>
+            <loading>
+              <%= will_paginate(@auctions) %>
+            </loading>
+          </div>
+          <div class="span5">            
+            <% unless @users.biz_site == "" %>
+              &nbsp;Business: <br><tabs><%= link_to @users.biz, "https://#{@users.biz_site}", target: "_blank" %></tabs><br><br>
+            <% end %>
+            <% unless @users.biz_position == "" %>
+              &nbsp;Business Position: <br><tabs>$<%= @users.biz_position %></tabs><br><br>
+            <% end %>
+            <% #render personal description (If a firm, the firms description with a group of firms users pages with avatars) %>
+          </div>
+        <% else %>
+          <div class="span5">
+            <% if @users.microposts.any? %>
+              <h3>I'm working on...</h3>
+              <ol class="microposts-list">
+                <%= render "microposts/micro_listing" %>
+                <div class="userborder"></div>
+              </ol>
+              <loading>
+                <%= will_paginate(@microposts) %>
+              </loading>
+            <% else %>
+              <h3>No posts from <%=@users.name%>...yet!</h3>
+            <% end %>
+          </div>
+          <div class="span7">
+            <% @auction_count = 0 %>
+            <patentlisting>
+              <h3>Recent Patent Listings:</h3>
+              <%= render partial: "show_patents" %>
+            </patentlisting>
+            <loading>
+              <%= will_paginate(@auctions) %>
+            </loading>
+          </div>
+        <% end %>
       </div>
 		</br></br></br></br></br></br></br></br></br></br></br></br>
 	  </div>

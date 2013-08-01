@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725183017) do
+ActiveRecord::Schema.define(:version => 20130731020242) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20130725183017) do
     t.string   "slug"
     t.string   "vid_url"
     t.string   "cat_search"
+    t.integer  "business_buy_id"
+    t.string   "business_buy_name"
   end
 
   add_index "auctions", ["slug"], :name => "index_auctions_on_slug", :unique => true
@@ -105,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20130725183017) do
     t.datetime "picture_updated_at"
     t.string   "slug"
     t.integer  "user_id"
+    t.integer  "lawyer_id"
   end
 
   add_index "filings", ["slug"], :name => "index_filings_on_slug", :unique => true

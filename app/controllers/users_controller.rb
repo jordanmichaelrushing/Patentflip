@@ -30,10 +30,11 @@ class UsersController < ApplicationController
     @search = Search.new
     @auctions = Auction.paginate(page: params[:page], per_page: 15)
     @filings = Filing.paginate(page: params[:page], per_page: 15)
-		@user = User.find(params[:id])
+    @user = current_user
+		@users = User.find(params[:id])
 		@microposts = @user.microposts.paginate(page: params[:page], per_page: 15)
-    if request.path != user_path(@user)
-      redirect_to @user, status: :moved_permanently
+    if request.path != user_path(@users)
+      redirect_to @users, status: :moved_permanently
     end
 	end
  
@@ -43,17 +44,19 @@ class UsersController < ApplicationController
  
   def create
   	params[:user]
-		@user = User.create(params[:user])
+    @user = current_user
+		@users = User.create(params[:user])
 		if @user.save
-			sign_in @user
+			sign_in @users
 			flash[:success] = "Welcome to Patentflip!"
-			redirect_to @user
+			redirect_to @users
 		else
 			render 'new'
 		end
 	end
  
 	def edit
+    @user = current_user
     @search = Search.new
 	end
  
@@ -75,6 +78,7 @@ class UsersController < ApplicationController
 	end
 
   def following
+    @search = Search.new
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
@@ -82,6 +86,7 @@ class UsersController < ApplicationController
   end
   
   def followers
+    @search = Search.new
     @title = "Followers"
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
@@ -91,8 +96,8 @@ class UsersController < ApplicationController
 	private
  
 	def correct_user
-		@user = User.find(params[:id])
-		redirect_to (root_path), error: "Cannot edit others information!" unless current_user?(@user)
+		@users = User.find(params[:id])
+		redirect_to (root_path), error: "Cannot edit others information!" unless current_user?(@users)
 	end
  
 	def admin_user

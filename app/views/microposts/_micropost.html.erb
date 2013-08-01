@@ -1,8 +1,7 @@
-<h6>Personal Post</h6>
 <li class="micro-search-results">
   <userlistfeed>
     <span class="user">
-      <%= link_to((image_tag micropost.user.avatar.url(:medium), class: "thumb_nail", id:"user-grav-list"), micropost.user) %>
+      <%= link_to((image_tag micropost.user.avatar.url(:thumb), class: "thumb_nail", id:"user-grav-list"), micropost.user) %>
       <h4><%= link_to micropost.content, micropost.user, class: "micro-listing" %></h4>
     </span>
     <span class="content"><%= link_to micropost.user.name, micropost.user %></span>
@@ -13,4 +12,5 @@
       <%= link_to "delete", micropost, method: :delete,confirm: "You sure?", title: micropost.content %>
     <% end %>
   </userlistfeed>
+<div class="userborder"/><br>
 </li>

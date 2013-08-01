@@ -14,19 +14,7 @@
 				</aside>
 				<div class="span6">
         <% $law_query = "u" %>
-          <% unless @user.biz_law == "lawyer" %>
-            <% if @feed_items.any? %>
-              <h1>Recent Patent Listings</h1>
-              <ol class="users">
-                <%= render partial: 'auctions/index' %> 
-              </ol>
-              <loading>
-                <%= will_paginate(@auctions) %>
-              </loading>
-            <% else %>
-              <br><br><br><br><br><br><h2>No recent patent listings, for now...</h2>
-            <% end %>
-          <% else %>
+          <% if @users.biz_law == "lawyer" %>
             <% $law_query = "l" %>
             <% if @filings.any? %>
               <h1>Recent Job Postings</h1>
@@ -38,6 +26,32 @@
               </loading>
             <% else %>
               <br><br><br><br><br><br><h2>No recent job postings, for now...</h2>
+            <% end %>
+          <% elsif @user.biz_law == "business" %>
+            <% $law_query = "b" %>
+            <% if @auctions.any? %>
+              <h1>Recent Patent Listings</h1>
+              <ol class="users">
+                <%= render partial: 'auctions/index' %> 
+              </ol>
+              <loading>
+                <%= will_paginate(@auctions) %>
+              </loading>
+            <% else %>
+              <br><br><br><br><br><br><h2>No recent patent listings, for now...</h2>
+            <% end %>
+          <% else %>
+            <% if @feed_items.any? %><br>
+              <h2>Personal Posts
+                <div class="userborder"/></h2>
+              <ol class="users">
+                <%= render @feed_items %> 
+              </ol>
+              <loading>
+                <%= will_paginate(@feed_items) %>
+              </loading>
+            <% else %>
+              <br><br><br><br><br><br><h2>No recent posts, for now...</h2>
             <% end %>
           <% end %>
         </div>

@@ -1,6 +1,7 @@
 class FilingsController < ApplicationController
 
   before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :lawyer_page
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
@@ -36,7 +37,7 @@ class FilingsController < ApplicationController
     @users = User.find(@filing.user_id)
 
     if request.path != filing_path(@filing)
-      redirect_to @auction, status: :moved_permanently
+      redirect_to @filing, status: :moved_permanently
     end
   end
 
@@ -63,8 +64,11 @@ class FilingsController < ApplicationController
 
   def correct_user
     @filing = Filing.find(params[:id])
-    @user = User.find_by_id(@auction.user_id)
+    @user = User.find_by_id(@filings.user_id)
     redirect_to (new_filing_path), error: "Cannot edit others jobs!" unless current_user?(@user)
   end
 
+  def lawyer_page
+    redirect_to (root_path), error: "This section is not for those in a business aspect" if current_user.biz_law == "business"
+  end
 end

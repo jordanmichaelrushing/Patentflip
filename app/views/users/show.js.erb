@@ -1,14 +1,33 @@
-$('.microposts-list').append('<%= j render("microposts/micro_listing") %>');
-<% if @microposts.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@microposts) %>');
+<% if @users.biz_law == "lawyer" %>
+  $('patentlisting').append('<%= j render("show_jobs") %>');
+  <% if @filings.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@filings) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 1 %>
+<% elsif @users.biz_law == "business" %>
+  $('patentlisting').append('<%= j render("buy_patents") %>');
+  <% if @auctions.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@auctions) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 1 %>
 <% else %>
-  $('.pagination').remove();
-<% end %>
+  $('.microposts-list').append('<%= j render("microposts/micro_listing") %>');
+  <% if @microposts.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@microposts) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 1 %>
 
-$('patentlisting').append('<%= j render("show_patents") %>');
-<% if @auctions.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@auctions) %>');
-<% else %>
-  $('.pagination').remove();
+  $('patentlisting').append('<%= j render("show_patents") %>');
+  <% if @auctions.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@auctions) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 1 %>
 <% end %>
-<% sleep 1 %>

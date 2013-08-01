@@ -17,4 +17,6 @@
 //= require twitter-bootstrap-hover-dropdown.min
 //= require flowplayer
 //= require countdown
+//= require embedmin
+//= require endless_page
 //= require_tree .

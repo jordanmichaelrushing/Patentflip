@@ -1,13 +1,12 @@
 <% provide(:title, @title) %>
 <div class="outtie">
-    <div class="innie">
+  <div class="innie">
     <div class="row">
       <aside class="span4">
         <section>
           <%= link_to (image_tag @user.avatar.url(:medium), class: "gravatar"), @user %>
             <h1><%= link_to @user.name, @user %></h1>
-            <span><%= link_to "view my profile", @user %></span>
-            <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+            <span><b>Posts:</b> <%= @user.microposts.count %></span>
         </section>
         <section>
           <%= render 'shared/stats' %>

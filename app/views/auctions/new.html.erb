@@ -34,7 +34,7 @@
               <%= f.check_box(:goog_url) %><%="  "%>Is your patent on google patents?
               <br><br>
               What Category would you put this patent in?
-              <%= f.select(:category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "#{:category}"), { :prompt => false}, { :single => true, :size => 5 }) %>
+              <%= f.select(:category, options_for_select(["Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "#{:category}"), { :prompt => false}, { :single => true, :size => 5 }) %>
               Would you prefer to license your patent or outright sell it?<br></h4>
               <h2>
               License: <%= f.radio_button :lic_or_sell, true, id: "radio-sell" %>

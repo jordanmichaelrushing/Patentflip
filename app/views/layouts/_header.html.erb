@@ -63,7 +63,7 @@
             </li>
      				<li class="divider-vertical"></li>
   					<li id="fat-menu" class="dropdown">
-  						<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="200">
+  						<a class="dropdown-toggle" data-hover="dropdown" data-delay="200">
   							<%= image_tag("/assets/settings_icon.png", id: "settings_icon") %><br>Options
   						</a>
   						<ul class="dropdown-menus">
@@ -86,17 +86,9 @@
 							<%= f.submit "Sign in", class: "btn btn-small btn-primary", id: "sign-in-home" %>
 				    <% end %>
             <li class="divider-vertical" id="post-sign-in"></li>
-
     		 	<% end %>
     		</ul>
 	  	</nav>
 		</div>
   </div>
-
-  <script>
-  $(function() {
-    $( document ).tooltip();
-  });</script>
-<script type="text/javascript">$('.dropdown-toggle').dropdownHover();</script>
-
 </header>

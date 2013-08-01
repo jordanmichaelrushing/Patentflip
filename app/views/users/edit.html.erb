@@ -5,10 +5,10 @@
 			<div class="tabbable"> <!-- Only required for left/right tabs -->
 				<ul class="nav nav-pills">
 					<li class="active"><a href="#tab1" data-toggle="tab">Basic User Info</a></li>
-  				<% if @user.biz_law == "lawyer" %>
+  				<% if @users.biz_law == "lawyer" %>
 				  	<li><a href="#tab2" data-toggle="tab">Lawyer Info</a></li>
 				  <% end %>
-				  <% if @user.biz_law == "business" %>
+				  <% if @users.biz_law == "business" %>
 				  	<li><a href="#tab3" data-toggle="tab">Business Info</a></li>
 				  <% end %>
 				  <li><a href="#tab4" data-toggle="tab">Extra Info</a></li>			  
@@ -18,7 +18,7 @@
 	        <div class="tab-pane fade in active" id="tab1">
 						<div class="row">
 							<div class="span6 offset3">
-								<%= form_for(@user, html: { multipart: true}) do |f| %>
+								<%= form_for(@users, html: { multipart: true}) do |f| %>
 						
 								<%= render 'shared/error_messages', object: f.object %>
 								<%= f.label :name %>
@@ -34,16 +34,16 @@
 								<%= f.password_field :password_confirmation %>
 
 								<%= f.label :avatar, "Edit User Image" %>
-								<%= image_tag @user.avatar.url(:medium), class: "gravatar-user-edit" %>
+								<%= image_tag @users.avatar.url(:medium), class: "gravatar-user-edit" %>
 								<%= f.file_field :avatar, id: "edit-form" %><br><br>
 							</div>
 						</div>
 					</div>
-  				<% if @user.biz_law == "lawyer" %>
+  				<% if @users.biz_law == "lawyer" %>
 						<div class="tab-pane fade in" id="tab2">
 							<div class="row">
 								<div class="span6 offset3">
-									<%= f.label :firm %>
+									<%= f.label :firm, label: "Firm Name" %>
 									<%= f.text_field :firm %>
 								
 									<%= f.label :years_practicing %>
@@ -59,7 +59,7 @@
 									<%= f.text_field :pat_bar_num %>
 
 									<%= f.label :pat_cat, "Do you specialize in a certain patent category?" %>
-									<%= f.select(:pat_cat, options_for_select(["Any Kind", "Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "Any Kind"), { :prompt => false}, { :single => true, :size => 5 }) %>
+									<%= f.select(:pat_cat, options_for_select(["Any Kind", "Agricultural", "Apparel", "Arts", "Automotive", "Biological", "Business", "Chemical", "Construction", "Electronic", "Environmental", "Extensions", "Hardware", "International", "Machinery", "Miscellaneous", "Patent", "Structural", "Telecomm"], "Any Kind"), { :prompt => false}, { single: true, size: 5 }) %>
 
 									<h5>Are you a Patent Agent, Lawyer, or the firm itself?</h5>
 									Agent: <%= f.radio_button :firm_agent_lawyer, "agent", id: "radio-sell" %>
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 					<% end %>
-					<% if @user.biz_law == "business" %>
+					<% if @users.biz_law == "business" %>
 						<div class="tab-pane fade in" id="tab3">
 							<div class="row">
 								<div class="span6 offset3">
