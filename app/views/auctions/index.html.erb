@@ -3,7 +3,11 @@
     <div class="innie">
       <h1>All Patents</h1>
       <ul class="users">
-        <%= render partial: "index" %>
+        <% if @auctions.any? %>
+          <%= render partial: "index" %>
+        <% else %>
+          <h2> No Patents Posted Just Yet...</h2>
+        <% end %>
       </ul>
       <loading>
         <%= will_paginate %>

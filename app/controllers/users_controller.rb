@@ -94,6 +94,7 @@ class UsersController < ApplicationController
   end
 
   def hire_you
+    $law = "u"
     @search = Search.new
     @user = current_user
     @users = User.find(params[:id])

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801044037) do
+ActiveRecord::Schema.define(:version => 20130801200644) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20130801044037) do
     t.integer  "lawyer_id"
     t.string   "user_name"
     t.string   "lawyer_name"
+    t.boolean  "user_accept",                :default => false
+    t.boolean  "lawyer_accept",              :default => false
   end
 
   add_index "filings", ["slug"], :name => "index_filings_on_slug", :unique => true

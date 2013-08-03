@@ -5,14 +5,13 @@
     <ul class="users">
       <h2>I want you to hire me, <%= @user.name %>, for this job!</h2><br>
       <patentlisting>
-        <% if @filing.user_name == @user.name %>
           <%= form_tag @filing, method: :put do %>
-            <h3><%= image_tag @filing.picture.url(:mid) %>
+            <h3><%= image_tag @filing.picture.url(:mid), class: "gravatar-pat-index" %>
             <%= @filing.filing_title %>
-            <%= check_box_tag :lawyer_name, @user.name, id: "radio-sell" %><br></h3>
+            <%= check_box_tag :lawyer_name, @user.name, id: "radio-sell" %><br>
+            <%= hidden_field_tag true, :lawyer_accept  %></h3>
           <h2><%= submit_tag "Hire Lawyer", class: "btn btn-big btn-primary", id: "sign_btn8" %></h2>
           <% end %>
-        <% end %>
       </patentlisting>
     </ul>
   </div>

@@ -17,7 +17,7 @@
           <% if @users.biz_law == "lawyer" %>
             <% $law_query = "l" %>
             <% if @filings.any? %>
-              <h1>Recent Job Postings</h1>
+              <h1>Latest Job Postings</h1>
               <ol class="microposts">
                 <%= render partial: 'shared/filings' %>
               </ol>

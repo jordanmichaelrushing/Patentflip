@@ -45,23 +45,23 @@
               <h2>I haven't updated my information yet!</h2>
             <% else %>
               <% unless @users.firm_site.nil? %>
-                &nbsp;<h4>Firm:</h4><tabs><h3><%= link_to @users.firm, "https://#{@users.firm_site}", target: "_blank" %></h3></tabs>
+                &nbsp;<h8>Firm:</h8><br><tabs><h4><%= link_to @users.firm, "https://#{@users.firm_site}", target: "_blank" %></h4></tabs><br>
               <% end %>
               <% unless @users.billable_hours.nil? %>
-                &nbsp;<h4>Average Billable Hours:</h4><tabs><h3>$<%= @users.billable_hours %>/hr</h3></tabs>
+                &nbsp;<h8>Average Billable Hours:</h8><br><tabs><h4>$<%= @users.billable_hours %>/hr</h4></tabs><br>
               <% end %>
               <% unless @users.firm_agent_lawyer == "firm" %>
                 <% unless @users.years_practicing.nil? %>
-                  &nbsp;<h4>Years Practicing:</h4><tabs><h3><%= @users.years_practicing %></h3></tabs>
+                  &nbsp;<h8>Years Practicing:</h8><br><tabs><h4><%= @users.years_practicing %></h4></tabs><br>
                 <% end %>
                 <% unless @users.pat_bar_num.nil? %>
-                  &nbsp;<h4>Bar #:</h4><tabs><h3><%= @users.pat_bar_num %></h3></tabs>
+                  &nbsp;<h8>Bar #:</h8><br><tabs><h4><%= @users.pat_bar_num %></h4></tabs><br>
                 <% end %>
               <% end %>
               <% if @users.pat_cat == "Any Kind" %>
-                &nbsp;<h4>Patents Specializing In: </h4><tabs><h3><%= link_to @users.pat_cat, auctions_path %></h3></tabs>
+                &nbsp;<h8>Patents Specializing In: </h8><br><tabs><h4><%= link_to @users.pat_cat, auctions_path %></h4></tabs><br>
               <% elsif @users.pat_cat == ("Agricultural" || "Apparel" || "Arts" || "Automotive" || "Biological" || "Business" || "Chemical" || "Construction" || "Electronic" || "Environmental" || "Extensions" || "Hardware" || "International" || "Machinery" || "Miscellaneous" || "Patent" || "Structural" || "Telecomm") %>
-                &nbsp;<h4>Patents Specializing In: </h4><tabs><h3><%= link_to @users.pat_cat, "/categories/#{@users.pat_cat}" %></h3></tabs>
+                &nbsp;<h8>Patents Specializing In: </h8><br><tabs><h4><%= link_to @users.pat_cat, "/categories/#{@users.pat_cat}" %></h4></tabs><br>
               <% else %>
               <% end %><br><br>
             <% end %>
