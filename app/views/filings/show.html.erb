@@ -15,7 +15,10 @@
           <%= link_to "Edit Job Posting", edit_filing_path, class: "btn btn-large btn-primary", id: "edit-job" %><br>
         <% else %>
           <% if current_user.name != @filing.lawyer_name %>
-            <%= link_to "Request Job", hire_me_path, class: "btn btn-large btn-primary", id: "request-job" %><br>
+            <% if ((@filing.lawyer_accept == true) && (@filing.user_accept == true)) %>
+            <% else %>
+            <%= link_to "Request Job", hire_me_path, class: "btn btn-large btn-primary", id: "request-job" %><br><br>
+            <% end %>
           <% else %><br><br>
             <a class="btn-large btn-primary" id="requested-job">Job Requested!</a><br><br>
           <% end %>

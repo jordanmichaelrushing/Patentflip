@@ -40,8 +40,8 @@ class FilingsController < ApplicationController
       redirect_to @filing, status: :moved_permanently
     end
 
-    if ((@filing.lawyer_accept == true) && (@filing.user_accept == true) &&((@filing.user_id == @user.id) || (@filing.lawyer_name == @user.name)))
-      redirect_to about_path
+    if ((@filing.lawyer_accept == true) && (@filing.user_accept == true) && ((@filing.lawyer_name == @user.name) || (@filing.user_id == @user.id)))
+      redirect_to milestone_path
     end
   end
 
@@ -78,6 +78,12 @@ class FilingsController < ApplicationController
   def destroy
     @filing.destroy
     redirect_back_or root_path
+  end
+
+  def milestone
+    @filing = Filing.find(params[:id])
+    @users = User.find_by_id(@filing.user_id)
+    @search = Search.new
   end
 
   private

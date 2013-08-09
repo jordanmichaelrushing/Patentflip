@@ -1,0 +1,20 @@
+<% provide(:title, "#{@filing.filing_title}") %>
+  </br></br></br>
+<h6>Job: </h6><h2><%=@filing.filing_title%></h2>
+<h8>Filed by: <%= @users.name %></h8>
+  <div class="outtie">
+    <div class="inner">
+      <mess class="offset4">
+      <% if @user.name == @filing.lawyer_name %>
+        <%= form_for @filing do |f| %>
+          <%= f.fields_for :filings do |builder| %>
+            <%= render 'milestone_fields', f: builder %>
+          <% end %>
+          <%= link_to "Add Milestone", "#", class: "add_fields" %>
+        <% end %>
+      <% else %>
+      Hello
+      <% end %>
+      </mess>
+    </div>
+  </div>
