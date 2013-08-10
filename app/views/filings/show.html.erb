@@ -9,8 +9,8 @@
     <div class="inner">
       <listingblurb>
         <% if current_user.name == @users.name %>
-          <% if @filing.lawyer_name != "" %>
-            <%= link_to "Job Requested!", user_path(@lawyer), class: "btn btn-large btn-primary", id: "edit-job" %><br>
+          <% if @filing.lawyer_name != nil %>
+            <%= link_to "Job Requested!", user_path(@users), class: "btn btn-large btn-primary", id: "edit-job" %><br>
           <% end %>
           <%= link_to "Edit Job Posting", edit_filing_path, class: "btn btn-large btn-primary", id: "edit-job" %><br>
         <% else %>

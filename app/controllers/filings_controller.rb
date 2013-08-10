@@ -82,6 +82,7 @@ class FilingsController < ApplicationController
 
   def milestone
     @filing = Filing.find(params[:id])
+    @milestone = Milestone.new
     @users = User.find_by_id(@filing.user_id)
     @search = Search.new
   end

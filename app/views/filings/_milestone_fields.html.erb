@@ -1,6 +1,7 @@
 <fieldset>
-  <h3>Milestone Title:<br /></h3>
+  <h3>New Milestone Title:<br /></h3>
   <%= f.text_area :milestone_title, id: "the-form" %> 
-  <%= f.hidden_field :_delete %>
-  <%= link_to "remove", "#", class: "remove_fields" %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove Milestone", "#", class: "remove_fields" %>
+  <h3 class="userborder"></h3><br>
 </fieldset>
