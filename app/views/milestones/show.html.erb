@@ -1,0 +1,17 @@
+<% provide(:title, "#{@filing.filing_title}") %>
+  </br></br></br>
+<h6>Job: </h6><h2><%=@filing.filing_title%></h2>
+<h8>Filed by: <%= @users.name %></h8>
+  <div class="outtie">
+    <div class="inner">
+      <h2>Milestones:</h2>
+      <% @filing.milestones.each do |f| %>
+        <h2><%= f.milestone_title %></h2><br>
+        <h3><%= f.milestone_content %></h3><br>
+        <h3 class="userborder"></h3><br>
+      <% end %>
+      <%  if @filing.lawyer_name == @user.name %>
+        <%= link_to "Edit Milestones", edit_filing_milestone_path %>
+      <% end %>
+    </div>
+  </div>

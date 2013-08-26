@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810085504) do
+ActiveRecord::Schema.define(:version => 20130826063253) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -127,6 +127,12 @@ ActiveRecord::Schema.define(:version => 20130810085504) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "groups", :force => true do |t|
+    t.string   "group_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "messengers", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -164,7 +170,11 @@ ActiveRecord::Schema.define(:version => 20130810085504) do
     t.integer  "milestone_timer"
     t.boolean  "milestone_user_accept"
     t.integer  "filing_id"
+    t.string   "slug"
+    t.string   "mile_id"
   end
+
+  add_index "milestones", ["slug"], :name => "index_milestones_on_slug", :unique => true
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"

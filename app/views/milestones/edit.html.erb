@@ -1,0 +1,19 @@
+<% provide(:title, "Edit #{@filing.filing_title} Milestones") %>
+  </br></br></br>
+<h6>Job: </h6><h2>Edit <%=@filing.filing_title%> Milestones</h2>
+<h8>Filed by: <%= @users.name %></h8>
+  <div class="outtie">
+    <div class="inner">
+      <%= form_for @filing do |f| %>
+        <%= f.fields_for :milestones do |builder| %>
+          <milestone>
+            <%= render 'milestone_fields', f: builder %>
+          </milestone>
+        <% end %>
+        <milestone>
+          <h3> <%= link_to_add_fields "Add Additional Milestone", f, :milestones %></h3>
+        </milestone><br />
+        <%= f.submit "Edit Milestones", class: "btn btn-big btn-primary", id: "sign_btn2" %>
+      <% end %>
+    </div>
+  </div>

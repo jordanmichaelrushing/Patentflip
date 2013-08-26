@@ -1,0 +1,10 @@
+<fieldset>
+  <h3>New Milestone Title:<br /></h3>
+  <%= f.text_area :milestone_title, id: "the-form" %>
+  <h3>Milestone Content:<br /></h3>
+  <%= f.text_area :milestone_content, id: "descrip-form" %>
+  <%= f.hidden_field :mile_id, value: Time.now.strftime("%I%M%S%z") %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove Milestone", "#", class: "remove_fields" %>
+  <h3 class="userborder"></h3><br>
+</fieldset>

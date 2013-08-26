@@ -302,7 +302,6 @@ html {
 body {
   height: 100%;
   padding-top: 10px;
-  align-right: 10px;
   background-color: #eee;
 }
 
@@ -457,6 +456,7 @@ aside {
   border: 2px solid #00cc00;
   moz-border-radius: 10px;
   border-radius: 10px;
+  text-align: center;
 }
 
 .gravatar-patent {
@@ -838,6 +838,11 @@ mid {
   margin-right: auto;
 }
 
+middle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 tabs {
   margin-left: 10px;
 }
@@ -1073,6 +1078,8 @@ input, textarea, select, .uneditable-input {
 	li {
 		padding: 0px;
 		border-top: 0px solid #e8e8e8;
+    margin-left: auto;
+    margin-right: auto;
     width:80%;
 	}
 }

@@ -40,8 +40,12 @@ class FilingsController < ApplicationController
       redirect_to @filing, status: :moved_permanently
     end
 
-    if ((@filing.lawyer_accept == true) && (@filing.user_accept == true) && ((@filing.lawyer_name == @user.name) || (@filing.user_id == @user.id)))
-      redirect_to milestone_path
+    if @filing.user_accept == true
+      if @filing.lawyer_name == @user.name
+          redirect_to new_filing_milestone_path(@filing)
+      elsif @filing.user_id == @user.id
+        redirect_to filing_milestone_path
+      end
     end
   end
 
@@ -58,33 +62,42 @@ class FilingsController < ApplicationController
       @filing.lawyer_accept = true
     elsif $law == "u"
       @filing.lawyer_name = @user.name
-      @filing.user_accept = true      
+      @filing.user_accept = true
+    elsif $law == "m"
+      @milestone = Milestone.create(params[:milestone])
+    elsif $law == "me"
+      @milestone = Milestone.find_by_mile_id(params[:mile_id])
     end
     
-    if @filing.update_attributes(params[:filing])
-      flash[:success] = "Job listing updated"
-      redirect_to @filing
+    if @filing.update_attributes(params[:filings])
+      if $law == "m"
+        $miles = "g"
+        flash[:success] = "Milestones Added"
+        redirect_to filing_milestone_path(@filing)
+      else
+        flash[:success] = "Job listing updated"
+        redirect_to @filing
+      end
     else
-      render 'edit'
+      if $law == "m"
+        render new_filing_milestone_path
+      else
+        render 'edit'
+      end
     end
   end
 
-  def hire_me
-    $law = "l"
-    @filing = Filing.find(params[:id])
+  def hire_for_job
     @search = Search.new
+    @user = current_user
+    @filing = Filing.find(params[:id])
+    @list = User.paginate(page: params[:page], per_page: 10)
+    @users = @list.where( Group.find_by_name(@filing.name).users )  
   end
 
   def destroy
     @filing.destroy
     redirect_back_or root_path
-  end
-
-  def milestone
-    @filing = Filing.find(params[:id])
-    @milestone = Milestone.new
-    @users = User.find_by_id(@filing.user_id)
-    @search = Search.new
   end
 
   private

@@ -21,7 +21,9 @@ resources :convers, only: [:create, :destroy]
 resources :searches, path: "search" do
       get :autocomplete_user_and_patent_search, on: :collection
 end
-resources :filings
+resources :filings do
+  resources :milestones
+end
 
 root to: 'static_pages#home'
 match '/help', to: 'static_pages#help'
@@ -35,9 +37,9 @@ match '/lawyers', to: 'users#lawyers'
 match '/users/:user_id/patents', to: 'auctions#patents'
 match '/search', to: 'search_suggestions#index'
 match '/categories/:cat_search', to: 'auctions#categories'
-match "/users/:id/hire_:id", to: 'users#hire_you', as: "hire_you"
-match "/filings/:id/hire_me", to: 'filings#hire_me', as: "hire_me"
-match "/filings/:id/milestones", to: 'filings#milestone', as: "milestone"
+match "/users/:id/hire_:id", to: 'groups#hire_you', as: "hire_you"
+match "/filings/:id/hire_me", to: 'groups#hire_me', as: "hire_me"
+match "/filings/:id/hire_for_job", to: 'filings#hire_for_job', as: "hire_for_job"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
