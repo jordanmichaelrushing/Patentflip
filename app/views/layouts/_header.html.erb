@@ -5,21 +5,7 @@
       <nav>
     		<ul class="nav pull-right">
     		  <% if signed_in? %>
-              <div class="span2">
-                <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
-                  <%= form_for @searches do |f| %>
-                    <p>
-                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
-                    </p>
-                  <% end %>
-                <% else %>
-                  <%= form_for @search do |f| %>
-                    <p>
-                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
-                    </p>
-                  <% end %>
-                <% end %>
-              </div>
+              
             <li class="divider-vertical"></li>
             <% if current_user.unread_messages? %>
               <% if current_user.unread_message_count == 1 %>
@@ -92,3 +78,39 @@
 		</div>
   </div>
 </header>
+
+<header class="navbar navbar-static">
+  <div class="navbar-search">
+    <div class="container">
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+              <div class="span2">
+                <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
+                  <%= form_for @searches do |f| %>
+                    <p>
+                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
+                    </p>
+                  <% end %>
+                <% else %>
+                  <%= form_for @search do |f| %>
+                    <p>
+                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
+                    </p>
+                  <% end %>
+                <% end %>
+              </div>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script type="text/javascript">
+$('.navbar-search').affix({
+      offset: {
+        top: 61
+      }
+}); 
+</script>

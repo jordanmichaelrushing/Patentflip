@@ -33,6 +33,7 @@ class FilingsController < ApplicationController
   def show
     @search = Search.new
     @filing = Filing.find(params[:id])
+    @group = Group.find(@filing.filing_title)
     @users = User.find(@filing.user_id)
     @lawyer = User.find_by_name(@filing.lawyer_name)
 
@@ -63,17 +64,13 @@ class FilingsController < ApplicationController
     elsif $law == "u"
       @filing.lawyer_name = @user.name
       @filing.user_accept = true
-    elsif $law == "m"
-      @milestone = Milestone.create(params[:milestone])
-    elsif $law == "me"
-      @milestone = Milestone.find_by_mile_id(params[:mile_id])
     end
     
     if @filing.update_attributes(params[:filings])
       if $law == "m"
-        $miles = "g"
-        flash[:success] = "Milestones Added"
-        redirect_to filing_milestone_path(@filing)
+          $miles = "g"
+          flash[:success] = "Milestones Added"
+          redirect_to filing_milestone_path(@filing)
       else
         flash[:success] = "Job listing updated"
         redirect_to @filing
@@ -92,7 +89,8 @@ class FilingsController < ApplicationController
     @user = current_user
     @filing = Filing.find(params[:id])
     @list = User.paginate(page: params[:page], per_page: 10)
-    @users = @list.where( Group.find_by_name(@filing.name).users )  
+    @group = Group.find_by_group_name(@filing.filing_title)
+    @users = @list.where( @group.users )  
   end
 
   def destroy

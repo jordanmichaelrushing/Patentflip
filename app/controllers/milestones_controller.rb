@@ -14,7 +14,7 @@ class MilestonesController < ApplicationController
     @filing = Filing.find(params[:id])
     @user = current_user
     @users = User.find_by_id(@filing.user_id)
-    @milestone = Milestone.create(params[:milestone])
+    @milestone = @filing.milestones.create(params[:milestone])
     @milestone.mile_id = @filing.filing_title
     if @milestone.save
       flash[:success] = "Milestones Added!"
@@ -26,7 +26,7 @@ class MilestonesController < ApplicationController
 
   def show
     @filing = Filing.find(params[:filing_id])
-    @milestone = @filing.milestones.find_by_mile_id(params[:mile_id])
+    @milestone = @filing.milestones.find(params[:id])
     @user = current_user
     @users = User.find_by_id(@filing.user_id)
     @search = Search.new
@@ -35,7 +35,7 @@ class MilestonesController < ApplicationController
   def edit
     $law = 'me'
     @filing = Filing.find(params[:filing_id])
-    @milestone = Milestone.find_by_mile_id(params[:mile_id])
+    @milestone = @filing.milestones.all
     @user = current_user
     @users = User.find_by_id(@filing.user_id)
     @search = Search.new

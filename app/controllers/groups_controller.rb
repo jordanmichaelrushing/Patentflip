@@ -6,8 +6,8 @@ class GroupsController < ApplicationController
     @user = current_user
     @search = Search.new
 
-    if Group.find_by_group_name(@filing.name).present?
-      @group = Group.find_by_name(@filing.name)
+    if Group.find(params[:id]).present?
+      @group = Group.find_by_name(@filing.filing_title)
     else
       @group = Group.new
     end
@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
     @group = Group.create(params[:group])
     @search = Search.new
     @user = current_user
-    @group.users << current_user
+    @group.users.push(current_user)
 
     if @group.save
       flash[:success] = "You've been added to the job's potential lawyers!"
