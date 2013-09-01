@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
     end
   end
   
+  has_many :memberships
+  has_many :groups, through: :memberships
 
   has_attached_file :avatar, styles: { medium: "200x200>", thumb: "100x100>",
    micro: "80x80>" }, default_url: "/assets/coolguy_:style.png"

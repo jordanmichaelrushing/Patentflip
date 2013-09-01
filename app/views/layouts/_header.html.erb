@@ -5,7 +5,6 @@
       <nav>
     		<ul class="nav pull-right">
     		  <% if signed_in? %>
-              
             <li class="divider-vertical"></li>
             <% if current_user.unread_messages? %>
               <% if current_user.unread_message_count == 1 %>
@@ -33,20 +32,18 @@
             <% end %>
          		<li class="divider-vertical"></li>
             <li>
-              <a href="<%= lawyers_path %>" title="Find A Patent Lawyer!"><%= image_tag("/assets/lawyer_icon.png", id: "lawyer_icon") %><br>Find A Lawyer</a>
+              <a href="<%= lawyers_path %>" title="Find A Patent Lawyer!"><%= image_tag("/assets/Law-icon.png", id: "lawyer_icon") %><br>Find A Lawyer</a>
             </li>
             <li class="divider-vertical"></li>
             <li>
-              <a href="<%= new_auction_path %>" title="Let's flip your patent on the marketplace!"><%= image_tag("/assets/pat_add_icon.png", id: "patent_icon") %><br>Flip A Patent</a>
+              <a href="<%= auctions_path %>" title="Let's flip your patent on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon") %><br>Patents</a>
             </li>
        			<li class="divider-vertical"></li>
-  		  		<li>
-              <% if @user.biz_law == "lawyer" %>
-                <a href="<%= filings_path %>" title="Look at the jobs!"><%= image_tag("/assets/pat_find_icon.png", id: "job_icon_find") %><br>All Jobs</a>
-              <% else %>
-                <a href="<%= auctions_path %>" title="Look at the patents on the marketplace!"><%= image_tag("/assets/pat_find_icon.png", id: "patent_icon_find") %><br>All Patents</a>
-              <% end %>
-            </li>
+            <% if @user.biz_law != "business" %>
+    		  		<li>
+                <a href="<%= filings_path %>" title="Look at the jobs!"><%= image_tag("/assets/lawyer_icon.png", id: "job_icon_find") %><br>All Jobs</a>
+              </li>
+            <% end %>
      				<li class="divider-vertical"></li>
   					<li id="fat-menu" class="dropdown">
   						<a class="dropdown-toggle" data-hover="dropdown" data-delay="200">
@@ -79,12 +76,12 @@
   </div>
 </header>
 
+<% if signed_in? %>
 <header class="navbar navbar-static">
   <div class="navbar-search">
     <div class="container">
       <nav>
         <ul class="nav pull-right">
-          <% if signed_in? %>
               <div class="span2">
                 <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
                   <%= form_for @searches do |f| %>
@@ -100,12 +97,12 @@
                   <% end %>
                 <% end %>
               </div>
-          <% end %>
         </ul>
       </nav>
     </div>
   </div>
 </header>
+<% end %>
 
 <script type="text/javascript">
 $('.navbar-search').affix({

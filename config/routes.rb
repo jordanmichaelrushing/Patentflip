@@ -21,7 +21,7 @@ resources :convers, only: [:create, :destroy]
 resources :searches, path: "search" do
       get :autocomplete_user_and_patent_search, on: :collection
 end
-resources :filings do
+resources :filings, path: "jobs" do
   resources :milestones
 end
 
