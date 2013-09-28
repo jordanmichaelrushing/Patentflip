@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830180425) do
+ActiveRecord::Schema.define(:version => 20130928174635) do
 
   create_table "auctions", :force => true do |t|
     t.string   "descrip"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130830180425) do
     t.string   "category"
     t.string   "img_url"
     t.string   "pat_num"
-    t.decimal  "cost"
+    t.decimal  "cost",               :precision => 10, :scale => 0
     t.integer  "timer_hr"
     t.string   "timer_min"
     t.string   "integer"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20130830180425) do
     t.string   "lic_or_sell"
     t.text     "pat_off_desc"
     t.integer  "user_id"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",                                                           :null => false
+    t.datetime "updated_at",                                                           :null => false
     t.string   "pic1_file_name"
     t.string   "pic1_content_type"
     t.integer  "pic1_file_size"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20130830180425) do
     t.string   "pic_descr_3"
     t.string   "pic_descr_4"
     t.string   "pic_descr_5"
-    t.boolean  "goog_url",           :default => false
+    t.boolean  "goog_url",                                          :default => false
     t.text     "why_sell"
     t.string   "phone_num"
     t.string   "user_name"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(:version => 20130830180425) do
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
     t.string   "slug"
-    t.string   "vid_url"
     t.string   "cat_search"
     t.integer  "business_buy_id"
     t.string   "business_buy_name"
@@ -237,7 +236,6 @@ ActiveRecord::Schema.define(:version => 20130830180425) do
     t.integer  "pat_sold",             :default => 0
     t.integer  "pat_selling",          :default => 0
     t.string   "sex",                  :default => "undefined"
-    t.string   "password_digest"
     t.boolean  "business"
     t.string   "biz"
     t.string   "biz_site"
@@ -271,6 +269,7 @@ ActiveRecord::Schema.define(:version => 20130830180425) do
     t.text     "firm_descrip"
     t.text     "user_descrip"
     t.boolean  "biz_or_person"
+    t.string   "password_digest"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

@@ -284,9 +284,10 @@ divider {
 
 #navbar_search {
   margin-top: 5px;
-  margin-left: -140%;
+  margin-left: 25%;
+  margin-right: 25%;
   height: 30px;
-  width: 175px;
+  width: 50%;
 }
 
 #myModal {
@@ -523,13 +524,15 @@ aside {
   background-image: -o-linear-gradient(top, #191919, #7f7f7f);
   background-image: linear-gradient(top, #191919, #7f7f7f);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'191919, endColorstr='#'7f7f7f, GradientType=0);
-  margin-top: -1px;
+  margin-top: -17px;
   height: 40px;
-  width:500px;
-  margin-left:30%;
-  margin-right:30%;
-  moz-border-radius: 100px;
-  border-radius: 7px;
+  width:33.3%;
+  margin-left:33.3%;
+  margin-right:33.3%;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .btn {
@@ -630,27 +633,22 @@ h8 {
 
 .navbar-search.affix {
   position: fixed;
-  top: 5px;
-  width: 39.5%;
+  top: 17px;
+  margin-left: 33.3%;
+  margin-right: 33.3%;
+  width: 33.3%;
   height: 40px;
-  moz-border-radius: 6px;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.affix {
-    width: 70%;
-    margin-left: 30%;
-    margin-right:30%;
-    }
-
 #logo {
   moz-border-radius: 6px;
   border-radius: 6px;
-	float: left;
-	margin-top: 16px;
+  float: left;
+  margin-top: 0px;
   margin-right: 10px;
-  width: 135px;
+  width: 250px;
 	&:hover {
     opacity: 0.7;
 		color: #fff;

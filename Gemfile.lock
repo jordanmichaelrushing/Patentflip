@@ -160,6 +160,7 @@ GEM
       i18n (~> 0.6.0)
     multi_json (1.7.2)
     multipart-post (1.2.0)
+    mysql2 (0.3.13)
     nifty-generators (0.4.6)
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
@@ -242,8 +243,6 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.7)
-    sqlite3 (1.3.7-x86-mingw32)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -290,6 +289,7 @@ DEPENDENCIES
   jquery-ui-rails
   koala
   mandrill-api
+  mysql2
   nifty-generators
   paperclip (= 3.4.2)
   pg
@@ -300,7 +300,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple-private-messages (= 0.0.0)!
   spork
-  sqlite3
   therubyracer
   uglifier (>= 1.0.3)
   uploadify-rails

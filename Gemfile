@@ -26,7 +26,7 @@ source 'https://rubygems.org'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-	gem 'sqlite3'
+	gem 'mysql2'
 	gem 'annotate'
   gem "nifty-generators"
   gem 'rack-mini-profiler'

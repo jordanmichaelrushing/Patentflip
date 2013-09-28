@@ -1,7 +1,7 @@
 <header class="navbar navbar-static-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to image_tag("/assets/Patent_Lettering.png", id: "logo"), root_path %>
+      <%= link_to image_tag("/assets/Patent_Full_Logo_beta.png", id: "logo"), root_path %>
       <nav>
     		<ul class="nav pull-right">
     		  <% if signed_in? %>
@@ -81,8 +81,6 @@
   <div class="navbar-search">
     <div class="container">
       <nav>
-        <ul class="nav pull-right">
-              <div class="span2">
                 <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
                   <%= form_for @searches do |f| %>
                     <p>
@@ -96,8 +94,6 @@
                     </p>
                   <% end %>
                 <% end %>
-              </div>
-        </ul>
       </nav>
     </div>
   </div>
