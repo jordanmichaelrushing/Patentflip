@@ -81,19 +81,19 @@
   <div class="navbar-search">
     <div class="container">
       <nav>
-                <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
-                  <%= form_for @searches do |f| %>
-                    <p>
-                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
-                    </p>
-                  <% end %>
-                <% else %>
-                  <%= form_for @search do |f| %>
-                    <p>
-                    <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
-                    </p>
-                  <% end %>
-                <% end %>
+        <% if (params[:controller] == 'searches' && params[:action] == 'show')%>
+          <%= form_for @searches do |f| %>
+            <p>
+            <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
+            </p>
+          <% end %>
+        <% else %>
+          <%= form_for @search do |f| %>
+            <p>
+            <%= f.text_field :keywords, :method => 'post', class: "search-query", id: "navbar_search", placeholder: "Search" %>
+            </p>
+          <% end %>
+        <% end %>
       </nav>
     </div>
   </div>
