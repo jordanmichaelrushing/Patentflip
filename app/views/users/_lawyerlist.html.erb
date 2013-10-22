@@ -31,8 +31,8 @@
       Average Billable Hours: $<%= user.billable_hours %>/hr<br>
       Years Practicing: <%= user.years_practicing %><br>
       Bar #: <%= user.pat_bar_num %><br>
-      <% if user.pat_cat == "Any Kind" %>
-        Patents Specializing In: <%= link_to user.pat_cat, auctions_path %>
+      <% if user.pat_cat == ("Any Kind" || "")%>
+        Patents Specializing In: Unannounced Yet
       <% else %>
         Patents Specializing In: <%= link_to user.pat_cat, "/categories/#{user.pat_cat}" %>
       <% end %>
